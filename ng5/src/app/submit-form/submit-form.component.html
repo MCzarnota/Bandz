@@ -1,0 +1,30 @@
+<div class="wrapper" [ngStyle]="{display:centerWrapper}">
+  <section class="formWindow">
+    <div class="title">
+      <h1>Sign up for a BANDZ account</h1>
+    </div>
+     <!-- front of the  Fan window -->
+      <div class="fanSection section" ontouchstart="this.classList.toggle('hover');">
+        <div class="sectionInner">
+          <!-- card -->
+              <div (click)="flip()" [ngClass]="{rotate:isFlipped}" class="card-front fanCard">
+                  <i class="fa fa-pie-chart fa-3x tile-icon icon-white"></i>
+                  <h4>Flexible Spending Account</h4>
+                  <p class="detail">$XXX,XXX</p>
+              </div>
+              <div class="card-back" [ngClass]="{show:isShowed}">
+                  <p class="title">Lorem ipsum dolor sit amet</p>
+                  <p class="desc">Pellentesque magna nunc, fermentum nec ipsum non, consequat scelerisque dui.</p>
+                  <p class="link">Details <i class="fa fa-chevron-circle-right"></i></p>
+              </div>
+          <!-- /card -->
+        </div>
+      </div>
+      <div class="bandSection section">
+        <button>Sign up for a band account</button>
+      </div>
+      <div class="venueManagerSection section">
+          <button>Sign up for a venue account</button>
+      </div>
+  </section>
+</div>

@@ -1,0 +1,19 @@
+@import url('../variables.scss');
+
+
+#main{
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 0 2em 0;
+  padding: 0;
+  li{
+    display: inline;
+    margin-right: 30px;
+    a{
+      font-size: 1.5em;
+    }
+  }
+}

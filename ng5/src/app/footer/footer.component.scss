@@ -1,0 +1,13 @@
+@import "~variables.scss";
+
+footer{
+  min-width: 100%;
+  background-color: #fc2840;
+  display: flex;
+  justify-content: space-between;
+  padding: 3em;
+}
+
+ul{
+  list-style-type: none;
+}
