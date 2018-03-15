@@ -1,16 +1,19 @@
 <div class="wrapper">
   <div class="logInWindow">
-      <div class="title"> 
-          <h1>Log In to BANDZ account </h1>
-        </div>
-        <div class="formContainer">
-      <mat-form-field>
-          <input matInput placeholder="Input">
-        </mat-form-field>
-        <mat-form-field>
-          <textarea matInput placeholder="Textarea"></textarea>
-        </mat-form-field>
-        </div>
-        <button>Log in</button>
+    <div class="title">
+      <h1>Log In to BANDZ account </h1>
+    </div>
+    <div class="formContainer">
+          <form action="" method="post" >
+              <mat-form-field>
+                  <input matInput placeholder="Username">
+                </mat-form-field>
+                <mat-form-field [floatLabel]="options.value.floatLabel">
+                    <mat-label>Both a label and a placeholder</mat-label>
+                    <input matInput placeholder="Simple placeholder">
+                  </mat-form-field>
+            
+            <button>Log in</button>
+          </form>
   </div>
 </div>

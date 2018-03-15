@@ -1,5 +1,7 @@
-.wrapper{
-    display:flex; // to display flex
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
+.wrapper {
+  min-height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -10,37 +12,36 @@
   position: fixed;
   z-index: 999;
   .logInWindow {
-    background: #fc2840;
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // grid-template-rows: 1fr 2fr 2fr;
+    background: red;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     width: 60vw;
     height: 70vh;
-    position: relative;
-    button{
-        width: 100px;
-        height: 100px;
-    }
     .title {
-        // grid-column: 1/4;
-        h1 {
-          //hack to position text vertically
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          color: white;
-        }
+      h1 {
+        //hack to position text vertically
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
       }
-      .formContainer {
-          background: white;
-        // display: flex;
-        // flex-direction: column;
+    }
+    .formContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      form{
+      mat-form-field {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 2rem;
       }
-      
-      .formContainer > * {
-        width: 100%;
-      }
-}
+    }
+    }
+  }
 }
