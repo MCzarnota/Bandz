@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
+import {MatDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'app-slide-show-with-search-bar',
   templateUrl: './slide-show-with-search-bar.component.html',
@@ -30,9 +32,11 @@ export class SlideShowWithSearchBarComponent implements OnInit {
     this.inputActive = !this.inputActive;
   }
   isActive() {
+    // Checks if the window is active
     return this.inputActive;
   }
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit() {
     this.timer = this.observable.subscribe(i => this.changePhoto());

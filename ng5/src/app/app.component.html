@@ -1,16 +1,8 @@
-<app-header></app-header>
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Testing angular material</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <button md-raised-button (click)="openDialog()">Click me</button>
-  </mat-card-content>
-</mat-card>
-
-
+<app-header (SubmitEvent)="isSubmitActive=$event" (LoginEvent)="isLoginActive=$event"></app-header>
 <main id="main">
-  <app-submit-form></app-submit-form>
-  <app-slide-show-with-search-bar></app-slide-show-with-search-bar>
+  <app-submit-form (SubmitEvent)="isSubmitActive=$event" *ngIf="isSubmitActive" ></app-submit-form>
+  <app-login-form (LoginEvent)="isLoginActive=$event" *ngIf="isLoginActive"></app-login-form>
+  <app-slide-show-with-search-bar ></app-slide-show-with-search-bar>
 </main>
-<app-footer></app-footer>
+<app-footer>
+</app-footer>

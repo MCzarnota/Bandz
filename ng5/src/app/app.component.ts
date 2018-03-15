@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
-  name = 'Maciej';
+  isSubmitActive = false;
   title = 'app';
 }

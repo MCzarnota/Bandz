@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 /** !Material IO imports */
 import {AppComponent} from './app.component';
 import {AboutComponent} from './about/about.component';
@@ -22,6 +24,7 @@ import { SlideShowWithSearchBarComponent } from './slide-show-with-search-bar/sl
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 
@@ -35,7 +38,8 @@ import { SubmitFormComponent } from './submit-form/submit-form.component';
     SlideShowWithSearchBarComponent,
     FooterComponent,
     HeaderComponent,
-    SubmitFormComponent
+    SubmitFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,11 @@ import { SubmitFormComponent } from './submit-form/submit-form.component';
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule
+  ],
+  entryComponents: [
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 /** A wrapper that covers whole body and add overlay */
 
 .wrapper{
-display:none; // to display flex
+display:flex; // to display flex
   justify-content: center;
   align-items: center;
   top: 0;
