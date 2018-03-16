@@ -2,18 +2,24 @@
   <div class="logInWindow">
     <div class="title">
       <h1>Log In to BANDZ account </h1>
+      <div class="x"  (click)=closeLoginForm()></div>
     </div>
-    <div class="formContainer">
-          <form action="" method="post" >
-              <mat-form-field>
-                  <input matInput placeholder="Username">
-                </mat-form-field>
-                <mat-form-field [floatLabel]="options.value.floatLabel">
-                    <mat-label>Both a label and a placeholder</mat-label>
-                    <input matInput placeholder="Simple placeholder">
-                  </mat-form-field>
-            
-            <button>Log in</button>
-          </form>
+    <div class="Container">
+      <form action="" method="post"  class="form form-login">
+        <mat-form-field [floatLabel]="Maciej">
+          <mat-label>Please provide your username</mat-label>
+          <input type="text" matInput placeholder="Username" >
+
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Please provide your password</mat-label>
+          <input matInput type="password" placeholder="Password">
+        </mat-form-field>
+            <input class="submit"  type="submit">
+       
+        <a id="lostPassword" href="#">Lost your password?</a><br>
+        <a id="registerAccount" href="#">Don't have an account?</a>
+
+      </form>
+    </div>
   </div>
-</div>

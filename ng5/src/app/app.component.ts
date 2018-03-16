@@ -7,5 +7,6 @@ import {Component} from '@angular/core';
 
 export class AppComponent {
   isSubmitActive = false;
+  isLoginActive = false;
   title = 'app';
 }
