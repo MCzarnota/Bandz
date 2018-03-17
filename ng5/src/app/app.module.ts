@@ -14,6 +14,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 /** !Material IO imports */
+/** NG components */
+import {AccordionModule} from 'primeng/components/accordion/accordion';
+import {MenuItem} from 'primeng/components/common/api';
+
+/** !NG components */
 import {AppComponent} from './app.component';
 import {AboutComponent} from './about/about.component';
 import {DataService} from './data.service';
@@ -56,7 +61,9 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
     MatFormFieldModule,
     MatSelectModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AccordionModule
+
   ],
   entryComponents: [
   ],

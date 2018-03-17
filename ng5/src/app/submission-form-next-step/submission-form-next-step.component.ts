@@ -12,10 +12,10 @@ import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 })
 export class SubmissionFormNextStepComponent implements OnInit {
   // group of form controls
-  public userForm: FormGroup;
+  public registrationForm: FormGroup;
+  private readonly emailRegex = '..... ';
   trigger = false;
   @Input() accountType;
-  email = new FormControl('', [Validators.required, Validators.email]);
   @Output() public submitSecondStepEvent = new EventEmitter();
 
   getErrorMessage() {
@@ -29,15 +29,17 @@ export class SubmissionFormNextStepComponent implements OnInit {
     this.submitSecondStepEvent.emit(this.trigger);
   }
   send() {
-    console.log(this.userForm.value);
+    // send the inputs value using JSON to the server
+    console.log(this.registrationForm.value);
   }
-
-  constructor(fb: FormBuilder) {
-    this.userForm = fb.group({
-      name: null,
-      email: null
+  get email() {
+    return this.registrationForm.get('email') as FormControl;
+  }
+  constructor(private readonly formBuilder: FormBuilder) {
+    this.registrationForm = formBuilder.group({
+      email: [null, Validators.email],
+      password: [null, Validators.required],
     });
-    this.send();
    }
 
   ngOnInit() {

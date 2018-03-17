@@ -123,6 +123,12 @@ a{
   transform-origin: center;
 }
 /** !CLOSE X STYLING **/
-mat-error{
-  color: white !important;
+// mat-error{
+//   color: white !important;
+// }
+.danger{
+  color:black;
+}
+input.ng-invalid{
+  border-color: black;
 }

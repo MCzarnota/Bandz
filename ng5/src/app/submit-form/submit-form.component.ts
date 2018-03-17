@@ -30,14 +30,14 @@ export class SubmitFormComponent implements OnInit {
     switch (elementId) {
       case 'fanCard':
         this.fanIsChosen = 1;
-        this.accountType = 'as a fan ';
+        this.accountType = 'fan ';
         this.submissionSecondStepEvent.emit(this.trigger);
         this.theTypeOfTheAccountEvent.emit(this.accountType);
         this.closeSubmissionForm();
         break;
       case 'bandCard':
         this.bandIsChosen = 2;
-        this.accountType = 'as a band ';
+        this.accountType = 'band ';
         this.submissionSecondStepEvent.emit(this.trigger);
         this.theTypeOfTheAccountEvent.emit(this.accountType);
         this.closeSubmissionForm();
@@ -45,7 +45,7 @@ export class SubmitFormComponent implements OnInit {
       case 'venueCard':
         console.log('venueCard');
         this.venueIsChosen = 3;
-        this.accountType = 'as a venue manager ';
+        this.accountType = 'venue manager ';
         this.submissionSecondStepEvent.emit(this.trigger);
         this.theTypeOfTheAccountEvent.emit(this.accountType);
         this.closeSubmissionForm();
