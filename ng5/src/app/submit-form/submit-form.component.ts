@@ -15,32 +15,42 @@ export class SubmitFormComponent implements OnInit {
   trigger = false;
   @Output() public SubmitEvent = new EventEmitter();
   @Output() public submissionSecondStepEvent = new EventEmitter();
+  @Output() public theTypeOfTheAccountEvent = new EventEmitter();
   closeSubmissionForm() {
+    console.log('close it');
     // closes the submission form using 'x'
     this.trigger = false;
     this.SubmitEvent.emit(this.trigger);
   }
   showRegistrationForm(event) {
+    console.log(event.target);
     const elementId: string = (event.target as Element).id;
+    console.log('You clicked on registration event');
     // Regiser what type of account. Passed later to backend
-    console.log(elementId);
     switch (elementId) {
       case 'fanCard':
         this.fanIsChosen = 1;
         this.accountType = 'as a fan ';
+        this.submissionSecondStepEvent.emit(this.trigger);
+        this.theTypeOfTheAccountEvent.emit(this.accountType);
+        this.closeSubmissionForm();
         break;
       case 'bandCard':
         this.bandIsChosen = 2;
         this.accountType = 'as a band ';
+        this.submissionSecondStepEvent.emit(this.trigger);
+        this.theTypeOfTheAccountEvent.emit(this.accountType);
+        this.closeSubmissionForm();
       break;
       case 'venueCard':
+        console.log('venueCard');
         this.venueIsChosen = 3;
         this.accountType = 'as a venue manager ';
+        this.submissionSecondStepEvent.emit(this.trigger);
+        this.theTypeOfTheAccountEvent.emit(this.accountType);
+        this.closeSubmissionForm();
         break;
       default:
-      this.accountType = 'for a BANDZ account';
-      this.submissionSecondStepEvent.emit(this.trigger);
-      this.closeSubmissionForm();
     }
   }
   constructor(public dialog: MatDialog) { }

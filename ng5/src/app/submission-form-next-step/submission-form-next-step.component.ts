@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/';
@@ -14,6 +14,7 @@ export class SubmissionFormNextStepComponent implements OnInit {
   // group of form controls
   public userForm: FormGroup;
   trigger = false;
+  @Input() accountType;
   email = new FormControl('', [Validators.required, Validators.email]);
   @Output() public submitSecondStepEvent = new EventEmitter();
 

@@ -8,8 +8,7 @@
     <div  id="fanCard"  (click)="showRegistrationForm($event)"  class="fanSection section" ontouchstart="this.classList.toggle('hover');">
       <article class="sectionInner">
         <!-- card -->
-        <div [ngClass]="{rotate:fanIsFlipped}" class="card-front fanCard">
-          <button>Sign up for a fan account</button>
+        <div  id="fanCard"  (click)="showRegistrationForm($event)"  [ngClass]="{rotate:fanIsFlipped}" class="card-front fanCard">
         </div>
         <div class="card-back" [ngClass]="{show:fanIsFlipped}">
           <p class="title">Card is flipped</p>
@@ -17,11 +16,10 @@
         <!-- /card -->
       </article>
     </div>
-    <div  id="bandCard" (click)="showRegistrationForm($event)" id="bandCard" class="bandSection section">
+    <div class="bandSection section">
       <article class="sectionInner">
         <!-- card -->
-        <div  [ngClass]="{rotate:bandIsFlipped}" class="card-front bandCard">
-          <button>Sign up for a fan account</button>
+        <div   id="bandCard" (click)="showRegistrationForm($event)"  [ngClass]="{rotate:bandIsFlipped}" class="card-front bandCard">
         </div>
         <div class="card-back" [ngClass]="{show:bandIsFlipped}">
           <p class="title">Card is flipped</p>
@@ -29,11 +27,10 @@
         <!-- /card -->
       </article>
     </div>
-    <div id="venueCard"(click)="showRegistrationForm($event)" id="venueCard" class="venueManagerSection section">
+    <div  class="venueManagerSection section">
       <article class="sectionInner">
         <!-- card -->
-        <div  [ngClass]="{rotate:venueIsFlipped}" class="card-front venueCard">
-          <button>Sign up for a fan account</button>
+        <div id="venueCard"  (click)="showRegistrationForm($event)" [ngClass]="{rotate:venueIsFlipped}" class="card-front venueCard">
         </div>
         <div class="card-back" [ngClass]="{show:venueIsFlipped}">
           <p class="title">VenueCard is flipped</p>
