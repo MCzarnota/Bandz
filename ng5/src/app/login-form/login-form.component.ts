@@ -8,7 +8,6 @@ import {MatIconModule} from '@angular/material/';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-  hide = true;
   public username = '';
   public password = '';
   constructor() { }

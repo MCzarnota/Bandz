@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="logInWindow">
+      <div class="title">
+        <h1>Register your ....</h1>
+        <div (click)=closeSecondSubmissionForm() class="x"></div>
+      </div>
+      <div class="Container">
+        <form action="" method="post"  class="form form-login" [formGroup]="userForm" (ngSubmit)="send()">
+            <mat-form-field>
+            <mat-label>Email adress</mat-label>
+            <input  matInput placeholder="Enter your email" [formControl]="email">
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Create a password">
+          </mat-form-field>
+          <label>Country</label>
+          <input type="text">
+          <small>Validation text</small>
+              <button class="submit" type="submit">Sign in</button>
+         <p> Already have a BANDZ account? <a href = "#" >Log in</a></p>
+  
+        </form>
+      </div>
+    </div>
+  

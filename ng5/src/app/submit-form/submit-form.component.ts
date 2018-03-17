@@ -6,38 +6,41 @@ import {MatDialog} from '@angular/material';
   styleUrls: ['./submit-form.component.scss']
 })
 export class SubmitFormComponent implements OnInit {
-
-  fanIsFlipped = false;
-  venueIsFlipped = false;
-  bandIsFlipped = false;
+  accountType = 'for a BANDZ account';
+  fanIsChosen;
+  venueIsChosen;
+  bandIsChosen;
+  hideSecondStep = true;
   isLoginFormVisible = false;
   trigger = false;
   @Output() public SubmitEvent = new EventEmitter();
-  closeLoginForm() {
+  @Output() public submissionSecondStepEvent = new EventEmitter();
+  closeSubmissionForm() {
+    // closes the submission form using 'x'
     this.trigger = false;
     this.SubmitEvent.emit(this.trigger);
   }
-  flip(event) {
+  showRegistrationForm(event) {
     const elementId: string = (event.target as Element).id;
-    // Flips the card
+    // Regiser what type of account. Passed later to backend
+    console.log(elementId);
     switch (elementId) {
       case 'fanCard':
-        this.fanIsFlipped = true;
-        this.bandIsFlipped = false;
-        this.venueIsFlipped = false;
+        this.fanIsChosen = 1;
+        this.accountType = 'as a fan ';
         break;
       case 'bandCard':
-      this.fanIsFlipped = false;
-      this.bandIsFlipped = true;
-      this.venueIsFlipped = false;
+        this.bandIsChosen = 2;
+        this.accountType = 'as a band ';
       break;
       case 'venueCard':
-      this.fanIsFlipped = false;
-      this.bandIsFlipped = false;
-      this.venueIsFlipped = true;
-      break;
+        this.venueIsChosen = 3;
+        this.accountType = 'as a venue manager ';
+        break;
       default:
-      console.log(event.srcElement.attributes.id);
+      this.accountType = 'for a BANDZ account';
+      this.submissionSecondStepEvent.emit(this.trigger);
+      this.closeSubmissionForm();
     }
   }
   constructor(public dialog: MatDialog) { }

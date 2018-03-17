@@ -1,46 +1,45 @@
-<div class="wrapper">
+<section class="wrapper">
   <section class="formWindow">
     <div class="title">
-      <h1>Sign up for a BANDZ account</h1>
-      <div class="x" (click)=closeLoginForm()></div>
+      <h1>Sign up {{accountType}} </h1>
+      <section class="x" (click)=closeSubmissionForm()></section>
     </div>
     <!-- front of the  Fan window -->
-    <div class="fanSection section" ontouchstart="this.classList.toggle('hover');">
-            <input type="radio" name="radio-set" checked="checked" />
-      <div class="sectionInner">
+    <div  id="fanCard"  (click)="showRegistrationForm($event)"  class="fanSection section" ontouchstart="this.classList.toggle('hover');">
+      <article class="sectionInner">
         <!-- card -->
-        <div id="fanCard" (click)="flip($event)" [ngClass]="{rotate:fanIsFlipped}" class="card-front fanCard">
+        <div [ngClass]="{rotate:fanIsFlipped}" class="card-front fanCard">
           <button>Sign up for a fan account</button>
         </div>
         <div class="card-back" [ngClass]="{show:fanIsFlipped}">
           <p class="title">Card is flipped</p>
         </div>
         <!-- /card -->
-      </div>
+      </article>
     </div>
-    <div id="bandCard" class="bandSection section">
-      <div class="sectionInner">
+    <div  id="bandCard" (click)="showRegistrationForm($event)" id="bandCard" class="bandSection section">
+      <article class="sectionInner">
         <!-- card -->
-        <div id="bandCard" (click)="flip($event)" [ngClass]="{rotate:bandIsFlipped}" class="card-front bandCard">
+        <div  [ngClass]="{rotate:bandIsFlipped}" class="card-front bandCard">
           <button>Sign up for a fan account</button>
         </div>
         <div class="card-back" [ngClass]="{show:bandIsFlipped}">
           <p class="title">Card is flipped</p>
         </div>
         <!-- /card -->
-      </div>
+      </article>
     </div>
-    <div id="venueCard" class="venueManagerSection section">
-      <div class="sectionInner">
+    <div id="venueCard"(click)="showRegistrationForm($event)" id="venueCard" class="venueManagerSection section">
+      <article class="sectionInner">
         <!-- card -->
-        <div id="venueCard" (click)="flip($event)" [ngClass]="{rotate:venueIsFlipped}" class="card-front venueCard">
+        <div  [ngClass]="{rotate:venueIsFlipped}" class="card-front venueCard">
           <button>Sign up for a fan account</button>
         </div>
         <div class="card-back" [ngClass]="{show:venueIsFlipped}">
           <p class="title">VenueCard is flipped</p>
         </div>
         <!-- /card -->
-      </div>
+      </article>
     </div>
   </section>
-</div>
+</section>

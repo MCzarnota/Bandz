@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -24,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { SubmissionFormNextStepComponent } from './submission-form-next-step/submission-form-next-step.component';
 
 
 
@@ -38,7 +40,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     FooterComponent,
     HeaderComponent,
     SubmitFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SubmissionFormNextStepComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
   ],
