@@ -11,9 +11,11 @@
             <mat-icon>email</mat-icon> Email</mat-label>
           <input #emailInput type="email" matInput placeholder="Please provide your email adress" formControlName="email">
           <mat-error *ngIf="hasError('email', 'required')">
+              <mat-icon>cancel</mat-icon>
             Email address required
           </mat-error>
           <mat-error *ngIf="hasError('email', 'email')">
+              <mat-icon>cancel</mat-icon>
             Email is not valid
           </mat-error>
         </mat-form-field>
