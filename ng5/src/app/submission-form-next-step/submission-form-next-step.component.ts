@@ -28,6 +28,7 @@ import {
 import {
   ErrorStateMatcher
 } from '@angular/material/core';
+import {MatDividerModule} from '@angular/material/divider';
 
 // /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
@@ -78,7 +79,9 @@ export class SubmissionFormNextStepComponent implements OnInit {
   constructor(private readonly formBuilder: FormBuilder) {
     this.registrationForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]],
+      'color': 'warn'
+
     });
   }
   ngOnInit() {}

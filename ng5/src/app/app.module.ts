@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 /** !Material IO imports */
 /** NG components */
 import {AccordionModule} from 'primeng/components/accordion/accordion';
@@ -65,7 +66,8 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
     MatSelectModule,
     MatIconModule,
     ReactiveFormsModule,
-    PasswordStrengthBarModule
+    PasswordStrengthBarModule,
+    MatDividerModule
   ],
   exports: [
     MatButtonModule,

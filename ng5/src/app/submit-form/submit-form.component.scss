@@ -21,7 +21,6 @@ display:flex;
     grid-template-rows: 1fr 5fr;
     transition: 2s;
     width:  60vw;
-    height: 70vh;
     position: relative;
     .title {
       grid-column: 1/4;
@@ -50,9 +49,6 @@ display:flex;
             border: 3px solid #DAA520;
           }
         }
-        .fanCard:hover {
-          // grid-column: 2/5;
-          }
         .bandCard {
           perspective: 1000px;
             background-image: url("assets/images/bandBackground.jpeg");
