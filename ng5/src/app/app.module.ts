@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -63,7 +64,8 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
     MatFormFieldModule,
     MatSelectModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PasswordStrengthBarModule
   ],
   exports: [
     MatButtonModule,

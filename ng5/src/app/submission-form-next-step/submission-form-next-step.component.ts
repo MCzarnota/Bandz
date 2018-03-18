@@ -3,14 +3,27 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/';
 import {MatIconModule} from '@angular/material/';
-import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
+import {FormControl, Validators, FormGroup, FormBuilder, FormGroupDirective, NgForm} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 
+// /** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 @Component({
   selector: 'app-submission-form-next-step',
   templateUrl: './submission-form-next-step.component.html',
   styleUrls: ['./submission-form-next-step.component.scss']
 })
 export class SubmissionFormNextStepComponent implements OnInit {
+  matcher = new MyErrorStateMatcherComponent();
+  public account = {
+    password: null
+};
+  public myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00', '#00C853'];
   // group of form controls
   public registrationForm: FormGroup;
   // checks for pattern => at least 1 letter, 1 number, 1 special
@@ -32,7 +45,7 @@ export class SubmissionFormNextStepComponent implements OnInit {
     // checks if the input is valid, return true if it's dirty(touched and then some input was typed)
     // , false if does not pass some of the validators
     const control = this.registrationForm.get(field);
-    return (control.dirty && control.hasError(error));
+    return control.hasError(error);
   }
   passwordMatchesEmail(passwordInput, emailInput) {
   // compare email input value with password input value.
