@@ -1,7 +1,7 @@
 /** A wrapper that covers whole body and add overlay */
 
 .wrapper{
-display:flex; // to display flex
+display:flex; 
   justify-content: center;
   align-items: center;
   top: 0;
@@ -12,11 +12,15 @@ display:flex; // to display flex
   position: fixed;
   z-index: 999;
   .formWindow {
+    // testing 
+    overflow: hidden;
+    // !testing 
     background: #fc2840;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto;
     grid-template-rows: 1fr 5fr;
-    width: 60vw;
+    transition: 2s;
+    width:  60vw;
     height: 70vh;
     position: relative;
     .title {
@@ -32,6 +36,7 @@ display:flex; // to display flex
       }
     }
     .section {
+    
       position: relative;
       .sectionInner {
         .fanCard {
@@ -45,17 +50,31 @@ display:flex; // to display flex
             border: 3px solid #DAA520;
           }
         }
-        display: flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-box;
-        display: -webkit-flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        width: 100%;
+        .fanCard:hover {
+          // grid-column: 2/5;
+          }
+        .bandCard {
+          perspective: 1000px;
+            background-image: url("assets/images/bandBackground.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-color: rgb(38, 218, 32);
+            border: 5px solid rgb(38, 218, 32);
+            button {
+              border: 3px solid rgb(38, 218, 32);
+            }
+          }
+          .venueCard {
+            perspective: 1000px;
+              background-image: url("assets/images/manager.jpeg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              border-color: rgb(203, 32, 218);
+              border: 5px solid rgb(203, 32, 218);;
+              button {
+                border: 3px solid rgb(203, 32, 218);;
+              }
+            }
       }
       p {
         font-size: 0.3rem;
@@ -107,26 +126,6 @@ display:flex; // to display flex
         top: 1px;
       }
     }
-    .bandSection {
-      border-color: #6E943B;
-      border: 5px solid #6E943B;
-      background-image: url("assets/images/band.jpeg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      button {
-        border: 3px solid #6E943B;
-      }
-    }
-    .venueManagerSection {
-      background-image: url("assets/images/manager.jpeg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-color: #6F49A1;
-      border: 5px solid #6F49A1;
-      button {
-        border: 3px solid #6F49A1;
-      }
-    }
   }
 }
 
@@ -166,3 +165,174 @@ display:flex; // to display flex
   transform: rotateY(0);
 }
 /*!!-------- cards --------*/
+/* CLOSE BUTTON STYLING */
+.x {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  transition: transform .25s ease-in-out;
+}
+.x:hover {
+  transform: rotate(180deg);
+}
+.x:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  height: 0;
+  border-top: 1px solid white;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.x:after {
+
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  height: 0;
+  border-top: 1px solid white;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+/* !CLOSE X STYLING */
+/*SUBMIT WINDOW EFFECTS */
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($color: #000000, $alpha: 0.8);
+  position: fixed;
+  z-index: 999;
+  .logInWindow {
+    position: relative;
+    padding: 10px 5%;
+    background: #fc2840;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 60vh;
+    .title {
+      h1 {
+        //hack to position text vertically
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        // font-size: 2em;
+      }
+    }
+    .Container {
+      width: 100%;
+      height: 100%;
+      color: white;
+    box-sizing: border-box;
+      form{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        mat-form-field{
+          mat-label{
+            color:white;
+            
+          }
+          input{
+            width: 100%;
+          }
+        }
+      }
+}
+  }
+}
+a{
+  font-size: 1.2em;
+}
+#lostPassword{
+  margin-bottom:0;
+  padding-bottom:0;
+}
+#registerAccount{
+  padding:0;
+  margin-top:0;
+  margin-bottom: 15px;
+}
+.submit{
+  background: white;
+  color:#fc2840;
+  border: none;
+  padding:15px;
+  border-radius:5px;
+  font-size: 1.5em;
+  cursor: pointer;
+  outline: none;
+
+}
+/** CLOSE BUTTON STYLING **/
+.x {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  transition: transform .25s ease-in-out;
+}
+.x:hover {
+  transform: rotate(180deg);
+}
+.x:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  height: 0;
+  border-top: 1px solid white;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.x:after {
+
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  height: 0;
+  border-top: 1px solid white;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+/** !CLOSE X STYLING **/

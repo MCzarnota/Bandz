@@ -1,5 +1,5 @@
 @import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -123,3 +123,15 @@ a{
   transform-origin: center;
 }
 /** !CLOSE X STYLING **/
+// mat-error{
+//   color: white !important;
+// }
+.has-danger{
+  border: 1px solid black !important;
+}
+.has-success{
+  border-color: green !important;
+}
+mat-error{
+  color:black !important;
+}

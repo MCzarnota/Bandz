@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <div class="logInWindow">
+    <div class="title">
+      <h1>Register yourself as a {{accountType | uppercase}}</h1>
+      <div (click)=closeSecondSubmissionForm() class="x"></div>
+    </div>
+    <div class="Container">
+      <form action="" method="post" class="form form-login" [formGroup]="registrationForm" (ngSubmit)="send()">
+        <mat-form-field floatLabel>
+          <mat-label>
+            <mat-icon>email</mat-icon> Email</mat-label>
+          <input #emailInput type="email" matInput placeholder="Please provide your email adress" formControlName="email">
+          <mat-error *ngIf="hasError('email', 'required')">
+            Email address required
+          </mat-error>
+          <mat-error *ngIf="hasError('email', 'email')">
+            Email is not valid
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field floatLabel>
+          <mat-label>
+            <mat-icon>lock-outline</mat-icon> Password</mat-label>
+          <input #passwordInput  type="password" matInput placeholder="Please provide your password" formControlName="password">
+          <mat-error *ngIf=true> <mat-icon>vpn_key</mat-icon>  
+              Password strenght: {{passwordStrenght[0]}}
+            </mat-error>
+          <mat-error *ngIf="hasError('password', 'required')"> <mat-icon>cancel</mat-icon> 
+            Password required
+          </mat-error>
+          <mat-error *ngIf="hasError('password', 'minlength')"> <mat-icon>cancel</mat-icon> 
+            At least 8 characters
+          </mat-error>
+          <mat-error *ngIf="hasError('password', 'pattern')"> <mat-icon>cancel</mat-icon> 
+            Contains a number, special symbol and letter
+          </mat-error>
+          <mat-error *ngIf="passwordMatchesEmail(emailInput.value,passwordInput.value)"> <mat-icon>cancel</mat-icon> 
+            Cannot contain your email adress
+          </mat-error>
+        </mat-form-field>
+        <button class="submit" type="submit">Sign in</button>
+        <p> Already have a BANDZ account?
+          <a href="#">Log in</a>
+        </p>
+
+      </form>
+    </div>
+  </div>
