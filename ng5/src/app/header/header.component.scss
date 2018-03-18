@@ -21,21 +21,9 @@ img{
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
-  height: 52px;
-  width: 52px;
-}
-
-.logo{
-  border-radius: 100%;
-  background: #fff;
-  height: 52px;
-  widtH: 52px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  font-size: 12px;
+  height: inherit;
+  width: inherit;
+  z-index: 2;
 }
 
 ul{
@@ -48,6 +36,30 @@ ul{
   font-size: 1.2em;
   li{
     padding: .5em 2em;
+    a{
+      position: relative;
+      color: white;
+      text-decoration: none;
+    }
+    a::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -1em;
+      left: 0;
+      background-color: white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    a:hover:before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    }
   }
 }
 
