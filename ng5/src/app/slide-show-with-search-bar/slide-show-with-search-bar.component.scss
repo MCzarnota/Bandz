@@ -17,6 +17,9 @@
     flex-direction: column;
     .innerWrapper {
       position: relative;
+      h1{
+        color: white;
+      }
     }
     .additionalInformationWrapper {
       height: 200px;
