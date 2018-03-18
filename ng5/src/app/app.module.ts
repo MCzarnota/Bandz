@@ -1,12 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-<<<<<<< HEAD
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-
-=======
->>>>>>> dacd6373da09d11dede0b8937688577272242a47
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -37,12 +30,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-<<<<<<< HEAD
 import { SuggestionsComponent} from './suggestions/suggestions.component';
-=======
 import { SubmissionFormNextStepComponent } from './submission-form-next-step/submission-form-next-step.component';
-
->>>>>>> dacd6373da09d11dede0b8937688577272242a47
 
 
 @NgModule({
@@ -58,11 +47,8 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
     SuggestionsComponent,
     SubmitFormComponent,
     LoginFormComponent,
-<<<<<<< HEAD
-    SuggestionsComponent
-=======
+    SuggestionsComponent,
     SubmissionFormNextStepComponent
->>>>>>> dacd6373da09d11dede0b8937688577272242a47
   ],
   imports: [
     BrowserModule,
@@ -76,17 +62,15 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-<<<<<<< HEAD
+    MatIconModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatButtonModule,
-    MatCardModule
-=======
+    MatCardModule,
     MatIconModule,
     ReactiveFormsModule,
     AccordionModule
-
->>>>>>> dacd6373da09d11dede0b8937688577272242a47
   ],
   entryComponents: [
   ],
