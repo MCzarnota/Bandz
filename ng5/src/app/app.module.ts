@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -25,7 +27,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-
+import { SuggestionsComponent} from './suggestions/suggestions.component';
 
 
 @NgModule({
@@ -38,8 +40,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
     SlideShowWithSearchBarComponent,
     FooterComponent,
     HeaderComponent,
+    SuggestionsComponent,
     SubmitFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    SuggestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,12 +56,21 @@ import { LoginFormComponent } from './login-form/login-form.component';
     MatDialogModule,
     MatCardModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+  ],
+  exports: [
+    MatButtonModule,
+    MatCardModule
   ],
   entryComponents: [
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule {
+
 }
+export class MaterialModule {}
