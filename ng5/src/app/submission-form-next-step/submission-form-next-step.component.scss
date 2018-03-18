@@ -126,9 +126,12 @@ a{
 // mat-error{
 //   color: white !important;
 // }
-.danger{
-  color:black;
+.has-danger{
+  border: 1px solid black !important;
 }
-input.ng-invalid{
-  border-color: black;
+.has-success{
+  border-color: green !important;
+}
+mat-error{
+  color:black !important;
 }

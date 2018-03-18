@@ -13,16 +13,12 @@ import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 export class SubmissionFormNextStepComponent implements OnInit {
   // group of form controls
   public registrationForm: FormGroup;
-  private readonly emailRegex = '..... ';
+  // checks for pattern => at least 1 letter, 1 number, 1 special
+  private readonly emailRegex = '(?=\\D*\\d)(?=.*?[a-zA-Z]).*[\\W_].*';
   trigger = false;
+  passwordStrenght = ['weak', 'good', 'strong'];
   @Input() accountType;
   @Output() public submitSecondStepEvent = new EventEmitter();
-
-  getErrorMessage() {
-    // If email has not been submitted correctly, return an error
-    return this.email.hasError('email') ? 'Not a valid email' :
-            '';
-  }
   closeSecondSubmissionForm() {
     // closes SecondStep submission window
     this.trigger = false;
@@ -32,16 +28,23 @@ export class SubmissionFormNextStepComponent implements OnInit {
     // send the inputs value using JSON to the server
     console.log(this.registrationForm.value);
   }
-  get email() {
-    return this.registrationForm.get('email') as FormControl;
+  hasError(field: string, error: string) {
+    // checks if the input is valid, return true if it's dirty(touched and then some input was typed)
+    // , false if does not pass some of the validators
+    const control = this.registrationForm.get(field);
+    return (control.dirty && control.hasError(error));
+  }
+  passwordMatchesEmail(passwordInput, emailInput) {
+  // compare email input value with password input value.
+  // return true if they are matched, false otherwise
+  return (passwordInput === emailInput) ? true : false;
   }
   constructor(private readonly formBuilder: FormBuilder) {
     this.registrationForm = formBuilder.group({
-      email: [null, Validators.email],
-      password: [null, Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
     });
    }
-
   ngOnInit() {
   }
 

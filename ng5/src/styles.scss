@@ -20,3 +20,13 @@ a {
   color: #fff;
   text-decoration: none;
 }
+// Workaround for https://github.com/angular/material2/issues/4580.
+mat-form-field .mat-form-field {
+  &-underline {
+    position: relative;
+    bottom: auto;
+  }
+  &-subscript-wrapper {
+    position: static;
+  }
+}
