@@ -7,8 +7,6 @@
   <!--<a *ngIf="startingFrom != cards.length-cardsPerRow*amountOfRows" (click)="upByx(1)"><strong>></strong></a>-->
   <!--<a *ngIf="startingFrom != cards.length-cardsPerRow*amountOfRows" (click)="upByx(5)"><strong>>></strong></a>-->
 </p>
-
-
 <div class="card-deck">
   <div class="card" *ngFor="let card of cardsDisplayed">
     <img *ngIf="card['thumbnail'] !== ''" src="{{card['thumbnail']}}">
