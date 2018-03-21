@@ -5,6 +5,11 @@
       <h1>{{ title }}</h1>
       <h2>{{location}}. {{genre}}</h2>
     </div>
+    <div class="buttons">
+      <button mat-raised-button>Message</button>
+      <button mat-raised-button>Gigs</button>
+      <button mat-raised-button="">Rate</button>
+    </div>
   </div>
   <div class="content">
     <article>
@@ -19,9 +24,4 @@
       <img *ngIf="isVenue" src="../../assets/images/fakeMap.JPG">
     </aside>
   </div>
-  <footer>
-    <button mat-button>See gigs</button>
-    <button mat-button>Message</button>
-    <button mat-button>Rate</button>
-  </footer>
 </main>

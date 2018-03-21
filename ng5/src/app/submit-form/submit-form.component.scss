@@ -1,7 +1,7 @@
 /** A wrapper that covers whole body and add overlay */
 
 .wrapper{
-display:flex; 
+display:flex;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -12,9 +12,9 @@ display:flex;
   position: fixed;
   z-index: 999;
   .formWindow {
-    // testing 
+    // testing
     overflow: hidden;
-    // !testing 
+    // !testing
     background: #fc2840;
     display: grid;
     grid-template-columns: auto;
@@ -35,12 +35,12 @@ display:flex;
       }
     }
     .section {
-    
+
       position: relative;
       .sectionInner {
         .fanCard {
         perspective: 1000px;
-          background-image: url("assets/images/fan-resized.jpg");
+          background-image: url("../../assets/images/fan-resized.jpg");
           background-repeat: no-repeat;
           background-size: cover;
           border-color: #DAA520;
@@ -51,7 +51,7 @@ display:flex;
         }
         .bandCard {
           perspective: 1000px;
-            background-image: url("assets/images/bandBackground.jpeg");
+            background-image: url("../../assets/images/bandBackground.jpeg");
             background-repeat: no-repeat;
             background-size: cover;
             border-color: rgb(38, 218, 32);
@@ -62,7 +62,7 @@ display:flex;
           }
           .venueCard {
             perspective: 1000px;
-              background-image: url("assets/images/manager.jpeg");
+              background-image: url("../../assets/images/manager.jpeg");
               background-repeat: no-repeat;
               background-size: cover;
               border-color: rgb(203, 32, 218);
@@ -254,7 +254,7 @@ display:flex;
         mat-form-field{
           mat-label{
             color:white;
-            
+
           }
           input{
             width: 100%;
