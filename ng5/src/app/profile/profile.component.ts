@@ -7,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class ProfileComponent implements OnInit {
+  isBand = false;
+  isVenue = true;
   title = 'Street Pieces';
   banner = 'cover url("../../assets/images/band.jpg") no-repeat center';
   bio = 'Street Pieces formed in 2012 and soon began playing across their home state. After cutting their teeth on the live circuit they ' +
@@ -16,6 +18,8 @@ export class ProfileComponent implements OnInit {
     ' them back on the road with rock heavyweights Shihad (NZ), The Bellrays (US) and Richie Ramone (US). This year with new bassist Jon' +
     ' Mengede in the mix Street Pieces released \'Monster\', a frenzied psychedelic blues jam featured in Blunt Magazine and followed up' +
     ' with an unforgettable show as they officially released \'Everything You Ever Wanted\' at The Foundry.\n' + '\n' + 'Listen below...';
+  location = 'Brisbane';
+  genre = 'Rock';
 
   constructor() {
   }
