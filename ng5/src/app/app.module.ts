@@ -35,6 +35,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SuggestionsComponent} from './suggestions/suggestions.component';
 import { SubmissionFormNextStepComponent } from './submission-form-next-step/submission-form-next-step.component';
 import { ProfileComponent } from './profile/profile.component';
+import { GigsComponent } from './gigs/gigs.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginFormComponent,
     SuggestionsComponent,
     SubmissionFormNextStepComponent,
-    ProfileComponent
+    ProfileComponent,
+    GigsComponent
   ],
   imports: [
     BrowserModule,
