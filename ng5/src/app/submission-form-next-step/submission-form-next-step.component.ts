@@ -1,9 +1,11 @@
+declare var require: any;
 import {
   Component,
   OnInit,
   Output,
   EventEmitter,
-  Input
+  Input,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import {
   BrowserAnimationsModule
@@ -29,7 +31,8 @@ import {
   ErrorStateMatcher
 } from '@angular/material/core';
 import {MatDividerModule} from '@angular/material/divider';
-
+import { Custom } from './custom';
+import * as bar from '../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component';
 // /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -38,6 +41,7 @@ export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
   }
 }
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-submission-form-next-step',
   templateUrl: './submission-form-next-step.component.html',
   styleUrls: ['./submission-form-next-step.component.scss']
@@ -52,6 +56,7 @@ export class SubmissionFormNextStepComponent implements OnInit {
   public registrationForm: FormGroup;
   // checks for pattern => at least 1 letter, 1 number, 1 special
   private readonly emailRegex = '(?=\\D*\\d)(?=.*?[a-zA-Z]).*[\\W_].*';
+  isPasswordStrong;
   trigger = false;
   @Input() accountType;
   @Output() public submitSecondStepEvent = new EventEmitter();
@@ -61,13 +66,14 @@ export class SubmissionFormNextStepComponent implements OnInit {
     this.submitSecondStepEvent.emit(this.trigger);
   }
   send() {
-    // send the inputs value using JSON to the server
+    // send the inputs values using JSON to the server
     console.log(this.registrationForm.value);
   }
   hasError(field: string, error: string) {
     // checks if the input is valid, return true if it's dirty(touched and then some input was typed)
     // , false if does not pass some of the validators
     const control = this.registrationForm.get(field);
+    console.log(this.isPasswordStrong.value);
     return control.hasError(error);
   }
   passwordMatchesEmail(passwordInput, emailInput) {
@@ -75,15 +81,17 @@ export class SubmissionFormNextStepComponent implements OnInit {
     // return true if they are matched, false otherwise
     return (passwordInput === emailInput) ? true : false;
   }
-
+  get email() {
+    return this.registrationForm.get('email') as FormControl;
+  }
   constructor(private readonly formBuilder: FormBuilder) {
+    this.isPasswordStrong = require('../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component');
     this.registrationForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]],
-      'color': 'warn'
-
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
     });
   }
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }

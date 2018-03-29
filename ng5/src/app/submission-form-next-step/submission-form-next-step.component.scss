@@ -131,7 +131,7 @@ a{
 .has-success{
   border-color: green !important;
 }
-
+////FORMS STYLING
 //overriding color for inputs 
 mat-error{
   color: black !important;
@@ -145,3 +145,27 @@ mat-error{
 /deep/ .mat-form-field-invalid .mat-form-field-ripple{
   background-color:black;
 }
+// !overriding color for inputs
+/deep/ .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+/deep/ .mat-form-field:nth-of-type(1){
+  padding-bottom: 1.25em !important;
+}
+.passwordMeterContainer{
+  padding-bottom: 1.25em;
+}
+span{
+  font-size: 20px;
+}
+p{
+  margin-bottom:0;
+}
+p > i{ vertical-align: middle !important; }
+// .passwordMeterIcon{
+//   font-size: 0 !important;
+// }
+/deep/ #strengthBar{
+  margin-left: 0 !important;
+}
+
