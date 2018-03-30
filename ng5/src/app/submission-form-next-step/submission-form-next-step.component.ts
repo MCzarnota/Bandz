@@ -33,6 +33,7 @@ import {
 import {MatDividerModule} from '@angular/material/divider';
 import { Custom } from './custom';
 import * as bar from '../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
 // /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -66,6 +67,9 @@ export class SubmissionFormNextStepComponent implements OnInit {
     this.submitSecondStepEvent.emit(this.trigger);
   }
   send() {
+    this.openSnackBar();
+    this.closeSecondSubmissionForm();
+    const isAccountCreated = true;
     // send the inputs values using JSON to the server
     console.log(this.registrationForm.value);
   }
@@ -73,7 +77,6 @@ export class SubmissionFormNextStepComponent implements OnInit {
     // checks if the input is valid, return true if it's dirty(touched and then some input was typed)
     // , false if does not pass some of the validators
     const control = this.registrationForm.get(field);
-    console.log(this.isPasswordStrong.value);
     return control.hasError(error);
   }
   passwordMatchesEmail(passwordInput, emailInput) {
@@ -84,7 +87,14 @@ export class SubmissionFormNextStepComponent implements OnInit {
   get email() {
     return this.registrationForm.get('email') as FormControl;
   }
-  constructor(private readonly formBuilder: FormBuilder) {
+  openSnackBar() {
+    // open Box that shows if the account has been created
+    this.snackBar.open('Account has been created.', 'Close', {
+      duration: 2000,
+      panelClass: ['snack-bar-color']
+    });
+}
+  constructor(private readonly formBuilder: FormBuilder, private snackBar: MatSnackBar) {
     this.isPasswordStrong = require('../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component');
     this.registrationForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
