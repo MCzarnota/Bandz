@@ -1,5 +1,5 @@
 <main>
-  <div class="banner" [ngStyle]="{'background': banner}"></div>
+  <div class="banner"></div>
   <div class="headWrap">
     <div class="title">
       <h1>{{ title }}</h1>
@@ -7,7 +7,9 @@
     </div>
     <div class="buttons">
       <button mat-raised-button routerLink="">Message</button>
-      <button mat-raised-button="">Rate</button>
+      <button mat-raised-button="" id="rate" (click)="rate()">Rate
+        <div *ngIf="rateDropDown" class="dropDown">1 2 3 4 5</div>
+      </button>
       <button mat-raised-button routerLink='/gigs'>Gigs</button>
     </div>
   </div>

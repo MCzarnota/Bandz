@@ -9,6 +9,7 @@ main {
   background: $color-lighter;
 
   .banner {
+    // TODO: This needs to come from ts dynamically, not static image
     background: url("../../assets/images/band1.jpg") no-repeat center;
     background-size: cover;
     min-width: 100%;
@@ -40,6 +41,18 @@ main {
 
       button {
         margin: 20px 0 20px 20px;
+
+        .dropDown{
+          position: fixed;
+          margin: auto;
+          background: $color-lighter;
+          left: 0;
+          width: 100%;
+          border-top: 1px solid black;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+        }
       }
     }
   }

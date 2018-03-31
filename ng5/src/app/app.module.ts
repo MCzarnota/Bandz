@@ -39,6 +39,7 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
 import { ProfileComponent } from './profile/profile.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { FrontViewComponent } from './front-view/front-view.component';
+import {GigsComponent} from "./gigs/gigs.component";
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { FrontViewComponent } from './front-view/front-view.component';
     SlideShowWithSearchBarComponent,
     FooterComponent,
     HeaderComponent,
+    GigsComponent,
     SuggestionsComponent,
     SubmitFormComponent,
     LoginFormComponent,
