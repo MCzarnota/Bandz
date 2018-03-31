@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
 import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
 import { Routes, RouterModule} from '@angular/router';
+import { AgmCoreModule} from '@agm/core';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -74,7 +75,10 @@ import { FrontViewComponent } from './front-view/front-view.component';
     ReactiveFormsModule,
     PasswordStrengthBarModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
+    })
   ],
   exports: [
     MatButtonModule,
