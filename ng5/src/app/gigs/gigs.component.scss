@@ -6,7 +6,6 @@ main {
   max-width: 800px;
   margin: 30px auto;
   padding: 20px;
-  background: $color-lighter;
 
   .banner {
     background: url("../../assets/images/band1.jpg") no-repeat center;
@@ -24,8 +23,6 @@ main {
     background-color: $color-accent;
     color: $color-lighter;
     margin-bottom: 20px;
-
-
 
     .buttons {
       display: flex;
@@ -72,7 +69,7 @@ main {
     margin: 0;
   }
 
-  .event{
+  .event {
     background-color: $color-lighter;
     padding: 20px;
     margin: 35px 0 0 0;
@@ -80,16 +77,16 @@ main {
     justify-content: space-between;
     border-bottom: 2px solid grey;
 
-    h1{
+    h1 {
       font-size: 2em;
     }
 
-    h2{
+    h2 {
       font-size: 1em;
       color: #252525;
     }
 
-    button{
+    button {
       background: $color-accent;
       color: $color-lighter;
     }
