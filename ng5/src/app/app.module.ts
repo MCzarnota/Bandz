@@ -30,7 +30,7 @@ import { ExtraComponent } from './extra/extra.component';
 import { BandSliderComponent } from './band-slider/band-slider.component';
 import { VenueSliderComponent } from './venue-slider/venue-slider.component';
 import { SlideShowWithSearchBarComponent } from './front-view/slide-show-with-search-bar/slide-show-with-search-bar.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './front-view/footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -39,7 +39,7 @@ import { SubmissionFormNextStepComponent } from './submission-form-next-step/sub
 import { ProfileComponent } from './profile/profile.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { FrontViewComponent } from './front-view/front-view.component';
-import {GigsComponent} from "./gigs/gigs.component";
+import {GigsComponent} from './gigs/gigs.component';
 
 @NgModule({
   declarations: [

@@ -1,8 +1,14 @@
+
 <div class="wrapper">
+  <section class="filterContainer">
+    <div class="filterWrapper">
+      <p>Filters</p>
+    </div>
+  </section>
   <section class="searchContainer">
       <div class="search-wrapper">
           <img src="../../assets/images/search.svg">
-          <input (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder={{searchContent[counter]}}>
+          <!-- <input (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder={{searchContent[counter]}}> -->
         </div>
         <input class="btn" title="submit" type="submit" value="Search">
         <div class="additionalInformationWrapper">
@@ -22,6 +28,5 @@
     </section>
     <section class="searchResultsContainer">
       <p>Results</p>
-      <app-suggestions></app-suggestions>
     </section>
 </div>

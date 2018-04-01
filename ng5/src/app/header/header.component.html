@@ -1,11 +1,10 @@
-<header>
+<header >
   <ul class="title">
     <!-- <li><a href="/#/"><img src="../../assets/images/bandzLogo.png"></a></li> -->
     <!-- <li><a href=""><h1>BANDZ</h1></a></li> -->
   </ul>
   <ul>
-    <li><a routerLink="/#/">Home</a></li>
-    <li><a routerLink="profile">Profile</a></li>
+    <li [routerLinkActive]="['active']"><a routerLink="profile">Profile</a></li>
     <!-- <li><a href="">Help</a></li> -->
     <li><a (click)="openSubmitForm()" >Sign up</a></li>
     <li><a (click)="openLoginForm()" >Log in</a></li>

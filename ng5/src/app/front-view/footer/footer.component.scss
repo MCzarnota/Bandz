@@ -1,12 +1,13 @@
 @import "~variables.scss";
 
 footer{
-  
+  z-index: 2;
   min-width: 100%;
   background-color: #fc2840;
   display: flex;
   justify-content: space-between;
   padding: 3em;
+  overflow: hidden;
 }
 
 ul{
