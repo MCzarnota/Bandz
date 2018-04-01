@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule,Input,Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -35,11 +35,26 @@ import { HeaderComponent } from './header/header.component';
 import { SubmitFormComponent } from './submit-form/submit-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SuggestionsComponent} from './front-view/suggestions/suggestions.component';
+<<<<<<< HEAD
+import { BandCardComponent } from './front-view/band-card/band-card.component';
+import { SubmissionFormNextStepComponent } from './submission-form-next-step/submission-form-next-step.component';
+import { EventCardComponent } from './front-view/event-card/event-card.component';
+import {GigsComponent} from './gigs/gigs.component';
+import {MainViewComponent} from './main-view/main-view.component';
+import {FrontViewComponent} from './front-view/front-view.component';
+import { ProfileComponent } from './profile/profile.component';
+
+=======
 import { SubmissionFormNextStepComponent } from './submission-form-next-step/submission-form-next-step.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { FrontViewComponent } from './front-view/front-view.component';
+<<<<<<< HEAD
 import {GigsComponent} from './gigs/gigs.component';
+=======
+import {GigsComponent} from "./gigs/gigs.component";
+>>>>>>> 9f37c18c32e948c5c667fc6b4535d6d34569c46f
+>>>>>>> 9d2949fe6dacb975e8fc03d4463f2518ccc502e0
 
 @NgModule({
   declarations: [
@@ -57,9 +72,17 @@ import {GigsComponent} from './gigs/gigs.component';
     LoginFormComponent,
     SuggestionsComponent,
     SubmissionFormNextStepComponent,
+<<<<<<< HEAD
+    BandCardComponent,
+    EventCardComponent,
+    MainViewComponent,
+    FrontViewComponent,
+    ProfileComponent
+=======
     ProfileComponent,
     MainViewComponent,
     FrontViewComponent
+>>>>>>> 9f37c18c32e948c5c667fc6b4535d6d34569c46f
   ],
   imports: [
     BrowserModule,
@@ -87,7 +110,7 @@ import {GigsComponent} from './gigs/gigs.component';
     MatCardModule,
     MatIconModule,
     ReactiveFormsModule,
-    AccordionModule
+    AccordionModule,
   ],
   entryComponents: [
   ],
