@@ -1,6 +1,6 @@
-import { Component, OnInit, Input,Output } from '@angular/core';
-import { BandCardComponent} from '../suggestions/band-card/band-card.component';
-import {EventCardComponent} from '../suggestions/event-card/event-card.component';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { BandCardComponent} from '../band-card/band-card.component';
+import {EventCardComponent} from '../event-card/event-card.component';
 
 
 @Component({
@@ -9,7 +9,6 @@ import {EventCardComponent} from '../suggestions/event-card/event-card.component
   styleUrls: ['./suggestions.component.scss']
 })
 export class SuggestionsComponent implements OnInit {
-  
   constructor() { }
 
   ngOnInit() {
