@@ -3,9 +3,8 @@
   <app-submit-form (submissionSecondStepEvent)="isAccountChosen=!$event" (SubmitEvent)="isSubmitActive=$event" (theTypeOfTheAccountEvent)="accountType=$event"  *ngIf="isSubmitActive" ></app-submit-form>
   <app-submission-form-next-step [accountType]="accountType" (submitSecondStepEvent)="isAccountChosen=$event" *ngIf="isAccountChosen"></app-submission-form-next-step>
   <app-login-form (LoginEvent)="isLoginActive=$event" *ngIf="isLoginActive"></app-login-form>
-  <app-slide-show-with-search-bar  ></app-slide-show-with-search-bar>
 </main>
-<app-suggestions></app-suggestions>
+<router-outlet></router-outlet>
 <app-footer>
 </app-footer>
 

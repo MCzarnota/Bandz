@@ -1,7 +1,7 @@
 /** A wrapper that covers whole body and add overlay */
 
-.wrapper{
-display:flex; 
+.wrapper {
+  display: flex;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -12,16 +12,15 @@ display:flex;
   position: fixed;
   z-index: 999;
   .formWindow {
-    // testing 
+    // testing
     overflow: hidden;
-    // !testing 
+    // !testing
     background: #fc2840;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 1fr 5fr;
     transition: 2s;
-    width:  60vw;
-    height: 70vh;
+    width: 60vw;
     position: relative;
     .title {
       grid-column: 1/4;
@@ -36,58 +35,46 @@ display:flex;
       }
     }
     .section {
-    
+
       position: relative;
       .sectionInner {
         .fanCard {
-        perspective: 1000px;
-          background-image: url("assets/images/fan-resized.jpg");
-          background-repeat: no-repeat;
+          perspective: 1000px;
+          background: url("../../assets/images/fan-resized.jpg") no-repeat;
           background-size: cover;
-          border-color: #DAA520;
           border: 5px solid #DAA520;
           button {
             border: 3px solid #DAA520;
           }
         }
-        .fanCard:hover {
-          // grid-column: 2/5;
-          }
         .bandCard {
           perspective: 1000px;
-            background-image: url("assets/images/bandBackground.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-color: rgb(38, 218, 32);
-            border: 5px solid rgb(38, 218, 32);
-            button {
-              border: 3px solid rgb(38, 218, 32);
-            }
+          background: url("../../assets/images/bandBackground.jpeg") no-repeat;
+          background-size: cover;
+          border: 5px solid rgb(38, 218, 32);
+          button {
+            border: 3px solid rgb(38, 218, 32);
           }
-          .venueCard {
-            perspective: 1000px;
-              background-image: url("assets/images/manager.jpeg");
-              background-repeat: no-repeat;
-              background-size: cover;
-              border-color: rgb(203, 32, 218);
-              border: 5px solid rgb(203, 32, 218);;
-              button {
-                border: 3px solid rgb(203, 32, 218);;
-              }
-            }
+        }
+        .venueCard {
+          perspective: 1000px;
+          background: url("../../assets/images/manager.jpeg") no-repeat;
+          background-size: cover;
+          border: 5px solid rgb(203, 32, 218);;
+          button {
+            border: 3px solid rgb(203, 32, 218);;
+          }
+        }
       }
       p {
         font-size: 0.3rem;
       }
-      margin: 0 5px;
-      margin-bottom: 5px;
+      margin: 0 5px 5px;
       display: flex;
       align-items: flex-end;
-      position: relative;
       cursor: default;
       button {
-        margin: 0 auto;
-        margin-bottom: 25px;
+        margin: 0 auto 25px;
         -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
         -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
         box-shadow: inset 0px 1px 0px 0px #ffffff;
@@ -109,7 +96,7 @@ display:flex;
         font-weight: bold;
         padding: 6px 24px;
         text-decoration: none;
-        text-shadow: 0px 1px 0px #ffffff;
+        text-shadow: 0 1px 0 #ffffff;
       }
       button:hover {
         background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
@@ -159,25 +146,29 @@ display:flex;
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
+
 //class that adds class for showing the back of card
-.show{
+.show {
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
+
 /*!!-------- cards --------*/
 /* CLOSE BUTTON STYLING */
 .x {
   display: block;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1em;
+  top: 1em;
   width: 32px;
   height: 32px;
   transition: transform .25s ease-in-out;
 }
+
 .x:hover {
   transform: rotate(180deg);
 }
+
 .x:before {
   content: "";
   position: absolute;
@@ -193,6 +184,7 @@ display:flex;
   transform: rotate(45deg);
   transform-origin: center;
 }
+
 .x:after {
 
   content: "";
@@ -209,6 +201,7 @@ display:flex;
   transform: rotate(-45deg);
   transform-origin: center;
 }
+
 /* !CLOSE X STYLING */
 /*SUBMIT WINDOW EFFECTS */
 @import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
@@ -250,47 +243,52 @@ display:flex;
       width: 100%;
       height: 100%;
       color: white;
-    box-sizing: border-box;
-      form{
+      box-sizing: border-box;
+      form {
         display: flex;
         flex-direction: column;
         height: 100%;
-        mat-form-field{
-          mat-label{
-            color:white;
-            
+        mat-form-field {
+          mat-label {
+            color: white;
+
           }
-          input{
+          input {
             width: 100%;
           }
         }
       }
-}
+    }
   }
 }
-a{
+
+a {
   font-size: 1.2em;
 }
-#lostPassword{
-  margin-bottom:0;
-  padding-bottom:0;
+
+#lostPassword {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
-#registerAccount{
-  padding:0;
-  margin-top:0;
+
+#registerAccount {
+  padding: 0;
+  margin-top: 0;
   margin-bottom: 15px;
 }
-.submit{
+
+.submit {
   background: white;
-  color:#fc2840;
+  color: #fc2840;
   border: none;
-  padding:15px;
-  border-radius:5px;
+  padding: 15px;
+  border-radius: 5px;
   font-size: 1.5em;
   cursor: pointer;
   outline: none;
 
 }
+
 /** CLOSE BUTTON STYLING **/
 .x {
   display: block;
@@ -301,9 +299,11 @@ a{
   height: 32px;
   transition: transform .25s ease-in-out;
 }
+
 .x:hover {
   transform: rotate(180deg);
 }
+
 .x:before {
   content: "";
   position: absolute;
@@ -319,6 +319,7 @@ a{
   transform: rotate(45deg);
   transform-origin: center;
 }
+
 .x:after {
 
   content: "";
@@ -335,4 +336,5 @@ a{
   transform: rotate(-45deg);
   transform-origin: center;
 }
+
 /** !CLOSE X STYLING **/

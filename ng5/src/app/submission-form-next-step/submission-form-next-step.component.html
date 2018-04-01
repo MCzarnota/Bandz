@@ -18,19 +18,21 @@
             <mat-icon>cancel</mat-icon>
             Email is not valid
           </mat-error>
+          <!-- <mat-error *ngIf="hasError('email', 'notUnique')">
+              <mat-icon>cancel</mat-icon>
+              Email is already taken
+            </mat-error> -->
         </mat-form-field>
         <mat-form-field floatLabel>
           <mat-label>
             <mat-icon>lock-outline</mat-icon> Password</mat-label>
-          <input  [(ngModel)]="account.password"  #password type="password" 
-          matInput [errorStateMatcher]="matcher" placeholder="Please provide your password" formControlName="password">
-          <mat-error *ngIf="true"> <mat-icon>vpn_key</mat-icon> Password Strenght
-              <ng2-password-strength-bar  [passwordToCheck]="account.password" [barColors]="myColors">
-                </ng2-password-strength-bar></mat-error> 
+          <input  value="warn" [(ngModel)]="account.password"  #password type="password"
+          matInput placeholder="Please provide your password" formControlName="password">
           <mat-error *ngIf="hasError('password', 'required')">
             <mat-icon>cancel</mat-icon>
             Password required
           </mat-error>
+          <mat-hint *ngIf="!registrationForm.valid && !password.value"> Password needs to have at least 8 characters, contain a number, special symbol and letter</mat-hint>
           <mat-error *ngIf="hasError('password', 'minlength')">
             <mat-icon>cancel</mat-icon>
             At least 8 characters
@@ -44,7 +46,11 @@
             Cannot contain your email adress
           </mat-error>
         </mat-form-field>
-        <button  class="submit" type="submit"mat-raised-button [disabled]="!registrationForm.valid" >Sign in</button>
+        <div  class="passwordMeterContainer" *ngIf="true">
+            <p><i class="material-icons">vpn_key</i>  Password Strength</p>
+          <ng2-password-strength-bar [passwordToCheck]="account.password" [barColors]="myColors">
+            </ng2-password-strength-bar></div>
+        <button  class="submit" type="submit" mat-raised-button [disabled]="!registrationForm.valid && !isPasswordStrong.value" >Sign in</button>
         <p> Already have a BANDZ account?
           <a href="#">Log in</a>
         </p>

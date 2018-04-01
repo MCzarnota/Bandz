@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <section class="searchContainer">
+      <div class="search-wrapper">
+          <img src="../../assets/images/search.svg">
+          <input (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder={{searchContent[counter]}}>
+        </div>
+        <input class="btn" title="submit" type="submit" value="Search">
+        <div class="additionalInformationWrapper">
+            <div class="innerWrapper">
+              <h3 class="title">
+                Explore
+                <b>BANDS</b>
+              </h3>
+            <button class="myButton">All</button>
+            <button class="myButton">Bands</button>
+            <button class="myButton">Events</button>
+            </div>
+          </div>
+  </section>
+  <section class="mapContainer">
+    <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>
+    </section>
+    <section class="searchResultsContainer">
+      <p>Results</p>
+      <app-suggestions></app-suggestions>
+    </section>
+</div>

@@ -29,3 +29,16 @@ mat-form-field .mat-form-field {
     position: static;
   }
 }
+snack-bar-container {
+  &snack-bar-color{
+      height: auto; 
+      min-width: initial;
+  }
+  &.snack-bar-color {
+    color:white !important;
+    background: #fc2840 !important;
+    button{
+      color: black !important;
+    }
+} 
+}
