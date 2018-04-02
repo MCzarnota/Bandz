@@ -10,6 +10,7 @@ import * as events from 'events';
   styleUrls: ['./suggestions.component.scss']
 })
 export class SuggestionsComponent implements OnInit {
+
   bands = [
     {
       'name': 'Drunk Donkey',
@@ -48,31 +49,36 @@ export class SuggestionsComponent implements OnInit {
       'name': 'DonkeyFest',
       'location': 'Moorooka',
       'cost': '$28',
-      'attending': 32
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
     },
     {
       'name': 'DonkeyFest',
       'location': 'Moorooka',
       'cost': '$28',
-      'attending': 32
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
     },
     {
       'name': 'DonkeyFest',
       'location': 'Moorooka',
       'cost': '$28',
-      'attending': 32
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
     },
     {
       'name': 'DonkeyFest',
       'location': 'Moorooka',
       'cost': '$28',
-      'attending': 32
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
     },
     {
       'name': 'DonkeyFest',
       'location': 'Moorooka',
       'cost': '$28',
-      'attending': 32
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
     }
   ];
 
