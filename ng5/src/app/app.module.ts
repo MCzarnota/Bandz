@@ -24,7 +24,6 @@ import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {MenuItem} from 'primeng/components/common/api';
 /** !NG components */
 import {AppComponent} from './app.component';
-import {AboutComponent} from './about/about.component';
 import {DataService} from './data.service';
 import {ExtraComponent} from './extra/extra.component';
 import {BandSliderComponent} from './band-slider/band-slider.component';
@@ -45,7 +44,6 @@ import {ProfileComponent} from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
     ExtraComponent,
     BandSliderComponent,
     VenueSliderComponent,

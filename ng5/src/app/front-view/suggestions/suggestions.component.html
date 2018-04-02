@@ -6,7 +6,7 @@
 
     <mat-card class="suggestionsBox" *ngFor="let card of bands">
       <div class="hotItem">
-        <img mat-card-image src="../assets/images/hotItem.png" alt="">
+        <img mat-card-image src="../../../assets/images/hotItem.png" alt="">
       </div>
       <div class="bandImage">
         <img src={{card.image}} alt={{card.name}}>
@@ -19,7 +19,7 @@
 
         <mat-card-actions>
           <div class="ratingItem">
-            <a> <img class="playIcon" src="../assets/images/playButton.svg" alt=""></a>
+            <a> <img class="playIcon" src="../../../assets/images/playButton.svg" alt=""></a>
             <p class="ratingNumber">Play sample</p>
           </div>
           <button mat-fab>Book now</button>
@@ -35,10 +35,10 @@
 
     <mat-card class="suggestionsBox" *ngFor="let card of events">
       <div class="hotItem">
-        <img mat-card-image src="../assets/images/hotItem.png" alt="">
+        <img mat-card-image src="../../../assets/images/hotItem.png" alt="">
       </div>
       <div class="newItem">
-        <img mat-card-image src="../assets/images/newItem.png" alt="">
+        <img mat-card-image src="../../../assets/images/newItem.png" alt="">
       </div>
       <div class="bandImage">
         <img src={{card.image}} alt={{card.name}}>
@@ -51,7 +51,7 @@
 
         <mat-card-actions>
           <div class="ratingItem">
-            <img src="../assets/images/ratingItem.png" alt="">
+            <img src="../../../assets/images/ratingItem.png" alt="">
             <p class="ratingNumber">{{card.attending}}</p>
           </div>
           <button mat-fab>Buy now</button>

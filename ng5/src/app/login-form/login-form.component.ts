@@ -28,7 +28,7 @@ export class LoginFormComponent implements OnInit {
   goMain() {
     // redirects to main view
     // To do: change log in <a> in header to a  profile account component
-    // after sucessful authentication, add server validation
+    // after successful authentication, add server validation
     this.isLoginPassed = !this.isLoginPassed;
     this.router.navigate(['main']);
   }

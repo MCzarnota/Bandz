@@ -88,7 +88,7 @@ export class SubmissionFormNextStepComponent implements OnInit {
   passwordMatchesEmail(passwordInput, emailInput) {
     // compare email input value with password input value.
     // return true if they are matched, false otherwise
-    return (passwordInput === emailInput) ? true : false;
+    return (passwordInput === emailInput);
   }
 
   get email() {

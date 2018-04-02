@@ -29,7 +29,7 @@ export class SubmitFormComponent implements OnInit {
     console.log(event.target);
     const elementId: string = (event.target as Element).id;
     console.log('You clicked on registration event');
-    // Regiser what type of account. Passed later to backend
+    // Register what type of account. Passed later to backend
     switch (elementId) {
       case 'fanCard':
         this.fanIsChosen = 1;
