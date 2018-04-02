@@ -21,6 +21,32 @@ export class ProfileComponent implements OnInit {
   location = 'Brisbane';
   genre = 'Rock';
   rateDropDown = false;
+  gigs = [
+    // Order these by date please. Happens in the DB don't worry about it here
+    {
+      'name': 'The Best Gig Ever',
+      'venue': 'Top Club',
+      'city': 'Brisbane',
+      'date': '12/05/2018',
+      'thumbnail': '../../assets/images/band3.jpg'
+    },
+    {
+      'name': 'Great Gig',
+      'venue': 'Metal Town',
+      'city': 'Sydney',
+      'date': '20/05/2018',
+      'thumbnail': '../../assets/images/band3.jpg'
+    },
+    {
+      'name': 'Jazz gig in Jazz town',
+      'venue': 'Jazz Club',
+      'city': 'Melbourne',
+      'date': '01/07/2018',
+      'thumbnail': '../../assets/images/band3.jpg'
+    }
+  ];
+  showContent = true;
+  showGigs = false;
 
   rate() {
     // console.log('Rate');
@@ -31,6 +57,11 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  toggleContentGigs() {
+    this.showContent = !this.showContent;
+    this.showGigs = !this.showGigs;
   }
 
 }

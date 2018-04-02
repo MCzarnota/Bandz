@@ -8,12 +8,18 @@
     <div class="buttons">
       <button mat-raised-button routerLink="">Message</button>
       <button mat-raised-button="" id="rate" (click)="rate()">Rate
-        <div *ngIf="rateDropDown" class="dropDown">1 2 3 4 5</div>
+        <div *ngIf="rateDropDown" class="dropDown">
+          <p>
+            1 2 3 45
+          </p>
+        </div>
       </button>
-      <button mat-raised-button routerLink='/gigs'>Gigs</button>
+      <button *ngIf="showContent" mat-raised-button (click)="toggleContentGigs()">Gigs</button>
+      <button *ngIf="showGigs" mat-raised-button (click)="toggleContentGigs()">Profile</button>
     </div>
   </div>
-  <div class="content">
+
+  <div *ngIf="showContent" class="content">
     <article>
       <p>{{ bio }}</p>
     </article>
@@ -25,5 +31,15 @@
 
       <img *ngIf="isVenue" src="../../assets/images/fakeMap.JPG">
     </aside>
+  </div>
+
+  <div *ngIf="showGigs">
+    <div class="event" *ngFor="let gig of gigs">
+      <div class="title">
+        <h1>{{ gig['name'] }}</h1>
+        <h2>{{ gig['date'] }} | {{ gig['venue'] }} | {{ gig['city'] }}</h2>
+      </div>
+      <button mat-raised-button>Buy tickets</button>
+    </div>
   </div>
 </main>
