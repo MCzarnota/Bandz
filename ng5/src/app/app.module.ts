@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PasswordStrengthBarModule} from 'ng2-password-strength-bar';
 import {Routes, RouterModule} from '@angular/router';
 import {AgmCoreModule} from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -78,6 +79,7 @@ import {ProfileComponent} from './profile/profile.component';
     PasswordStrengthBarModule,
     MatDividerModule,
     MatSnackBarModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
     })
