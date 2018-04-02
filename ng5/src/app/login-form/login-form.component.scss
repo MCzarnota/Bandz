@@ -1,5 +1,6 @@
 @import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -36,48 +37,53 @@
       width: 100%;
       height: 100%;
       color: white;
-      
-    box-sizing: border-box;
-      form{
+
+      box-sizing: border-box;
+      form {
         display: flex;
         flex-direction: column;
         height: 100%;
-        mat-form-field{
-          mat-label{
-            color:white;
-            
+        mat-form-field {
+          mat-label {
+            color: white;
+
           }
-          input{
+          input {
             width: 100%;
           }
         }
       }
-}
+    }
   }
 }
-a{
+
+a {
   font-size: 1.2em;
 }
-#lostPassword{
-  margin-bottom:0;
-  padding-bottom:0;
+
+#lostPassword {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
-#registerAccount{
-  padding:0;
-  margin-top:0;
+
+#registerAccount {
+  padding: 0;
+  margin-top: 0;
   margin-bottom: 15px;
 }
-.submit{
+
+.submit {
   background: white;
-  color:#fc2840;
+  color: #fc2840;
   border: none;
-  padding:15px;
-  border-radius:5px;
+  padding: 15px;
+  border-radius: 5px;
   font-size: 1.5em;
   cursor: pointer;
   outline: none;
 
 }
+
 /** CLOSE BUTTON STYLING **/
 .x {
   display: block;
@@ -88,9 +94,11 @@ a{
   height: 32px;
   transition: transform .25s ease-in-out;
 }
+
 .x:hover {
   transform: rotate(180deg);
 }
+
 .x:before {
   content: "";
   position: absolute;
@@ -106,6 +114,7 @@ a{
   transform: rotate(45deg);
   transform-origin: center;
 }
+
 .x:after {
 
   content: "";
@@ -122,4 +131,5 @@ a{
   transform: rotate(-45deg);
   transform-origin: center;
 }
+
 /** !CLOSE X STYLING **/

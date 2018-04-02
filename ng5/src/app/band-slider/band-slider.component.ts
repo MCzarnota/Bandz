@@ -125,7 +125,7 @@ export class BandSliderComponent implements OnInit {
 
     // Add empty elements to array to ensure left-align on last line
     while (this.cards.length % this.cardsPerRow !== 0) {
-      this.cards.push({'name' : '', 'thumbnail': '', 'description': ''});
+      this.cards.push({'name': '', 'thumbnail': '', 'description': ''});
     }
     this.fillFirstLine();
   }

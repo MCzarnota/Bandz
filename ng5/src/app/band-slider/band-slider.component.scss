@@ -4,19 +4,18 @@ $break-medium: 1400px;
 $break-small: 1250px;
 $break-smaller: 1000px;
 
-
-#card-width{
+#card-width {
   --card-width: 200;
 }
 
-h2{
+h2 {
   margin-bottom: 50px;
   margin-left: 50px;
   margin-top: 40px;
   font-size: 2em;
 }
 
-.card-deck{
+.card-deck {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -28,8 +27,7 @@ a {
 
 // 380px wide for now
 
-
-.card{
+.card {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -37,15 +35,15 @@ a {
   margin: 25px 15px;
   //border-bottom: 1px solid $color-light;
 
-  @media screen and (min-width: $break-smaller){
+  @media screen and (min-width: $break-smaller) {
     width: 25%;
-    @media screen and (min-width: $break-small){
+    @media screen and (min-width: $break-small) {
       width: 18%;
     }
   }
 }
 
-img{
+img {
   display: block;
   margin-left: auto;
   object-fit: cover;
@@ -57,17 +55,16 @@ img{
 
 }
 
-
-h3{
+h3 {
   margin-top: 0;
   color: #c43235;
 }
 
-p{
+p {
   color: #e6e6e8;
 }
 
-section{
+section {
   width: 100%;
   padding: .2em 0 0 .2em;
 }

@@ -33,7 +33,7 @@
     </aside>
   </div>
 
-  <div *ngIf="showGigs">
+  <ng-container *ngIf="showGigs">
     <div class="event" *ngFor="let gig of gigs">
       <div class="title">
         <h1>{{ gig['name'] }}</h1>
@@ -41,5 +41,5 @@
       </div>
       <button mat-raised-button>Buy tickets</button>
     </div>
-  </div>
+  </ng-container>
 </main>

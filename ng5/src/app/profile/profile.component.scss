@@ -42,7 +42,7 @@ main {
       button {
         margin: 20px 0 20px 20px;
 
-        .dropDown{
+        .dropDown {
           position: fixed;
           margin: auto;
           background: $color-lighter;
@@ -83,7 +83,6 @@ main {
     }
   }
 }
-
 
 @import "../../variables.scss";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";

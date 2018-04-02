@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FrontViewComponent } from './front-view.component';
+import {FrontViewComponent} from './front-view.component';
 
 describe('FrontViewComponent', () => {
   let component: FrontViewComponent;
@@ -8,9 +8,9 @@ describe('FrontViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FrontViewComponent ]
+      declarations: [FrontViewComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

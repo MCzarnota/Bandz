@@ -5,10 +5,12 @@
       <section class="x" (click)=closeSubmissionForm()></section>
     </div>
     <!-- front of the  Fan window -->
-    <div  id="fanCard"  (click)="showRegistrationForm($event)"  class="fanSection section" ontouchstart="this.classList.toggle('hover');">
+    <div id="fanCard" (click)="showRegistrationForm($event)" class="fanSection section"
+         ontouchstart="this.classList.toggle('hover');">
       <article class="sectionInner">
         <!-- card -->
-        <div  id="fanCard"  (click)="showRegistrationForm($event)"  [ngClass]="{rotate:fanIsFlipped}" class="card-front fanCard">
+        <div id="fanCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:fanIsFlipped}"
+             class="card-front fanCard">
         </div>
         <div class="card-back" [ngClass]="{show:fanIsFlipped}">
           <p class="title">Card is flipped</p>
@@ -19,7 +21,8 @@
     <div class="bandSection section">
       <article class="sectionInner">
         <!-- card -->
-        <div   id="bandCard" (click)="showRegistrationForm($event)"  [ngClass]="{rotate:bandIsFlipped}" class="card-front bandCard">
+        <div id="bandCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:bandIsFlipped}"
+             class="card-front bandCard">
         </div>
         <div class="card-back" [ngClass]="{show:bandIsFlipped}">
           <p class="title">Card is flipped</p>
@@ -27,10 +30,11 @@
         <!-- /card -->
       </article>
     </div>
-    <div  class="venueManagerSection section">
+    <div class="venueManagerSection section">
       <article class="sectionInner">
         <!-- card -->
-        <div id="venueCard"  (click)="showRegistrationForm($event)" [ngClass]="{rotate:venueIsFlipped}" class="card-front venueCard">
+        <div id="venueCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:venueIsFlipped}"
+             class="card-front venueCard">
         </div>
         <div class="card-back" [ngClass]="{show:venueIsFlipped}">
           <p class="title">VenueCard is flipped</p>

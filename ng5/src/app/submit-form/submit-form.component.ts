@@ -1,5 +1,6 @@
-import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Inject, Output, EventEmitter} from '@angular/core';
 import {MatDialog} from '@angular/material';
+
 @Component({
   selector: 'app-submit-form',
   templateUrl: './submit-form.component.html',
@@ -16,12 +17,14 @@ export class SubmitFormComponent implements OnInit {
   @Output() public SubmitEvent = new EventEmitter();
   @Output() public submissionSecondStepEvent = new EventEmitter();
   @Output() public theTypeOfTheAccountEvent = new EventEmitter();
+
   closeSubmissionForm() {
     console.log('close it');
     // closes the submission form using 'x'
     this.trigger = false;
     this.SubmitEvent.emit(this.trigger);
   }
+
   showRegistrationForm(event) {
     console.log(event.target);
     const elementId: string = (event.target as Element).id;
@@ -41,7 +44,7 @@ export class SubmitFormComponent implements OnInit {
         this.submissionSecondStepEvent.emit(this.trigger);
         this.theTypeOfTheAccountEvent.emit(this.accountType);
         this.closeSubmissionForm();
-      break;
+        break;
       case 'venueCard':
         console.log('venueCard');
         this.venueIsChosen = 3;
@@ -53,7 +56,9 @@ export class SubmitFormComponent implements OnInit {
       default:
     }
   }
-  constructor(public dialog: MatDialog) { }
+
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
   }

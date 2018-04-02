@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {TestBed, inject} from '@angular/core/testing';
 
-import { PasswordStrenghtCheckerServiceService } from './password-strenght-checker-service.service';
+import {PasswordStrenghtCheckerServiceService} from './password-strenght-checker-service.service';
 
 describe('PasswordStrenghtCheckerServiceService', () => {
   beforeEach(() => {

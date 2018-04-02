@@ -11,5 +11,6 @@ export class DataService {
   }
 
   changeGoal(goal) {
-    this.goals.next(goal); }
+    this.goals.next(goal);
+  }
 }
