@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SlideShowWithSearchBarComponent } from './slide-show-with-search-bar.component';
+import {SlideShowWithSearchBarComponent} from './slide-show-with-search-bar.component';
 
 describe('SlideShowWithSearchBarComponent', () => {
   let component: SlideShowWithSearchBarComponent;
@@ -8,9 +8,9 @@ describe('SlideShowWithSearchBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlideShowWithSearchBarComponent ]
+      declarations: [SlideShowWithSearchBarComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

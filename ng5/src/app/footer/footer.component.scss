@@ -1,6 +1,11 @@
-@import "~variables.scss";
+@import "../../variables.scss";
 
+<<<<<<< HEAD:ng5/src/app/front-view/footer/footer.component.scss
 footer{
+=======
+footer {
+  z-index: 2;
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440:ng5/src/app/footer/footer.component.scss
   min-width: 100%;
   background-color: #fc2840;
   display: flex;
@@ -31,6 +36,7 @@ p{
 }
 @import "~variables.scss";
 
+<<<<<<< HEAD:ng5/src/app/front-view/footer/footer.component.scss
 ul{
   list-style: none;
   display: flex;
@@ -71,5 +77,9 @@ ul{
     }
   }
 
+=======
+ul {
+  list-style-type: none;
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440:ng5/src/app/footer/footer.component.scss
 }
 

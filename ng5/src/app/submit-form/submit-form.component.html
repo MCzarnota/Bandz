@@ -1,42 +1,60 @@
-<section class="wrapper">
+<main>
   <section class="formWindow">
-    <div class="title">
+    <header>
       <h1>Sign up {{accountType}} </h1>
       <section class="x" (click)=closeSubmissionForm()></section>
-    </div>
+    </header>
+
     <!-- front of the  Fan window -->
-    <div  id="fanCard"  (click)="showRegistrationForm($event)"  class="fanSection section" ontouchstart="this.classList.toggle('hover');">
-      <article class="sectionInner">
+    <div class="cards">
+      <div class="fanSection card">
         <!-- card -->
-        <div  id="fanCard"  (click)="showRegistrationForm($event)"  [ngClass]="{rotate:fanIsFlipped}" class="card-front fanCard">
-        </div>
-        <div class="card-back" [ngClass]="{show:fanIsFlipped}">
-          <p class="title">Card is flipped</p>
+        <div id="fanCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:fanIsFlipped}"
+             class="card-front fanCard thumbnail">
         </div>
         <!-- /card -->
-      </article>
-    </div>
-    <div class="bandSection section">
-      <article class="sectionInner">
+        <aside>
+          <h2>Sign up as a fan</h2>
+          <p>Sign up as a fan to follow bands and venues, buy tickets and message others.</p>
+          <button id="fanButton" mat-raised-button (click)="showRegistrationForm($event)">Create fan account</button>
+        </aside>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="bandSection card">
         <!-- card -->
-        <div   id="bandCard" (click)="showRegistrationForm($event)"  [ngClass]="{rotate:bandIsFlipped}" class="card-front bandCard">
-        </div>
-        <div class="card-back" [ngClass]="{show:bandIsFlipped}">
-          <p class="title">Card is flipped</p>
+        <div id="bandCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:bandIsFlipped}"
+             class="card-front bandCard thumbnail">
         </div>
         <!-- /card -->
-      </article>
-    </div>
-    <div  class="venueManagerSection section">
-      <article class="sectionInner">
+        <aside>
+          <h2>Sign up as a band</h2>
+          <p>Bands can share music and images, create events and sell tickets.</p>
+          <button id="bandButton" mat-raised-button (click)="showRegistrationForm($event)">Create band account</button>
+        </aside>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="venueManagerSection card">
         <!-- card -->
-        <div id="venueCard"  (click)="showRegistrationForm($event)" [ngClass]="{rotate:venueIsFlipped}" class="card-front venueCard">
-        </div>
-        <div class="card-back" [ngClass]="{show:venueIsFlipped}">
-          <p class="title">VenueCard is flipped</p>
+        <div id="venueCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:venueIsFlipped}"
+             class="card-front venueCard thumbnail">
         </div>
         <!-- /card -->
-      </article>
+        <aside>
+          <h2>Sign up as a venue</h2>
+          <p>Venues can share photos and other info, host events and sell tickets.</p>
+          <button id="venueButton" mat-raised-button (click)="showRegistrationForm($event)">Create venue account</button>
+        </aside>
+      </div>
     </div>
+
+    <footer>
+      <p> Already have a BANDZ account? <a href="#">Log in</a></p>
+    </footer>
+
   </section>
-</section>
+</main>

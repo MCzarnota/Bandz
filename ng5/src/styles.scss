@@ -5,19 +5,21 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "variables.scss";
 
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: $font-heading;
-margin: 0;
+  margin: 0;
+  background-color: $color-background;
 }
 
 a {
-  color: #fff;
+  color: $color-lighter;
   text-decoration: none;
 }
+
 // Workaround for https://github.com/angular/material2/issues/4580.
 mat-form-field .mat-form-field {
   &-underline {
@@ -28,16 +30,17 @@ mat-form-field .mat-form-field {
     position: static;
   }
 }
+
 snack-bar-container {
-  &snack-bar-color{
-      height: auto; 
-      min-width: initial;
+  &snack-bar-color {
+    height: auto;
+    min-width: initial;
   }
   &.snack-bar-color {
-    color:white !important;
-    background: #fc2840 !important;
-    button{
+    color: white !important;
+    background: $color-accent !important;
+    button {
       color: black !important;
     }
-} 
+  }
 }

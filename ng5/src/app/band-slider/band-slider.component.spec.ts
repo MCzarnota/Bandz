@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BandSliderComponent } from './band-slider.component';
+import {BandSliderComponent} from './band-slider.component';
 
 describe('BandSliderComponent', () => {
   let component: BandSliderComponent;
@@ -8,9 +8,9 @@ describe('BandSliderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BandSliderComponent ]
+      declarations: [BandSliderComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

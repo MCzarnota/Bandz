@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ExtraComponent } from './extra.component';
+import {ExtraComponent} from './extra.component';
 
 describe('ExtraComponent', () => {
   let component: ExtraComponent;
@@ -8,9 +8,9 @@ describe('ExtraComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExtraComponent ]
+      declarations: [ExtraComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

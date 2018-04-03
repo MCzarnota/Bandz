@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { BandCardComponent} from '../band-card/band-card.component';
+import {Component, OnInit, Input, Output} from '@angular/core';
+import {BandCardComponent} from '../band-card/band-card.component';
 import {EventCardComponent} from '../event-card/event-card.component';
+import * as events from 'events';
 
 
 @Component({
@@ -9,6 +10,7 @@ import {EventCardComponent} from '../event-card/event-card.component';
   styleUrls: ['./suggestions.component.scss']
 })
 export class SuggestionsComponent implements OnInit {
+<<<<<<< HEAD
   
   // events:EventsDataService[];
   // constructor() {
@@ -18,6 +20,83 @@ export class SuggestionsComponent implements OnInit {
   // ]
   constructor(){}
   
+=======
+
+  bands = [
+    {
+      'name': 'Drunk Donkey',
+      'location': 'Moorooka',
+      'image': '../assets/images/band1.jpg',
+      'hot': true
+    },
+    {
+      'name': 'Drunk Donkey',
+      'location': 'Moorooka',
+      'image': '../assets/images/band1.jpg',
+      'hot': true
+    },
+    {
+      'name': 'Drunk Donkey',
+      'location': 'Moorooka',
+      'image': '../assets/images/band1.jpg',
+      'hot': true
+    },
+    {
+      'name': 'Drunk Donkey',
+      'location': 'Moorooka',
+      'image': '../assets/images/band1.jpg',
+      'hot': true
+    },
+    {
+      'name': 'Drunk Donkey',
+      'location': 'Moorooka',
+      'image': '../assets/images/band1.jpg',
+      'hot': true
+    }
+  ];
+
+  events = [
+    {
+      'name': 'DonkeyFest',
+      'location': 'Moorooka',
+      'cost': '$28',
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
+    },
+    {
+      'name': 'DonkeyFest',
+      'location': 'Moorooka',
+      'cost': '$28',
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
+    },
+    {
+      'name': 'DonkeyFest',
+      'location': 'Moorooka',
+      'cost': '$28',
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
+    },
+    {
+      'name': 'DonkeyFest',
+      'location': 'Moorooka',
+      'cost': '$28',
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
+    },
+    {
+      'name': 'DonkeyFest',
+      'location': 'Moorooka',
+      'cost': '$28',
+      'attending': 32,
+      'image': '../assets/images/band1.jpg'
+    }
+  ];
+
+  constructor() {
+  }
+
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
   ngOnInit() {
   }
 

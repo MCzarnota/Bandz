@@ -4,9 +4,9 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
-import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
-import { Routes, RouterModule} from '@angular/router';
-import { AgmCoreModule} from '@agm/core';
+import {PasswordStrengthBarModule} from 'ng2-password-strength-bar';
+import {Routes, RouterModule} from '@angular/router';
+import {AgmCoreModule} from '@agm/core';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -24,39 +24,39 @@ import {AccordionModule} from 'primeng/components/accordion/accordion';
 import {MenuItem} from 'primeng/components/common/api';
 /** !NG components */
 import {AppComponent} from './app.component';
-import {AboutComponent} from './about/about.component';
 import {DataService} from './data.service';
-import { ExtraComponent } from './extra/extra.component';
-import { BandSliderComponent } from './band-slider/band-slider.component';
-import { VenueSliderComponent } from './venue-slider/venue-slider.component';
-import { SlideShowWithSearchBarComponent } from './front-view/slide-show-with-search-bar/slide-show-with-search-bar.component';
-import { FooterComponent } from './front-view/footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { SubmitFormComponent } from './submit-form/submit-form.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { SuggestionsComponent} from './front-view/suggestions/suggestions.component';
-import { BandCardComponent } from './front-view/band-card/band-card.component';
-import { SubmissionFormNextStepComponent } from './submission-form-next-step/submission-form-next-step.component';
-import { EventCardComponent } from './front-view/event-card/event-card.component';
-import {GigsComponent} from './gigs/gigs.component';
+import {ExtraComponent} from './extra/extra.component';
+import {BandSliderComponent} from './band-slider/band-slider.component';
+import {VenueSliderComponent} from './venue-slider/venue-slider.component';
+import {SlideShowWithSearchBarComponent} from './front-view/slide-show-with-search-bar/slide-show-with-search-bar.component';
+import {FooterComponent} from './footer/footer.component';
+import {HeaderComponent} from './header/header.component';
+import {SubmitFormComponent} from './submit-form/submit-form.component';
+import {LoginFormComponent} from './login-form/login-form.component';
+import {SuggestionsComponent} from './front-view/suggestions/suggestions.component';
+import {BandCardComponent} from './front-view/band-card/band-card.component';
+import {SubmissionFormNextStepComponent} from './submission-form-next-step/submission-form-next-step.component';
+import {EventCardComponent} from './front-view/event-card/event-card.component';
 import {MainViewComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
+<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
 import {BandsDataService} from './front-view/suggestions/bands.service';
 
+=======
+import {ProfileComponent} from './profile/profile.component';
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
     ExtraComponent,
     BandSliderComponent,
     VenueSliderComponent,
     SlideShowWithSearchBarComponent,
     FooterComponent,
     HeaderComponent,
-    GigsComponent,
     SuggestionsComponent,
     SubmitFormComponent,
     LoginFormComponent,
@@ -96,15 +96,21 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
     ReactiveFormsModule,
     AccordionModule
   ],
+<<<<<<< HEAD
   entryComponents: [
   ],
   providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService],
+=======
+  entryComponents: [],
+  providers: [DataService],
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
   bootstrap: [AppComponent]
 })
-
 
 
 export class AppModule {
 
 }
-export class MaterialModule {}
+
+export class MaterialModule {
+}

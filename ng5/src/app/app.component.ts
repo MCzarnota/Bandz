@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {MatSnackBarConfig} from '@angular/material';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +9,9 @@ import {MatSnackBarConfig} from '@angular/material';
 })
 
 export class AppComponent {
-  constructor(public snackBar: MatSnackBar) {}
+  constructor(public snackBar: MatSnackBar) {
+  }
+
   isSubmitActive = false;
   isLoginActive = false;
   isAccountChosen = false;
