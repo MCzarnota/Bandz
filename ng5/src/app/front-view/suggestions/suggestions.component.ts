@@ -10,17 +10,6 @@ import * as events from 'events';
   styleUrls: ['./suggestions.component.scss']
 })
 export class SuggestionsComponent implements OnInit {
-<<<<<<< HEAD
-  
-  // events:EventsDataService[];
-  // constructor() {
-  //   this.events =[
-  //     new EventsDataService("Concert","Beaudesert Road","Red Lion",25,5,false,false),
-  //     new EventsDataService("Concert","Beaudesert Road","Red Lion",25,5,false,false)
-  // ]
-  constructor(){}
-  
-=======
 
   bands = [
     {
@@ -96,7 +85,6 @@ export class SuggestionsComponent implements OnInit {
   constructor() {
   }
 
->>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
   ngOnInit() {
   }
 

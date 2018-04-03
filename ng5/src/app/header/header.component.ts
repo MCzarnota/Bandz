@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import { Component, OnInit, Inject, Input, HostListener, EventEmitter, Output, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { SubmitFormComponent} from '../submit-form/submit-form.component';
-=======
-import {Component, OnInit, Inject, Input, HostListener, EventEmitter, Output} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import {SubmitFormComponent} from '../submit-form/submit-form.component';
->>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
 
 @Component({
   selector: 'app-header',
