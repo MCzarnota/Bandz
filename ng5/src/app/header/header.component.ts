@@ -1,11 +1,13 @@
-import { Component, OnInit, Inject, Input, HostListener, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Inject, Input, HostListener, EventEmitter, Output, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { SubmitFormComponent} from '../submit-form/submit-form.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+@Injectable()
 export class HeaderComponent implements OnInit {
   submitTrigger = false;
   loginTrigger = false;

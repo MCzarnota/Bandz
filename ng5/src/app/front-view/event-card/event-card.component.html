@@ -1,3 +1,4 @@
+
 <mat-card class="suggestionsBox">
     <div class="hotItem">
         <img mat-card-image src="../assets/images/hotItem.png" alt="">
@@ -8,18 +9,18 @@
     <div class="bandImage">
         <img  src="../assets/images/band1.jpg " alt=" ">
     </div>
+   
     <mat-card-content>
-        <mat-card-subtitle class="venueName">Drunk Donkey,</mat-card-subtitle>
-        <mat-card-subtitle class="venueAddress"> Moorooka</mat-card-subtitle>
-        <mat-card-title class="eventName">Event Name here</mat-card-title>
-        <mat-card-title class="price">$28 entry</mat-card-title>
-        
+        <mat-card-subtitle class="venueName">{{event.getVenueName()|uppercase}},&nbsp;</mat-card-subtitle>
+        <mat-card-subtitle class="venueAddress">{{event.getVenueAddress()|uppercase}} </mat-card-subtitle>
+        <mat-card-title class="eventName">{{event.getEventName()}}</mat-card-title>
+        <mat-card-title class="price">{{event.getEventPrice()|currency:'USD':'symbol':'1.0-0'}} entry</mat-card-title>
         <mat-card-actions>
                 <div class="ratingItem">
                         <img src="../assets/images/ratingItem.png" alt="">
-                        <p class="ratingNumber">30</p>
+                        <p class="ratingNumber">{{event.getEventRatingNo()}}</p>
                 </div>
-           <button mat-fab >Buy now</button>
+           <button mat-fab color="warn" >Buy now</button>
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

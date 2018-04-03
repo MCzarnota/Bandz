@@ -42,6 +42,9 @@ import {GigsComponent} from './gigs/gigs.component';
 import {MainViewComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EventsDataService } from './front-view/suggestions/events.service';
+import {BandsDataService} from './front-view/suggestions/bands.service';
+
 
 @NgModule({
   declarations: [
@@ -95,7 +98,7 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   entryComponents: [
   ],
-  providers: [DataService],
+  providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService],
   bootstrap: [AppComponent]
 })
 

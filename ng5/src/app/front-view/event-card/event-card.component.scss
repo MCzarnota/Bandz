@@ -54,10 +54,14 @@
   .price{
   font-weight: bold;
   }
+  .venueAddress,.venueName{
+      text-transform: capitalize;
+  }
   .venueAddress,
   .venueName,.bandName,.bandAddress {
       display: inline;
       font-weight: bold;
+      letter-spacing: 2px;
   }
   .playIcon {
       width: 4em;
@@ -68,7 +72,6 @@
       cursor: pointer;
   }
   .mat-fab{
-      background-color:#fc2840;
       -webkit-transition-duration: 0.4s; /* Safari */
       transition-duration: 0.4s;
       text-decoration: none;

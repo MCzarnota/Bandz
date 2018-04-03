@@ -33,7 +33,7 @@ ul{
   margin: 0;
   color: #fff;
   font-size: 1.2em;
-  li{
+  li:not(:first-child) {
     padding: .5em 2em;
     .blacks{
       background-color: green;
@@ -62,6 +62,11 @@ ul{
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+    }
+  }
+  .Logo{
+    a:hover{
+      opacity: 0.8;
     }
   }
 }

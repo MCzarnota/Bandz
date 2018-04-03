@@ -9,8 +9,15 @@ import {EventCardComponent} from '../event-card/event-card.component';
   styleUrls: ['./suggestions.component.scss']
 })
 export class SuggestionsComponent implements OnInit {
-  constructor() { }
-
+  
+  // events:EventsDataService[];
+  // constructor() {
+  //   this.events =[
+  //     new EventsDataService("Concert","Beaudesert Road","Red Lion",25,5,false,false),
+  //     new EventsDataService("Concert","Beaudesert Road","Red Lion",25,5,false,false)
+  // ]
+  constructor(){}
+  
   ngOnInit() {
   }
 
