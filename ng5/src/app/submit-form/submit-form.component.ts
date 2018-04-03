@@ -1,5 +1,6 @@
 import {Component, OnInit, Inject, Output, EventEmitter} from '@angular/core';
 import {MatDialog} from '@angular/material';
+import {HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-submit-form',
@@ -29,9 +30,9 @@ export class SubmitFormComponent implements OnInit {
     console.log(event.target);
     const elementId: string = (event.target as Element).id;
     console.log('You clicked on registration event');
-    // Register what type of account. Passed later to backend
     switch (elementId) {
       case 'fanCard':
+      case 'fanButton':
         this.fanIsChosen = 1;
         this.accountType = 'fan ';
         this.submissionSecondStepEvent.emit(this.trigger);
@@ -39,6 +40,7 @@ export class SubmitFormComponent implements OnInit {
         this.closeSubmissionForm();
         break;
       case 'bandCard':
+      case 'bandButton':
         this.bandIsChosen = 2;
         this.accountType = 'band ';
         this.submissionSecondStepEvent.emit(this.trigger);
@@ -46,6 +48,7 @@ export class SubmitFormComponent implements OnInit {
         this.closeSubmissionForm();
         break;
       case 'venueCard':
+      case 'venueButton':
         console.log('venueCard');
         this.venueIsChosen = 3;
         this.accountType = 'venue manager ';
@@ -55,6 +58,7 @@ export class SubmitFormComponent implements OnInit {
         break;
       default:
     }
+    // Register what type of account. Passed later to backend
   }
 
   constructor(public dialog: MatDialog) {
