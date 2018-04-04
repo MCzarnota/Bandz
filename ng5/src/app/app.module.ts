@@ -39,14 +39,10 @@ import {SubmissionFormNextStepComponent} from './submission-form-next-step/submi
 import {EventCardComponent} from './front-view/event-card/event-card.component';
 import {MainViewComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
-<<<<<<< HEAD
 import { ProfileComponent } from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
 import {BandsDataService} from './front-view/suggestions/bands.service';
 
-=======
-import {ProfileComponent} from './profile/profile.component';
->>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
 
 @NgModule({
   declarations: [
@@ -96,14 +92,9 @@ import {ProfileComponent} from './profile/profile.component';
     ReactiveFormsModule,
     AccordionModule
   ],
-<<<<<<< HEAD
   entryComponents: [
   ],
-  providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService],
-=======
-  entryComponents: [],
-  providers: [DataService],
->>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
+  providers: [DataService, EventsDataService, BandSliderComponent, BandsDataService, EventsDataService],
   bootstrap: [AppComponent]
 })
 

@@ -51,60 +51,6 @@ img {
 
 .price {
   font-weight: bold;
-<<<<<<< HEAD
-  }
-  .venueAddress,.venueName{
-      text-transform: capitalize;
-  }
-  .venueAddress,
-  .venueName,.bandName,.bandAddress {
-      display: inline;
-      font-weight: bold;
-      letter-spacing: 2px;
-  }
-  .playIcon {
-      width: 4em;
-      height: 4em;
-  }
-  .playIcon:hover{
-      opacity: 0.5;
-      cursor: pointer;
-  }
-  .mat-fab{
-      -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.4s;
-      text-decoration: none;
-      overflow: hidden;
-      display: inline-block;
-      position: absolute;
-      width: 6em;
-      height: 6em;
-      left: 14em;
-      bottom: 2em;
-      
-  }
-  
-  .mat-fab:after {
-      content: "";
-      background: white;
-      display: block;
-      position: absolute;
-      border-radius: 50%;
-      padding-top: 250%;
-      padding-left: 200%;
-      margin-left: -20px!important;
-      margin-top: -200%;
-      opacity: 0;
-      transition: all 0.8s
-  }
-  
-  .mat-fab:active:after {
-      padding: 0;
-      margin: 0;
-      opacity: 1;
-      transition: 0s
-  }
-=======
 }
 
 .venueAddress,
@@ -158,4 +104,3 @@ img {
   opacity: 1;
   transition: 0s
 }
->>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
