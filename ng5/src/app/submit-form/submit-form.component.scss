@@ -1,6 +1,7 @@
 /** A wrapper that covers whole body and add overlay */
+@import "../../variables.scss";
 
-.wrapper {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,109 +9,96 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba($color: #000000, $alpha: 0.8);
+  background: rgba($color: #000, $alpha: 0.8);
   position: fixed;
   z-index: 999;
+
   .formWindow {
-    // testing
     overflow: hidden;
-    // !testing
-    background: #fc2840;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 5fr;
+    background: $color-lighter;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 5px;
+
     transition: 2s;
     width: 60vw;
+    max-width: 700px;
     position: relative;
-    .title {
-      grid-column: 1/4;
-      h1 {
-        //hack to position text vertically
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
+
+    footer{
+      background: $color-accent;
+      color: $color-lighter ;
+      display: flex;
+      justify-content: center;
+      a{
+        font-weight: bolder;
       }
     }
-    .section {
 
-      position: relative;
-      .sectionInner {
-        .fanCard {
-          perspective: 1000px;
-          background: url("../../assets/images/fan-resized.jpg") no-repeat;
-          background-size: cover;
-          border: 5px solid #DAA520;
-          button {
-            border: 3px solid #DAA520;
+    .divider {
+      width: 90%;
+      border-top: 1px solid $color-darker;
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      background: $color-accent;
+
+      h1 {
+        text-align: center;
+        color: $color-lighter;
+      }
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      width: 100%;
+      margin: 0 5px 5px;
+
+      .card {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        position: relative;
+        height: 150px;
+        margin: 15px;
+
+        aside {
+          width: 50%;
+          h2{
+            margin: 0;
           }
+          button{
+            background: $color-accent;
+            color: $color-lighter;
+          }
+        }
+
+        .thumbnail {
+          height: 150px;
+          width: 150px;
+          box-shadow: 2px 2px $color-darker;
+          position: relative;
+          cursor: pointer;
+        }
+
+        .fanCard {
+          background: url("../../assets/images/fan-fromTheInternet.png") no-repeat;
+          background-size: cover;
         }
         .bandCard {
-          perspective: 1000px;
-          background: url("../../assets/images/bandBackground.jpeg") no-repeat;
+          background: url("../../assets/images/band-fromTheInternet.png") no-repeat;
           background-size: cover;
-          border: 5px solid rgb(38, 218, 32);
-          button {
-            border: 3px solid rgb(38, 218, 32);
-          }
         }
         .venueCard {
-          perspective: 1000px;
-          background: url("../../assets/images/manager.jpeg") no-repeat;
+          background: url("../../assets/images/venue-manager_fromTheInternet") no-repeat;
           background-size: cover;
-          border: 5px solid rgb(203, 32, 218);;
-          button {
-            border: 3px solid rgb(203, 32, 218);;
-          }
         }
-      }
-      p {
-        font-size: 0.3rem;
-      }
-      margin: 0 5px 5px;
-      display: flex;
-      align-items: flex-end;
-      cursor: default;
-      button {
-        margin: 0 auto 25px;
-        -moz-box-shadow: inset 0 1px 0 0 #ffffff;
-        -webkit-box-shadow: inset 0 1px 0 0 #ffffff;
-        box-shadow: inset 0 1px 0 0 #ffffff;
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
-        background: -moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-        background: -webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-        background: -o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-        background: -ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-        background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9', GradientType=0);
-        background-color: #f9f9f9;
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
-        display: inline-block;
-        cursor: pointer;
-        color: #666666;
-        font-size: 0.7rem;
-        font-weight: bold;
-        padding: 6px 24px;
-        text-decoration: none;
-        text-shadow: 0 1px 0 #ffffff;
-      }
-      button:hover {
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
-        background: -moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-        background: -webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-        background: -o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-        background: -ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-        background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9', GradientType=0);
-        background-color: white;
-      }
-      button:active {
-        position: relative;
-        top: 1px;
       }
     }
   }
@@ -118,40 +106,7 @@
 
 /*-------- cards --------*/
 
-.card-front,
-.card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  justify-content: flex-end;
-}
 
-.card-back {
-  background-color: #1e1e1e;
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-
-//*-------- cards / flip effect --------*//
-//class that adds class for rotating the card
-.rotate {
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-
-//class that adds class for showing the back of card
-.show {
-  -webkit-transform: rotateY(0);
-  transform: rotateY(0);
-}
 
 /*!!-------- cards --------*/
 /* CLOSE BUTTON STYLING */
@@ -162,7 +117,7 @@
   top: 1em;
   width: 32px;
   height: 32px;
-  transition: transform .25s ease-in-out;
+  transition: transform .4s ease-in-out;
 }
 
 .x:hover {
@@ -204,137 +159,3 @@
 
 /* !CLOSE X STYLING */
 /*SUBMIT WINDOW EFFECTS */
-@import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-.wrapper {
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba($color: #000000, $alpha: 0.8);
-  position: fixed;
-  z-index: 999;
-  .logInWindow {
-    position: relative;
-    padding: 10px 5%;
-    background: #fc2840;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    height: 60vh;
-    .title {
-      h1 {
-        //hack to position text vertically
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        // font-size: 2em;
-      }
-    }
-    .Container {
-      width: 100%;
-      height: 100%;
-      color: white;
-      box-sizing: border-box;
-      form {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        mat-form-field {
-          mat-label {
-            color: white;
-
-          }
-          input {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-a {
-  font-size: 1.2em;
-}
-
-#lostPassword {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-#registerAccount {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.submit {
-  background: white;
-  color: #fc2840;
-  border: none;
-  padding: 15px;
-  border-radius: 5px;
-  font-size: 1.5em;
-  cursor: pointer;
-  outline: none;
-
-}
-
-/** CLOSE BUTTON STYLING **/
-.x {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 32px;
-  height: 32px;
-  transition: transform .25s ease-in-out;
-}
-
-.x:hover {
-  transform: rotate(180deg);
-}
-
-.x:before {
-  content: "";
-  position: absolute;
-  display: block;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  height: 0;
-  border-top: 1px solid white;
-  transform: rotate(45deg);
-  transform-origin: center;
-}
-
-.x:after {
-
-  content: "";
-  position: absolute;
-  display: block;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  height: 0;
-  border-top: 1px solid white;
-  transform: rotate(-45deg);
-  transform-origin: center;
-}
-
-/** !CLOSE X STYLING **/

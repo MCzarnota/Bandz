@@ -11,11 +11,9 @@ import { FormControl, Validators, FormGroup, FormBuilder, FormGroupDirective, Ng
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-  public loginForm: FormGroup;
-  private readonly emailRegex = '(?=\\D*\\d)(?=.*?[a-zA-Z]).*[\\W_].*';
   public username = '';
   public password = '';
-  public  greeting = {};
+  loginForm;
   constructor(private router: Router, private readonly formBuilder: FormBuilder,
               private http: HttpClient) {
     this.loginForm = formBuilder.group({

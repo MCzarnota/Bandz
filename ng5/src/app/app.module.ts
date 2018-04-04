@@ -7,7 +7,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PasswordStrengthBarModule} from 'ng2-password-strength-bar';
 import {Routes, RouterModule} from '@angular/router';
 import {AgmCoreModule} from '@agm/core';
-import { HttpClientModule } from '@angular/common/http';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -40,7 +39,14 @@ import {SubmissionFormNextStepComponent} from './submission-form-next-step/submi
 import {EventCardComponent} from './front-view/event-card/event-card.component';
 import {MainViewComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
+<<<<<<< HEAD
+import { ProfileComponent } from './profile/profile.component';
+import { EventsDataService } from './front-view/suggestions/events.service';
+import {BandsDataService} from './front-view/suggestions/bands.service';
+
+=======
 import {ProfileComponent} from './profile/profile.component';
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
 
 @NgModule({
   declarations: [
@@ -79,7 +85,6 @@ import {ProfileComponent} from './profile/profile.component';
     PasswordStrengthBarModule,
     MatDividerModule,
     MatSnackBarModule,
-    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
     })
@@ -91,8 +96,14 @@ import {ProfileComponent} from './profile/profile.component';
     ReactiveFormsModule,
     AccordionModule
   ],
+<<<<<<< HEAD
+  entryComponents: [
+  ],
+  providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService],
+=======
   entryComponents: [],
   providers: [DataService],
+>>>>>>> 9cbe23edf6fd1f8de19b9d2085a463ab395ba440
   bootstrap: [AppComponent]
 })
 
