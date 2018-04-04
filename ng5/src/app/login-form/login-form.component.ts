@@ -18,7 +18,7 @@ export class LoginFormComponent implements OnInit {
               private http: HttpClient) {
     this.loginForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]]
     });
   }
 
