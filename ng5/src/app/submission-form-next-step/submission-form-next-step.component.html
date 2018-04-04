@@ -5,7 +5,7 @@
       <div (click)=closeSecondSubmissionForm() class="x"></div>
     </div>
     <div class="Container">
-      <form action="" method="post" class="form form-login" [formGroup]="registrationForm" (ngSubmit)="send()">
+      <form action="" method="post" class="form form-login" [formGroup]="registrationForm" (ngSubmit)="send('email','password')">
         <mat-form-field floatLabel>
           <mat-label>
             <mat-icon>email</mat-icon>

@@ -3,6 +3,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/';
 import {MatIconModule} from '@angular/material/';
 import {Router} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { FormControl, Validators, FormGroup, FormBuilder, FormGroupDirective, NgForm} from '@angular/forms';
 @Component({
   selector: 'app-login-form',
@@ -14,8 +15,9 @@ export class LoginFormComponent implements OnInit {
   private readonly emailRegex = '(?=\\D*\\d)(?=.*?[a-zA-Z]).*[\\W_].*';
   public username = '';
   public password = '';
-
-  constructor(private router: Router, private readonly formBuilder: FormBuilder) {
+  public  greeting = {};
+  constructor(private router: Router, private readonly formBuilder: FormBuilder,
+              private http: HttpClient) {
     this.loginForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
