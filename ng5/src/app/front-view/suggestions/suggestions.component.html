@@ -12,7 +12,8 @@
 <section class="topEvents suggestions">
     <h1>Events worth checking out</h1>
     <div class=" suggestionsGallery ">
-            <div *ngFor="let event of [0,1,2,3,4,5]">
+            <div *ngFor="let key of events" >
+                    <p> {{demo}},DEMO{{events.getEventsArrayName()}}</p>
                     <app-event-card></app-event-card>
             </div>
     </div>

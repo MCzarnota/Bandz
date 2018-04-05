@@ -12,6 +12,13 @@ h1{
   padding: 0;
 }
 
+p{
+  display: block;
+  border:1px red solid;
+  height: 1em;
+  z-index: 5;
+  color: red;
+}
 .topBands,
 .topEvents {
   margin-top: 3em;
