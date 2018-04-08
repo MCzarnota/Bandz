@@ -102,7 +102,11 @@ import {AppServices} from './front-view/suggestions/app.service';
   ],
   entryComponents: [
   ],
+<<<<<<< HEAD
   providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService,AppServices],
+=======
+  providers: [DataService, EventsDataService, BandSliderComponent, BandsDataService, EventsDataService],
+>>>>>>> e4437f1aa639aad67bf4e1768474378d207b21da
   bootstrap: [AppComponent]
 })
 

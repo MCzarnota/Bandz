@@ -34,6 +34,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {Custom} from './custom';
 import * as bar from '../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+// import { UserService } from '../shared/user.service';
 
 // /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
@@ -71,10 +72,11 @@ export class SubmissionFormNextStepComponent implements OnInit {
   }
 
   send() {
+    // send the inputs values using JSON to the server
     this.openSnackBar();
     this.closeSecondSubmissionForm();
     const isAccountCreated = true;
-    // send the inputs values using JSON to the server
+    // this.userService.registerUser(this.registrationForm.value);
     console.log(this.registrationForm.value);
   }
 
