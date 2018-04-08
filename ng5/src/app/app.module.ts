@@ -42,6 +42,13 @@ import {FrontViewComponent} from './front-view/front-view.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
 import {BandsDataService} from './front-view/suggestions/bands.service';
+import { Injectable }     from '@angular/core';
+import { Http, Response, Headers, RequestOptions, HttpModule } from '@angular/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {AppServices} from './front-view/suggestions/app.service';
 
 
 @NgModule({
@@ -81,6 +88,7 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
     PasswordStrengthBarModule,
     MatDividerModule,
     MatSnackBarModule,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
     })
@@ -94,7 +102,7 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
   ],
   entryComponents: [
   ],
-  providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService],
+  providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService,AppServices],
   bootstrap: [AppComponent]
 })
 

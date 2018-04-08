@@ -11,11 +11,7 @@ private eventRatingNo:number;
 private newItem:boolean;
 private hotItem:boolean;
 
-events = [
-    new EventsDataService( "Drunken Stupour","Mooroka","Red Lion",23,55,false,false),
-    new EventsDataService( "Foundraising for Cancer Research","Townsville","Jam Corner",35,89,false,false)
 
-   ]
 
 constructor(eventName:string,venueAddress:string,venueName:string,eventPrice:number,eventRatingNo:number,newItem:boolean,
     hotItem:boolean){
@@ -76,10 +72,10 @@ public setHotItem(data){
 public getHotItem(){
     return this.hotItem;
 }
-public getEventsArrayName(){
+// public getEventsArrayName(){
 
-    for(let x of this.events){
-        return this.events[0]
-    }
-}
+//     for(let x of this.events){
+//         return this.events[0]
+//     }
+// }
 }
