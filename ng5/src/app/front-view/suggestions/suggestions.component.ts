@@ -13,81 +13,6 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./suggestions.component.scss'],
   providers:[EventsDataService,AppServices]
 })
-<<<<<<< HEAD
-=======
-export class SuggestionsComponent implements OnInit {
-
-  bands = [
-    {
-      'name': 'Drunk Donkey',
-      'location': 'Moorooka',
-      'image': '../assets/images/band1.jpg',
-      'hot': true
-    },
-    {
-      'name': 'Drunk Donkey',
-      'location': 'Moorooka',
-      'image': '../assets/images/band1.jpg',
-      'hot': true
-    },
-    {
-      'name': 'Drunk Donkey',
-      'location': 'Moorooka',
-      'image': '../assets/images/band1.jpg',
-      'hot': true
-    },
-    {
-      'name': 'Drunk Donkey',
-      'location': 'Moorooka',
-      'image': '../assets/images/band1.jpg',
-      'hot': true
-    },
-    {
-      'name': 'Drunk Donkey',
-      'location': 'Moorooka',
-      'image': '../assets/images/band1.jpg',
-      'hot': true
-    }
-  ];
-
-  events = [
-    {
-      'name': 'DonkeyFest',
-      'location': 'Moorooka',
-      'cost': '$28',
-      'attending': 32,
-      'image': '../assets/images/band1.jpg'
-    },
-    {
-      'name': 'DonkeyFest',
-      'location': 'Moorooka',
-      'cost': '$28',
-      'attending': 32,
-      'image': '../assets/images/band1.jpg'
-    },
-    {
-      'name': 'DonkeyFest',
-      'location': 'Moorooka',
-      'cost': '$28',
-      'attending': 32,
-      'image': '../assets/images/band1.jpg'
-    },
-    {
-      'name': 'DonkeyFest',
-      'location': 'Moorooka',
-      'cost': '$28',
-      'attending': 32,
-      'image': '../assets/images/band1.jpg'
-    },
-    {
-      'name': 'DonkeyFest',
-      'location': 'Moorooka',
-      'cost': '$28',
-      'attending': 32,
-      'image': '../assets/images/band1.jpg'
-    }
-  ];
->>>>>>> e4437f1aa639aad67bf4e1768474378d207b21da
 
 export class SuggestionsComponent implements OnInit {
   band= new AppServices;
@@ -95,11 +20,7 @@ export class SuggestionsComponent implements OnInit {
     
    
   }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> e4437f1aa639aad67bf4e1768474378d207b21da
   ngOnInit() {
    
   }

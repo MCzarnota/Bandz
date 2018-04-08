@@ -11,7 +11,6 @@ private eventRatingNo: number;
 private newItem: boolean;
 private hotItem: boolean;
 
-<<<<<<< HEAD
 
 
 constructor(eventName:string,venueAddress:string,venueName:string,eventPrice:number,eventRatingNo:number,newItem:boolean,
@@ -27,17 +26,6 @@ constructor(eventName:string,venueAddress:string,venueName:string,eventPrice:num
         
       
        
-=======
-constructor(eventName: string, venueAddress: string, venueName: string, eventPrice: number, eventRatingNo: number, newItem: boolean,
-    hotItem: boolean) {
-        this.eventName = eventName;
-        this.venueAddress= venueAddress;
-        this.venueName = venueName;
-        this.eventPrice = eventPrice;
-        this.eventRatingNo = eventRatingNo;
-        this.newItem = newItem;
-        this.hotItem = hotItem;
->>>>>>> e4437f1aa639aad67bf4e1768474378d207b21da
 }
 
 public setEventName(data) {
@@ -84,7 +72,6 @@ public setHotItem(data) {
 public getHotItem() {
     return this.hotItem;
 }
-<<<<<<< HEAD
 // public getEventsArrayName(){
 
 //     for(let x of this.events){
@@ -92,6 +79,3 @@ public getHotItem() {
 //     }
 // }
 }
-=======
-}
->>>>>>> e4437f1aa639aad67bf4e1768474378d207b21da
