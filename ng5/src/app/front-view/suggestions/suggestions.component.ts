@@ -17,12 +17,8 @@ import { RouterLink } from '@angular/router';
 export class SuggestionsComponent implements OnInit {
   band= new AppServices;
   constructor() {
-    
-   
-  }
+    }
  
   ngOnInit() {
-   
-  }
-
+   }
 }

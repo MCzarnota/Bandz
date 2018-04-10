@@ -37,7 +37,7 @@ import {SuggestionsComponent} from './front-view/suggestions/suggestions.compone
 import {BandCardComponent} from './front-view/band-card/band-card.component';
 import {SubmissionFormNextStepComponent} from './submission-form-next-step/submission-form-next-step.component';
 import {EventCardComponent} from './front-view/event-card/event-card.component';
-import {MainViewComponent} from './main-view/main-view.component';
+import {MainViewComponent, MainEventSuggestionsComponent, MainBandSuggestionsComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
@@ -69,7 +69,9 @@ import {AppServices} from './front-view/suggestions/app.service';
     EventCardComponent,
     MainViewComponent,
     FrontViewComponent,
-    ProfileComponent
+    ProfileComponent,
+    MainEventSuggestionsComponent,
+    MainBandSuggestionsComponent
   ],
   imports: [
     BrowserModule,

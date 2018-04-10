@@ -12,6 +12,7 @@ import {
 import {
   MAT_DIALOG_DATA
 } from '@angular/material';
+import { AgmCoreModule } from '@agm/core';
 
 @Component({
   selector: 'app-slide-show-with-search-bar',

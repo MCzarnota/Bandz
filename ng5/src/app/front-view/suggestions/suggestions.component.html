@@ -1,5 +1,4 @@
 <section class="topBands suggestions">
-<<<<<<< HEAD
         <h1>Bands worth checking out</h1>
         <app-band-card></app-band-card>
 </section>
@@ -7,64 +6,4 @@
 <section class="topEvents suggestions">
         <h1>Events worth checking out</h1>
         <app-event-card></app-event-card>   
-=======
-  <h1>Bands worth checking out</h1>
-  <div class=" suggestionsGallery ">
-    <mat-card class="suggestionsBox" *ngFor="let card of bands">
-      <div class="hotItem">
-        <img mat-card-image src="../../../assets/images/hotItem.png" alt="">
-      </div>
-      <div class="bandImage">
-        <img src={{card.image}} alt={{card.name}}>
-      </div>
-      <mat-card-content>
-        <mat-card-subtitle class="bandName">{{card.name}},</mat-card-subtitle>
-        <mat-card-subtitle class="bandAddress"> {{card.location}}</mat-card-subtitle>
-        <br>
-        <mat-card-title class="bandName">{{card.name}}</mat-card-title>
-
-        <mat-card-actions>
-          <div class="ratingItem">
-            <a> <img class="playIcon" src="../../../assets/images/playButton.svg" alt=""></a>
-            <p class="ratingNumber">Play sample</p>
-          </div>
-          <button mat-fab>Book now</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </div>
-</section>
-
-<section class="topEvents suggestions">
-  <h1>Events worth checking out</h1>
-  <div class=" suggestionsGallery ">
-
-    <mat-card class="suggestionsBox" *ngFor="let card of events">
-      <div class="hotItem">
-        <img mat-card-image src="../../../assets/images/hotItem.png" alt="">
-      </div>
-      <div class="newItem">
-        <img mat-card-image src="../../../assets/images/newItem.png" alt="">
-      </div>
-      <div class="bandImage">
-        <img src={{card.image}} alt={{card.name}}>
-      </div>
-      <mat-card-content>
-        <mat-card-subtitle class="venueName">{{card.name}},</mat-card-subtitle>
-        <mat-card-subtitle class="venueAddress"> {{card.location}}</mat-card-subtitle>
-        <mat-card-title class="eventName">{{card.name}}</mat-card-title>
-        <mat-card-title class="price">{{card.cost}} entry</mat-card-title>
-
-        <mat-card-actions>
-          <div class="ratingItem">
-            <img src="../../../assets/images/ratingItem.png" alt="">
-            <p class="ratingNumber">{{card.attending}}</p>
-          </div>
-          <button mat-fab>Buy now</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-
-  </div>
->>>>>>> e4437f1aa639aad67bf4e1768474378d207b21da
 </section>

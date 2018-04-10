@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import {BandsDataService} from '../suggestions/bands.service';
 import {SuggestionsComponent} from '../suggestions/suggestions.component';
 import { AppServices } from './../suggestions/app.service';
@@ -10,6 +10,7 @@ import {bandDatabase} from './../suggestions/bandDatabase';
   styleUrls: ['./band-card.component.scss'],
   providers:[BandsDataService,AppServices],
 })
+@Injectable()
 export class BandCardComponent implements OnInit {
   bandz = new AppServices;  
   constructor() { }
