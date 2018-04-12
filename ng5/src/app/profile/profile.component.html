@@ -1,10 +1,14 @@
 <main>
   <div class="banner editable">
-    <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="imageEdit"><img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit</button>
+    <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="imageEdit">
+      <img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
+    </button>
   </div>
   <div class="headWrap editable">
     <!--TODO: Why is this not in the top corner?-->
-    <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="titleEdit"><img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit</button>
+    <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="titleEdit">
+      <img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
+    </button>
     <div class="title">
       <h1>{{ title }}</h1>
       <h2>{{location}}. {{genre}}</h2>
@@ -26,11 +30,19 @@
   <div *ngIf="showContent" class="content">
     <article class="editable">
       <!--TODO: Why is this massive?-->
-      <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="bioEdit"><img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit</button>
-      <p>{{ bio }}</p>
+      <button *ngIf="showBioEditButton()" class="edit-btn" mat-raised-button id="bioEdit" (click)="enableEditBio()">
+        <img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
+      </button>
+      <p *ngIf="!editingBio">{{ bio }}</p>
+      <form *ngIf="editingBio">
+        <textarea ref-textarea>{{bio}}</textarea>
+        <button mat-raised-button (click)="submitBioEdit(textarea.value)">submit</button>
+      </form>
     </article>
     <aside class="editable">
-      <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="MusicEdit"><img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit</button>
+      <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="MusicEdit"><img
+        src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
+      </button>
       <iframe *ngIf="isBand" style="border: 0; width: 350px; height: 470px;"
               src="https://bandcamp.com/EmbeddedPlayer/album=77046358/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
               seamless><a href="http://streetpieces.bandcamp.com/album/everything-you-ever-wanted">Everything You Ever

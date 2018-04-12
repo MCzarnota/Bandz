@@ -7,9 +7,10 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class ProfileComponent implements OnInit {
+  userOwnsThisProfile = true;
+  editingBio = false;
   isBand = true;
   isVenue = false;
-  userOwnsThisProfile = true;
   title = 'Street Pieces';
   banner = 'url("../../assets/images/band.jpg") no-repeat center';
   bio = 'Street Pieces formed in 2012 and soon began playing across their home state. After cutting their teeth on the live circuit they ' +
@@ -65,4 +66,16 @@ export class ProfileComponent implements OnInit {
     this.showGigs = !this.showGigs;
   }
 
+  showBioEditButton() {
+    return this.userOwnsThisProfile && !this.editingBio;
+  }
+
+  enableEditBio() {
+    this.editingBio = true;
+  }
+
+  submitBioEdit(value: string) {
+    this.editingBio = false;
+    this.bio = value;
+  }
 }
