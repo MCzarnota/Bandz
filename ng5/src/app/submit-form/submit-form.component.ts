@@ -22,6 +22,9 @@ export class SubmitFormComponent implements OnInit {
   closeSubmissionForm() {
     console.log('close it');
     // closes the submission form using 'x'
+
+
+
     this.trigger = false;
     this.SubmitEvent.emit(this.trigger);
   }

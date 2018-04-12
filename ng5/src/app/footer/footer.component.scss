@@ -12,6 +12,12 @@ footer{
   bottom:0;
   height: 4em;
 }
+
+.fake-footer{
+  // Ensures the bottom of the screen is free for the footer.
+  height: 4em ;
+}
+
 .social{
   width: 40px;
   height: 40px;

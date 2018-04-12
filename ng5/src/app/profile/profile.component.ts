@@ -9,6 +9,7 @@ import {Component, OnInit} from '@angular/core';
 export class ProfileComponent implements OnInit {
   isBand = true;
   isVenue = false;
+  userOwnsThisProfile = true;
   title = 'Street Pieces';
   banner = 'url("../../assets/images/band.jpg") no-repeat center';
   bio = 'Street Pieces formed in 2012 and soon began playing across their home state. After cutting their teeth on the live circuit they ' +
