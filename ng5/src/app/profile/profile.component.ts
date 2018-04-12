@@ -9,6 +9,7 @@ import {Component, OnInit} from '@angular/core';
 export class ProfileComponent implements OnInit {
   userOwnsThisProfile = true;
   editingBio = false;
+  editingHeadInfo = false;
   isBand = true;
   isVenue = false;
   title = 'Street Pieces';
@@ -77,5 +78,20 @@ export class ProfileComponent implements OnInit {
   submitBioEdit(value: string) {
     this.editingBio = false;
     this.bio = value;
+  }
+
+  showHeadEditButton() {
+    return this.userOwnsThisProfile && !this.editingHeadInfo;
+  }
+
+  enableEditHead() {
+    this.editingHeadInfo = true;
+  }
+
+  submitHeadEdit(title: string, location: string, genre: string) {
+    this.editingHeadInfo = false;
+    this.title = title;
+    this.location = location;
+    this.genre = genre;
   }
 }

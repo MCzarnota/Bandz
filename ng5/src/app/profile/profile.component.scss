@@ -26,6 +26,11 @@ main {
     color: $color-lighter;
     margin-bottom: 20px;
 
+    form{
+      input{
+      }
+    }
+
     h1 {
       font-weight: bold;
       margin: 0;
@@ -90,6 +95,11 @@ main {
       height: 400px;
     }
   }
+}
+
+form{
+  display: flex;
+  flex-direction: column;
 }
 
 @import "../../variables.scss";

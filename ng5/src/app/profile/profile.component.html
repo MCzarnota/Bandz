@@ -6,13 +6,21 @@
   </div>
   <div class="headWrap editable">
     <!--TODO: Why is this not in the top corner?-->
-    <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="titleEdit">
+    <button *ngIf="showHeadEditButton()" class="edit-btn" mat-raised-button id="titleEdit" (click)="enableEditHead()">
       <img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
     </button>
-    <div class="title">
+    <div class="title" *ngIf="!editingHeadInfo">
       <h1>{{ title }}</h1>
       <h2>{{location}}. {{genre}}</h2>
     </div>
+    <form *ngIf="editingHeadInfo">
+      <input type="text" value="{{title}}" ref-title_input>
+      <input type="text" value="{{location}}" ref-location_input><input type="text" value="{{genre}}" ref-genre_input>
+      <button mat-raised-button (click)="submitHeadEdit(title_input.value, location_input.value, genre_input.value)">
+        submit
+      </button>
+    </form>
+
     <div class="buttons">
       <button mat-raised-button>Message</button>
       <button mat-raised-button="" id="rate" (click)="rate()">Rate
@@ -35,8 +43,8 @@
       </button>
       <p *ngIf="!editingBio">{{ bio }}</p>
       <form *ngIf="editingBio">
-        <textarea ref-textarea>{{bio}}</textarea>
-        <button mat-raised-button (click)="submitBioEdit(textarea.value)">submit</button>
+        <textarea ref-bio_text>{{bio}}</textarea>
+        <button mat-raised-button (click)="submitBioEdit(bio_text.value)">submit</button>
       </form>
     </article>
     <aside class="editable">
