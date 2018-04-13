@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {MatSnackBarConfig} from '@angular/material';
+import { AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-root',

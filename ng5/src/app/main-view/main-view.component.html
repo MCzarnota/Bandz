@@ -1,60 +1,44 @@
-
 <div class="wrapper">
-      <div class="content">
-        <div class="innerWrapper">
-          <form>
-            <div class="searchWrapper">
-              <img src="../../assets/images/search.svg">
-              <input  (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text"
-                     placeholder="Search&#8226;Anytime">
-            </div>
-<<<<<<< HEAD
-            </form>
-=======
-
-          </form>
->>>>>>> abcfe1326740062d29c6a61f0128246b3648d714
-          <div class="additionalInformationWrapper" [style.display]="isActive() ? 'block': 'none'">
-            <div class="innerWrapper">
-              <h3 class="title">
-                Explore
-                <b>BANDS</b>
-              </h3>
-              <button class="myButton">All</button>
-              <button class="myButton">Bands</button>
-              <button class="myButton">Events</button>
-            </div>
-          </div>
+  <div class="content">
+    <div class="innerWrapper">
+      <form>
+        <div class="searchWrapper">
+          <img src="../../assets/images/search.svg">
+          <input (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder="Search&#8226;Anytime">
         </div>
-<<<<<<< HEAD
-       </div>
-=======
-
+      </form>
+      <div class="additionalInformationWrapper" [style.display]="isActive() ? 'block': 'none'">
+        <div class="innerWrapper">
+          <h3 class="title">
+            Explore
+            <b>BANDS</b>
+          </h3>
+          <button class="myButton">All</button>
+          <button class="myButton">Bands</button>
+          <button class="myButton">Events</button>
+        </div>
       </div>
->>>>>>> abcfe1326740062d29c6a61f0128246b3648d714
-      <section class="filterContainer">
-          <div class="filterWrapper">
-            <button  class ="filterButton"mat-button>Dates</button>
-            <button class ="filterButton" mat-button>Price</button>
-            <button class ="filterButton" mat-button>Popularity</button>
-            <button class ="filterButton" mat-button>Distance</button>
-            <button class ="filterButton" mat-button>Events</button>
-            <button class ="filterButton" mat-button>Bands</button>
-          </div>
-      </section>
-
-
+    </div>
+  </div>
+  <section class="filterContainer">
+    <div class="filterWrapper">
+      <button class="filterButton" mat-button>Dates</button>
+      <button class="filterButton" mat-button>Price</button>
+      <button class="filterButton" mat-button>Popularity</button>
+      <button class="filterButton" mat-button>Distance</button>
+      <button class="filterButton" mat-button>Events</button>
+      <button class="filterButton" mat-button>Bands</button>
+    </div>
+  </section>
   <section class="searchResultsContainer">
-      <h1>Bands</h1>
-      <h2>Discover best bands accross Australia</h2>
+    <h1>Bands</h1>
+    <h2>Discover best bands accross Australia</h2>
     <main-band-suggestions></main-band-suggestions>
     <h1>Events</h1>
     <h2>Book and experience great events </h2>
-    <main-event-suggestions ></main-event-suggestions>
+    <main-event-suggestions></main-event-suggestions>
   </section>
-  <aside class="mapContainer"  [class.fixed]="fixed">
-    
-      <agm-map  [latitude]="latitude" [longitude]="longitude" [class.fixed]="fixed"></agm-map>
+  <aside class="mapContainer">
+    <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>
   </aside>
 </div>
-

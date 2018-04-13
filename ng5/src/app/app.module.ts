@@ -77,7 +77,8 @@ import { StarRatingModule } from 'angular-star-rating';
     FrontViewComponent,
     ProfileComponent,
     MainEventSuggestionsComponent,
-    MainBandSuggestionsComponent
+    MainBandSuggestionsComponent,
+    BandProfileComponent,
   ],
   imports: [
     BrowserModule,
