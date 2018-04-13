@@ -9,6 +9,7 @@ import {HostListener} from '@angular/core';
 })
 export class SubmitFormComponent implements OnInit {
   accountType = 'for a BANDZ account';
+  onSwap = false;
   fanIsChosen;
   venueIsChosen;
   bandIsChosen;
@@ -18,12 +19,18 @@ export class SubmitFormComponent implements OnInit {
   @Output() public SubmitEvent = new EventEmitter();
   @Output() public submissionSecondStepEvent = new EventEmitter();
   @Output() public theTypeOfTheAccountEvent = new EventEmitter();
-
+  @Output() public openLoginFormEvent = new EventEmitter();
   closeSubmissionForm() {
     console.log('close it');
     // closes the submission form using 'x'
     this.trigger = false;
     this.SubmitEvent.emit(this.trigger);
+  }
+  redirecttoLogin() {
+    // redirects the user to LoginForm
+    this.closeSubmissionForm();
+    this.onSwap = true;
+    this.openLoginFormEvent.emit(this.onSwap);
   }
 
   showRegistrationForm(event) {

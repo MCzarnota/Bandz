@@ -36,11 +36,19 @@ snack-bar-container {
     height: auto;
     min-width: initial;
   }
-  &.snack-bar-color {
+  &.warning {
     color: white !important;
     background: $color-accent !important;
     button {
       color: black !important;
     }
   }
+  &.confirm {
+    color: white !important;
+    background: #7FB800 !important;
+    button {
+      color: white !important;
+    }
+  }
+
 }

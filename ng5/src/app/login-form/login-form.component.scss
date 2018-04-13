@@ -81,7 +81,6 @@ a {
   font-size: 1.5em;
   cursor: pointer;
   outline: none;
-
 }
 
 /** CLOSE BUTTON STYLING **/
@@ -133,3 +132,46 @@ a {
 }
 
 /** !CLOSE X STYLING **/
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.42);
+  flex: 1;
+}
+////FORMS STYLING
+//overriding color for inputs
+mat-error {
+  color: black !important;
+}
+mat-hint{
+  color: 	#006400 !important;
+}
+.pending{
+  color:  white !important;
+  }
+
+/deep/ .mat-focused .mat-form-field-ripple {
+  background-color: white !important;
+}
+
+/deep/ .mat-focused .mat-form-field-ripple {
+  background-color: white !important;
+}
+
+/deep/ .mat-form-field-invalid .mat-form-field-ripple {
+  background-color: black;
+}
+
+// !overriding color for inputs
+/deep/ .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+/deep/ .mat-form-field:nth-of-type(1) {
+  padding-bottom: 1.25em !important;
+}
+
+.passwordMeterContainer {
+  padding-bottom: 1.25em;
+}

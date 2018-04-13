@@ -1,43 +1,17 @@
 declare var require: any;
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  Input,
-  ChangeDetectionStrategy
-} from '@angular/core';
-import {
-  BrowserAnimationsModule
-} from '@angular/platform-browser/animations';
-import {
-  MatFormFieldModule
-} from '@angular/material/form-field';
-import {
-  MatSelectModule
-} from '@angular/material/';
-import {
-  MatIconModule
-} from '@angular/material/';
-import {
-  FormControl,
-  Validators,
-  FormGroup,
-  FormBuilder,
-  FormGroupDirective,
-  NgForm
-} from '@angular/forms';
-import {
-  ErrorStateMatcher
-} from '@angular/material/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule} from '@angular/material/';
+import { MatIconModule} from '@angular/material/';
+import { FormControl, Validators, FormGroup, FormBuilder, FormGroupDirective, NgForm} from '@angular/forms';
+import { ErrorStateMatcher} from '@angular/material/core';
 import {MatDividerModule} from '@angular/material/divider';
-import {Custom} from './custom';
 import * as bar from '../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
-// import { UserService } from '../shared/user.service';
-
-// /** Error when invalid control is dirty, touched, or submitted. */
+import {AuthService} from '../../services/auth.service';
 export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
+  // /** Error when invalid control is dirty, touched, or submitted. */
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
@@ -52,7 +26,9 @@ export class MyErrorStateMatcherComponent implements ErrorStateMatcher {
 })
 export class SubmissionFormNextStepComponent implements OnInit {
   matcher = new MyErrorStateMatcherComponent();
+  public onSwap = false;
   public account = {
+    username: null,
     password: null
   };
   public myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00', '#00C853'];
@@ -60,11 +36,11 @@ export class SubmissionFormNextStepComponent implements OnInit {
   public registrationForm: FormGroup;
   // checks for pattern => at least 1 letter, 1 number, 1 special
   private readonly emailRegex = '(?=\\D*\\d)(?=.*?[a-zA-Z]).*[\\W_].*';
-  isPasswordStrong;
-  trigger = false;
+  public isPasswordStrong;
+  public trigger = false;
   @Input() accountType;
   @Output() public submitSecondStepEvent = new EventEmitter();
-
+  @Output() public openLoginFormEvent2 = new EventEmitter();
   closeSecondSubmissionForm() {
     // closes SecondStep submission window
     this.trigger = false;
@@ -72,12 +48,20 @@ export class SubmissionFormNextStepComponent implements OnInit {
   }
 
   send() {
-    // send the inputs values using JSON to the server
-    this.openSnackBar();
+    // REGISTER USER
+    const user = {
+      username: this.account.username,
+      password: this.account.password
+    };
+    this.authService.registerUser(user).subscribe(data => {
+      if (data.success) {
+        this.openSnackBar('User has been created', 'confirm');
+      } else {
+        this.openSnackBar(data.message, 'warning');
+      }
+    });
     this.closeSecondSubmissionForm();
     const isAccountCreated = true;
-    // this.userService.registerUser(this.registrationForm.value);
-    console.log(this.registrationForm.value);
   }
 
   hasError(field: string, error: string) {
@@ -97,23 +81,30 @@ export class SubmissionFormNextStepComponent implements OnInit {
     return this.registrationForm.get('email') as FormControl;
   }
 
-  openSnackBar() {
+  openSnackBar(msg: String, color: String) {
     // open Box that shows if the account has been created
-    this.snackBar.open('Account has been created.', 'Close', {
+    this.snackBar.open( msg.toString() , 'Close', {
       duration: 2000,
-      panelClass: ['snack-bar-color']
+      panelClass: [color.toString()]
     });
   }
+  redirecttoLogin() {
+    // redirects the user to LoginForm
+    this.closeSecondSubmissionForm();
+    this.onSwap = true;
+    this.openLoginFormEvent2.emit(this.onSwap);
+  }
 
-  constructor(private readonly formBuilder: FormBuilder, private snackBar: MatSnackBar) {
-    this.isPasswordStrong = require('../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component');
-    this.registrationForm = formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private snackBar: MatSnackBar,
+    private authService: AuthService) {
+      this.isPasswordStrong = require('../../../node_modules/ng2-password-strength-bar/lib/passwordStrengthBar.component');
+      this.registrationForm = formBuilder.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30), Validators.pattern(this.emailRegex)]]
     });
   }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

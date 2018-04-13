@@ -7,6 +7,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PasswordStrengthBarModule} from 'ng2-password-strength-bar';
 import {Routes, RouterModule} from '@angular/router';
 import {AgmCoreModule} from '@agm/core';
+import {AuthService} from '../services/auth.service';
+import { HttpModule } from '@angular/http';
+import { AuthGuard} from '../guards/auth.guard';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -39,7 +42,8 @@ import {SubmissionFormNextStepComponent} from './submission-form-next-step/submi
 import {EventCardComponent} from './front-view/event-card/event-card.component';
 import {MainViewComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
-import { ProfileComponent } from './profile/profile.component';
+import { BandProfileComponent } from './bandProfile/profile.component';
+import { ProfileComponent} from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
 import {BandsDataService} from './front-view/suggestions/bands.service';
 
@@ -62,6 +66,7 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
     EventCardComponent,
     MainViewComponent,
     FrontViewComponent,
+    BandProfileComponent,
     ProfileComponent
   ],
   imports: [
@@ -81,6 +86,7 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
     PasswordStrengthBarModule,
     MatDividerModule,
     MatSnackBarModule,
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
     })
@@ -94,7 +100,14 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
   ],
   entryComponents: [
   ],
-  providers: [DataService, EventsDataService, BandSliderComponent, BandsDataService, EventsDataService],
+  providers: [
+    DataService,
+    EventsDataService,
+    BandSliderComponent,
+    BandsDataService,
+    EventsDataService,
+    AuthService,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 
