@@ -11,15 +11,21 @@ private eventRatingNo: number;
 private newItem: boolean;
 private hotItem: boolean;
 
-constructor(eventName: string, venueAddress: string, venueName: string, eventPrice: number, eventRatingNo: number, newItem: boolean,
-    hotItem: boolean) {
-        this.eventName = eventName;
-        this.venueAddress= venueAddress;
-        this.venueName = venueName;
-        this.eventPrice = eventPrice;
-        this.eventRatingNo = eventRatingNo;
-        this.newItem = newItem;
-        this.hotItem = hotItem;
+
+
+constructor(eventName:string,venueAddress:string,venueName:string,eventPrice:number,eventRatingNo:number,newItem:boolean,
+    hotItem:boolean){
+        this.eventName=eventName;
+        this.venueAddress=venueAddress;
+        this.venueName=venueName;
+        this.eventPrice=eventPrice;
+        this.eventRatingNo=eventRatingNo;
+        this.newItem=newItem;
+        this.hotItem=hotItem;
+
+        
+      
+       
 }
 
 public setEventName(data) {
@@ -66,4 +72,10 @@ public setHotItem(data) {
 public getHotItem() {
     return this.hotItem;
 }
+// public getEventsArrayName(){
+
+//     for(let x of this.events){
+//         return this.events[0]
+//     }
+// }
 }

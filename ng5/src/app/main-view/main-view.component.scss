@@ -1,41 +1,358 @@
-.searchContainer {
-  background-color: red;
-  grid-area: searchInput;
-  .search-wrapper {
-    position: sticky;
-  }
-}
+@import "../../variables.scss";
 
 .mapContainer {
+
   display: grid;
-  grid-area: map;
+    grid-column: 3;
+    grid-row: 3/auto;
+    height: 60%;
+    width:30vw;
+    background-color: white;
+    margin:auto;
+    position: fixed;
+    right: 3vw;
+    top: 16em;
+    padding:15px;
+    overflow: hidden;
   agm-map {
-    width: 100%;
-    height: 90%;
-    justify-self: center;
-    align-self: center;
-    overflow: hidden; //code added to prevent scroll
-    position: absolute;
+    height: 100%;
+    position: relative; 
+    align-content: center;
+    
   }
 }
 
 .searchResultsContainer {
-  height: 100vh;
-  background-color: yellow;
-  grid-area: results;
-  overflow: auto; //code added
+  margin-top: 1px;
+  display: grid;
+  grid-column: 1/3;
+  grid-row:3/auto;
+  
 }
 
 .filterContainer {
-  background-color: gray;
-  grid-area: filters;
+  grid-column: auto;
+  grid-row: 2;
+  min-width: 98.5vw;
+  background-color: white;
+  margin-top: 2px;
+  padding: 5px;
+  height: 3em;
+  .filterWrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    .filterButton{
+        border-radius: 5%;
+        border:1px rgb(134, 174, 233) solid;
+        padding: 5px;
+        height: 2em;
+        font-family: $font-heading;
+        display: block;
+        text-align: center;
+        line-height: 0 !important;
+    }
+  }
+  
 }
 
 .wrapper {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr 4fr;
-  grid-template-areas: "searchInput  searchInput " "filters map" "results   map "
+  position: absolute;
+  grid-template-rows: repeat(1fr 1fr auto);
+  grid-template-columns: 4fr 1fr;
+  }
+
+  .content {
+    height: 5em;
+    bottom: 25%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .additionalInformationWrapper {
+      position: absolute;
+      height:200px;
+      background: white;
+      width: 40vw;
+      z-index: 3;
+      .innerWrapper {
+        width: 40vw;
+        margin: 0 0 0 53px;
+        .myButton {
+          -moz-box-shadow: inset 0 1px 0 0 #ffffff;
+          -webkit-box-shadow: inset 0 1px 0 0 #ffffff;
+          box-shadow: inset 0 1px 0 0 #ffffff;
+          background-color: transparent;
+          -moz-border-radius: 6px;
+          -webkit-border-radius: 6px;
+          border-radius: 6px;
+          border: 1px solid #dcdcdc;
+          display: inline-block;
+          cursor: pointer;
+          color: #666666;
+          font-size: 2rem;
+          padding: 6px 24px;
+          text-decoration: none;
+          text-shadow: 0 1px 0 #ffffff;
+        }
+        .myButton:hover {
+          background-color: transparent;
+        }
+        .myButton:active {
+          position: relative;
+          top: 1px;
+        }
+        h3 {
+          font-weight: 700;
+          color: #484848;
+          font-size: 1rem;
+          line-height: calc(3vw + 7px);
+        }
+      }
+    }
+    form {
+      min-width: 100vw;
+      height: 5em;
+      background: white;
+      margin-top: 2px;
+      color: $color-accent;
+      display: flex;
+      justify-content: space-between;
+      -webkit-box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.4);
+      .searchWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50vw;
+      }
+      .text-box {
+        background: white;
+        color: $color-light;
+        caret-color: $color-accent;
+        border: none;
+        font-size: 2em;
+        width: inherit;
+        border:1px rgb(177, 177, 190) solid;
+        border-radius: 2%;
+        -webkit-box-shadow: 0px 4px 7px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 4px 7px -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 4px 7px -2px rgba(0,0,0,0.75);
+      }
+      .text-box::selection {
+        background: $color-accent;
+        color: #ffffff;
+        
+      }
+      .text-box:focus{
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        box-shadow: none;
+      }
+      img {
+        width: 5%;
+      }
+      .btn {
+        background: $color-accent;
+        color: $color-light;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.5em;
+        cursor: pointer;
+        outline: none;
+        margin: auto;
+        height: 2em;
+        align-content: center;
+        margin-left: 2em;
+        width: 20%;
+      }
+      .btn::-moz-focus-inner {
+        // Gets rid of annoying Firefox shit
+        border: 0;
+      }
+      .btn:active {
+        background: #fff;
+        outline: none;
+      }
+      .btn:focus {
+        outline: 0;
+      }
+    }
+  }
+
+//EventCardSuggestionsComponent  CSS override
+
+
+.suggestions {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  color: white;
+  font-family: $font-heading;
+  
+}
+p{
+  display: block;
+  height: 1em;
+  color: black;
+}
+
+.suggestionsGallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: auto;
+  justify-items: center;
+  grid-gap: 1em;
+  width: 63vw;
+  
+}
+
+.suggestionsBox {
+  min-width: 300px;
+  min-height: 400px;
+  
+  
+}
+
+.eventImage {
+  background-size: cover;
+  background: no-repeat center;
+  position: relative;
+  min-width: 100%;
+  min-height: 80%;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: inherit;
+  height: inherit;
+}
+
+.hotItem {
+  position: absolute;
+  left: 3em;
+  top: 12em;
+  height: 30px;
+  width: 30px;
+  z-index: 1;
+  // border: 1px red solid;
+}
+
+.newItem {
+  position: absolute;
+  height: 5em;
+  width: 3em;
+  z-index: 2;
+  // border: 1px red solid;
+}
+
+.ratingItem {
+  width: 50px;
+  height: 20px;
+  display: inline;
+  position: relative;
+  left: 1em;
+  // border: 1px red solid;
+}
+
+.ratingNumber {
+  display: inline-block;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.venueAddress,
+.venueName,.eventName{
+  display: inline;
+  font-weight: bold;
+}
+
+.playIcon {
+  width: 4em;
+  height: 4em;
+}
+
+.playIcon:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.mat-fab {
+  background-color: #fc2840;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  display: inline-block;
+  position: absolute;
+  width: 6em;
+  height: 6em;
+  left: 12em;
+  bottom: 2em;
+
+}
+
+.mat-fab:after {
+  content: "";
+  background: white;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  padding-top: 250%;
+  padding-left: 200%;
+  margin-left: -20px !important;
+  margin-top: -200%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.mat-fab:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+//Bands CSS override
+
+.topBands{
+  margin-top: 3em;
+  height: 100%;
+}
+.bandName, .bandAddress {
+  display: inline;
+  font-weight: bold;
+}
+
+.playIcon {
+  width: 4.5em;
+  height: 4.5em;
+}
+
+.playIcon:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.bandImage {
+  background-size: cover;
+  background: no-repeat center;
+  position: relative;
+  min-width: 100%;
+  min-height: 80%;
+  width: 100%;
+  height: 100%;
 }

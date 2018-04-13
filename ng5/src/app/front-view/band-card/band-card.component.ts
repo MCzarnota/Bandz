@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import {BandsDataService} from '../suggestions/bands.service';
 import {SuggestionsComponent} from '../suggestions/suggestions.component';
+import { AppServices } from './../suggestions/app.service';
+import {bandDatabase} from './../suggestions/bandDatabase';
+
 @Component({
   selector: 'app-band-card',
   templateUrl: './band-card.component.html',
   styleUrls: ['./band-card.component.scss'],
-  providers: [BandsDataService],
+  providers:[BandsDataService,AppServices],
 })
+@Injectable()
 export class BandCardComponent implements OnInit {
-  band = new BandsDataService('Street Pieces', 'Brisbane', 'Alternative Rock', 40, false, false);
+  bandz = new AppServices;  
   constructor() { }
 
   ngOnInit() {

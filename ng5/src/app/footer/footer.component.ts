@@ -1,7 +1,5 @@
 import { Component, OnInit, Inject, Input, HostListener, EventEmitter, Output } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { SubmitFormComponent} from '../submit-form/submit-form.component';
-import {HeaderComponent} from '../header/header.component';
 
 @Component({
   selector: 'app-footer',

@@ -1,21 +1,31 @@
 @import "../../variables.scss";
 
-footer {
-  z-index: 2;
+footer{
   min-width: 100%;
   background-color: #fc2840;
   display: flex;
   justify-content: space-between;
   padding: 3em;
   overflow: hidden;
+  z-index: 2;
+  position: fixed;
+  bottom:0;
+  height: 4em;
 }
+
+.fake-footer{
+  // Ensures the bottom of the screen is free for the footer.
+  height: 4em ;
+}
+
 .social{
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   display: block;
-  padding-right: 10em;
   position: relative;
   bottom: 1em;
+  right: 3em;
+
   a{
     width: inherit;
     height: inherit;

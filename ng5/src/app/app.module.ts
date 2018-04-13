@@ -8,7 +8,6 @@ import {PasswordStrengthBarModule} from 'ng2-password-strength-bar';
 import {Routes, RouterModule} from '@angular/router';
 import {AgmCoreModule} from '@agm/core';
 import {AuthService} from '../services/auth.service';
-import { HttpModule } from '@angular/http';
 import { AuthGuard} from '../guards/auth.guard';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
@@ -40,12 +39,19 @@ import {SuggestionsComponent} from './front-view/suggestions/suggestions.compone
 import {BandCardComponent} from './front-view/band-card/band-card.component';
 import {SubmissionFormNextStepComponent} from './submission-form-next-step/submission-form-next-step.component';
 import {EventCardComponent} from './front-view/event-card/event-card.component';
-import {MainViewComponent} from './main-view/main-view.component';
+import {MainViewComponent, MainEventSuggestionsComponent, MainBandSuggestionsComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
 import { BandProfileComponent } from './bandProfile/profile.component';
 import { ProfileComponent} from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
 import {BandsDataService} from './front-view/suggestions/bands.service';
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions, HttpModule } from '@angular/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {AppServices} from './front-view/suggestions/app.service';
 
 
 @NgModule({
@@ -66,8 +72,9 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
     EventCardComponent,
     MainViewComponent,
     FrontViewComponent,
-    BandProfileComponent,
-    ProfileComponent
+    ProfileComponent,
+    MainEventSuggestionsComponent,
+    MainBandSuggestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -106,8 +113,7 @@ import {BandsDataService} from './front-view/suggestions/bands.service';
     BandSliderComponent,
     BandsDataService,
     EventsDataService,
-    AuthService,
-    AuthGuard],
+    AppServices],
   bootstrap: [AppComponent]
 })
 

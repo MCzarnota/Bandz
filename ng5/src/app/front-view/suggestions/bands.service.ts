@@ -7,16 +7,26 @@ export class BandsDataService{
 private bandAddress:string;
 private bandRatingNo:number;
 private bandGenre:string;
+private bandPrice:number;
+private bandAvailability:boolean;
+private bandDescription:string;
+private bandMusic:string;
+private bandImage:string;
 private newItem:boolean;
 private hotItem:boolean;
 
-    constructor(bandName:string,bandAddress:string,bandGenre:string,bandRatingNo:number,newItem:boolean,hotItem:boolean){
+    constructor(bandName:string,bandAddress:string,bandImage:string,bandMusic:string,bandDescription:string,bandAvailability:boolean,bandGenre:string,bandPrice:number,bandRatingNo:number,newItem:boolean,hotItem:boolean){
         this.bandName=bandName;
         this.bandAddress=bandAddress;
+        this.bandImage = bandImage;
         this.bandGenre=bandGenre;
         this.bandRatingNo=bandRatingNo;
         this.newItem=newItem;
         this.hotItem=hotItem;
+        this.bandPrice = bandPrice;
+        this.bandAvailability = bandAvailability;
+        this.bandDescription = bandDescription;
+        this.bandMusic=bandMusic;
 
     }
     public setBandName(data){

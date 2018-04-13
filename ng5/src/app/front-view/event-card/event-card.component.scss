@@ -1,11 +1,36 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../../../variables.scss";
+
+
+.suggestions {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  display: block;
+  height: 1em;
+  color: black;
+}
+
+.suggestionsGallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  grid-gap: 1em;
+ 
+
+}
 
 .suggestionsBox {
   min-width: 300px;
   min-height: 400px;
 }
 
-.bandImage {
+.eventImage {
   background-size: cover;
   background: no-repeat center;
   position: relative;
@@ -27,7 +52,7 @@ img {
   height: 30px;
   width: 30px;
   z-index: 1;
-
+  // border: 1px red solid;
 }
 
 .newItem {
@@ -35,6 +60,7 @@ img {
   height: 5em;
   width: 3em;
   z-index: 2;
+  // border: 1px red solid;
 }
 
 .ratingItem {
@@ -43,6 +69,7 @@ img {
   display: inline;
   position: relative;
   left: 1em;
+  // border: 1px red solid;
 }
 
 .ratingNumber {
@@ -54,7 +81,7 @@ img {
 }
 
 .venueAddress,
-.venueName, .bandName, .bandAddress {
+.venueName,.eventName{
   display: inline;
   font-weight: bold;
 }

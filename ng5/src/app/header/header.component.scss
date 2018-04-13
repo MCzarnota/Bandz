@@ -24,7 +24,7 @@ ul {
   margin: 0;
   color: #fff;
   font-size: 1.2em;
-  li {
+  li:not(.Logo) {
     padding: .5em 2em;
     .blacks {
       background-color: green;
