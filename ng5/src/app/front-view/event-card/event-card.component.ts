@@ -10,13 +10,12 @@ import { RouterLink } from '@angular/router';
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
   styleUrls: ['./event-card.component.scss'],
-  providers:[EventsDataService,AppServices]
+  providers: [EventsDataService, AppServices]
 })
 @Injectable()
 export class EventCardComponent implements OnInit {
   eventz = new AppServices;
   constructor() {
-   
     }
   ngOnInit() {
   }
