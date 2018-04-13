@@ -23,12 +23,12 @@
 }
 .fixed {
   position: fixed;
-  transition: all 2s;
+  transition: all 1.5s;
   transform: translate(0px, -35%);
   height: 80%;
 }
 .normal {
-  transition: all 2s;
+  transition: all 0.5s;
   height: 60%;
 }
 

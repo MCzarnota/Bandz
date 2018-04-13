@@ -14,22 +14,6 @@ import { bandDatabase } from "../front-view/suggestions/bandDatabase";
 import { DOCUMENT } from "@angular/platform-browser";
 import * as $ from "jquery";
 
-var fixed = false;
-$(document).scroll(function() {
-  if ($(this).scrollTop() >= 200) {
-    if (!fixed) {
-      fixed = true;
-      $(".mapContainer").removeClass("normal");
-      $(".mapContainer").addClass("fixed"); // Or set top:20px; in CSS
-    } // It won't matter when static
-  } else {
-    if (fixed) {
-      fixed = false;
-      $(".mapContainer").removeClass("fixed");
-      $(".mapContainer").addClass("normal");
-    }
-  }
-});
 @Component({
   selector: "app-main-view",
   templateUrl: "./main-view.component.html",
@@ -37,7 +21,6 @@ $(document).scroll(function() {
   providers: [AppServices]
 })
 export class MainViewComponent implements OnInit {
-  title = "jquert test";
   latitude: number = -27.46888;
   longitude: number = 153.02122;
   inputActive = false;
@@ -88,3 +71,21 @@ export class MainBandSuggestionsComponent extends BandCardComponent
 
   ngOnInit() {}
 }
+
+//Jquery operating the map changes when scrolling
+var fixed = false;
+$(document).scroll(function() {
+  if ($(this).scrollTop() >= 200) {
+    if (!fixed) {
+      fixed = true;
+      $(".mapContainer").removeClass("normal");
+      $(".mapContainer").addClass("fixed"); // Or set top:20px; in CSS
+    } 
+  } else {
+    if (fixed) {
+      fixed = false;
+      $(".mapContainer").removeClass("fixed");
+      $(".mapContainer").addClass("normal");
+    }
+  }
+});
