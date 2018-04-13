@@ -9,7 +9,7 @@
     <div class="cards">
       <div class="fanSection card">
         <!-- card -->
-        <div id="fanCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:fanIsFlipped}"
+        <div id="fanCard" (click)="showRegistrationForm($event)"
              class="card-front fanCard thumbnail">
         </div>
         <!-- /card -->
@@ -25,7 +25,7 @@
 
       <div class="bandSection card">
         <!-- card -->
-        <div id="bandCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:bandIsFlipped}"
+        <div id="bandCard" (click)="showRegistrationForm($event)"
              class="card-front bandCard thumbnail">
         </div>
         <!-- /card -->
@@ -40,7 +40,7 @@
 
       <div class="venueManagerSection card">
         <!-- card -->
-        <div id="venueCard" (click)="showRegistrationForm($event)" [ngClass]="{rotate:venueIsFlipped}"
+        <div id="venueCard" (click)="showRegistrationForm($event)"
              class="card-front venueCard thumbnail">
         </div>
         <!-- /card -->
@@ -53,7 +53,7 @@
     </div>
 
     <footer>
-      <p> Already have a BANDZ account? <a href="#">Log in</a></p>
+      <p> Already have a BANDZ account? <a (click)="redirecttoLogin()" href="#">Log in </a> </p>
     </footer>
 
   </section>

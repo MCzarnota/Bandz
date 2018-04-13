@@ -8,11 +8,11 @@ import {bandDatabase} from './../suggestions/bandDatabase';
   selector: 'app-band-card',
   templateUrl: './band-card.component.html',
   styleUrls: ['./band-card.component.scss'],
-  providers:[BandsDataService,AppServices],
+  providers: [BandsDataService, AppServices],
 })
 @Injectable()
 export class BandCardComponent implements OnInit {
-  bandz = new AppServices;  
+  bandz = new AppServices;
   constructor() { }
 
   ngOnInit() {

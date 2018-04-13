@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService} from '../../services/auth.service';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
-  userOwnsThisProfile = true;
-  editingBio = false;
-  editingHeadInfo = false;
+
+export class BandProfileComponent implements OnInit {
   isBand = true;
   isVenue = false;
   title = 'Street Pieces';
@@ -67,31 +64,4 @@ export class ProfileComponent implements OnInit {
     this.showGigs = !this.showGigs;
   }
 
-  showBioEditButton() {
-    return this.userOwnsThisProfile && !this.editingBio;
-  }
-
-  enableEditBio() {
-    this.editingBio = true;
-  }
-
-  submitBioEdit(value: string) {
-    this.editingBio = false;
-    this.bio = value;
-  }
-
-  showHeadEditButton() {
-    return this.userOwnsThisProfile && !this.editingHeadInfo;
-  }
-
-  enableEditHead() {
-    this.editingHeadInfo = true;
-  }
-
-  submitHeadEdit(title: string, location: string, genre: string) {
-    this.editingHeadInfo = false;
-    this.title = title;
-    this.location = location;
-    this.genre = genre;
-  }
 }

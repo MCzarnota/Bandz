@@ -7,6 +7,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {PasswordStrengthBarModule} from 'ng2-password-strength-bar';
 import {Routes, RouterModule} from '@angular/router';
 import {AgmCoreModule} from '@agm/core';
+import {AuthService} from '../services/auth.service';
+import { AuthGuard} from '../guards/auth.guard';
 /** Material IO imports */
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -39,13 +41,14 @@ import {SubmissionFormNextStepComponent} from './submission-form-next-step/submi
 import {EventCardComponent} from './front-view/event-card/event-card.component';
 import {MainViewComponent, MainEventSuggestionsComponent, MainBandSuggestionsComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
-import { ProfileComponent } from './profile/profile.component';
+import { BandProfileComponent } from './bandProfile/profile.component';
+import { ProfileComponent} from './profile/profile.component';
 import { EventsDataService } from './front-view/suggestions/events.service';
 import {BandsDataService} from './front-view/suggestions/bands.service';
-import { Injectable }     from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions, HttpModule } from '@angular/http';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {AppServices} from './front-view/suggestions/app.service';
@@ -108,7 +111,13 @@ import { StarRatingModule } from 'angular-star-rating';
   ],
   entryComponents: [
   ],
-  providers: [DataService,EventsDataService,BandSliderComponent,BandsDataService,EventsDataService,AppServices],
+  providers: [
+    DataService,
+    EventsDataService,
+    BandSliderComponent,
+    BandsDataService,
+    EventsDataService,
+    AppServices],
   bootstrap: [AppComponent]
 })
 
