@@ -1,5 +1,7 @@
 @import "../../variables.scss";
-
+*{
+  font-family: $font-heading;
+}
 .mapContainer {
 
   display: grid;
@@ -21,6 +23,16 @@
     
   }
 }
+.fixed{
+  position: fixed;
+  transition: all 2s;
+  transform: translate(0px,-35%);
+  height: 80%;
+}
+.normal{
+  transition: all 2s;
+  height: 60%;
+}
 
 .searchResultsContainer {
   margin-top: 1px;
@@ -33,7 +45,7 @@
 .filterContainer {
   grid-column: auto;
   grid-row: 2;
-  min-width: 98.5vw;
+  min-width: 100vw;
   background-color: white;
   margin-top: 2px;
   padding: 5px;
@@ -43,11 +55,12 @@
     justify-content: space-around;
     width: 40vw;
     .filterButton{
-        border-radius: 5%;
-        border:1px rgb(134, 174, 233) solid;
+        border-radius: 10%;
+        border:1px rgb(119, 125, 134) solid;
         padding: 5px;
         height: 2em;
         font-family: $font-heading;
+        font-weight: 600;
         display: block;
         text-align: center;
         line-height: 0 !important;
@@ -198,11 +211,21 @@
   padding: 0;
 }
 
-h1{
+h1,h2{
   color: white;
   font-family: $font-heading;
   
 }
+h1{
+  font-size: 2em;
+}
+h2{
+  color: rgb(204, 188, 188);
+  margin-top: -0.5em;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
 p{
   display: block;
   height: 1em;
@@ -244,7 +267,7 @@ img {
 .hotItem {
   position: absolute;
   left: 3em;
-  top: 12em;
+  top: 16em;
   height: 30px;
   width: 30px;
   z-index: 1;
@@ -260,16 +283,19 @@ img {
 }
 
 .ratingItem {
-  width: 50px;
-  height: 20px;
-  display: inline;
-  position: relative;
-  left: 1em;
-  // border: 1px red solid;
-}
+  padding:0;
+  margin-top:-1em;
+  align-content: center;
+  vertical-align: middle;
+ }
 
-.ratingNumber {
+.ratingImage:hover{
+  cursor: pointer;
+}
+.ratingImage,.ratingNumber {
   display: inline-block;
+  vertical-align: middle;
+  
 }
 
 .price {
@@ -302,8 +328,8 @@ img {
   position: absolute;
   width: 6em;
   height: 6em;
-  left: 12em;
-  bottom: 2em;
+  left: 17em;
+  bottom:1em;
 
 }
 

@@ -49,6 +49,9 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {AppServices} from './front-view/suggestions/app.service';
+import { StarRatingModule } from 'angular-star-rating';
+
+
 
 
 @NgModule({
@@ -91,6 +94,7 @@ import {AppServices} from './front-view/suggestions/app.service';
     MatDividerModule,
     MatSnackBarModule,
     HttpModule,
+    StarRatingModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
     })

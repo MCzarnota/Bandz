@@ -6,8 +6,8 @@ export class eventDatabase{
        eventName: "Drunk Donkey",
        eventAddress: "Moorooka",
        venueName:"Red Lion",
-       eventPrice:25,
-       eventRatingNo: "46",
+       eventPrice:42,
+       eventRatingNo: "200",
        eventDescription:"Great band for all occasions",
        eventImage: "../assets/images/band1.jpg",
        
@@ -16,8 +16,8 @@ export class eventDatabase{
         eventName: "Drunk Donkey",
         eventAddress: "Moorooka",
         venueName:"Red Lion",
-        eventPrice:25,
-        eventRatingNo: "46",
+        eventPrice:35,
+        eventRatingNo: "21",
         eventDescription:"Great band for all occasions",
         eventImage: "../assets/images/band1.jpg",
         

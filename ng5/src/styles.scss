@@ -4,11 +4,46 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "variables.scss";
+@import"~angular-star-rating/assets/scss/star-rating";
 
 * {
   box-sizing: border-box;
 }
+.rating.color-negative .star-container .star {
+  svg {
+    fill: yellow;
+  }
+  i {
+    color: #0f0;
+  }
+}
 
+.rating.color-ok .star-container .star {
+  svg {
+    fill: yellow;
+  }
+  i {
+    color: #f00;
+  }
+}
+
+.rating.color-positive .star-container .star {
+  svg {
+    fill: yellow;
+  }
+  i {
+    color: #00f;
+  }
+}
+
+.rating.color-default .star-container .star {
+  svg {
+    fill: #ff0;
+  }
+  i {
+    color: #ff0;
+  }
+}
 body {
   font-family: $font-heading;
   margin: 0;

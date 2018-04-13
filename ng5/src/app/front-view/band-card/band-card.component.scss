@@ -35,7 +35,8 @@ p{
 
 .suggestionsBox {
   min-width: 300px;
-  min-height: 400px;
+  min-height: 300px;
+  max-height: 400px;
 }
 
 .bandImage {
@@ -56,7 +57,7 @@ img {
 .hotItem {
   position: absolute;
   left: 3em;
-  top: 12em;
+  top: 11em;
   height: 30px;
   width: 30px;
   z-index: 1;
