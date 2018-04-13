@@ -74,7 +74,8 @@ import {AppServices} from './front-view/suggestions/app.service';
     FrontViewComponent,
     ProfileComponent,
     MainEventSuggestionsComponent,
-    MainBandSuggestionsComponent
+    MainBandSuggestionsComponent,
+    BandProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +114,9 @@ import {AppServices} from './front-view/suggestions/app.service';
     BandSliderComponent,
     BandsDataService,
     EventsDataService,
-    AppServices],
+    AppServices,
+    AuthService,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 
