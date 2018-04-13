@@ -10,18 +10,18 @@
         <img  src="../assets/images/band1.jpg " alt=" ">
     </div>
 
-    <mat-card-content>
+    <mat-card-content class="contents">
         <mat-card-subtitle class="venueName">{{eventz.pushVenueName()[i]|uppercase}},&nbsp;</mat-card-subtitle>
         <mat-card-subtitle class="venueAddress">{{eventz.pushEventAddress()[i]|uppercase}} </mat-card-subtitle><br>
         <mat-card-title class="eventName">{{eventz.pushEventName()[i]}}</mat-card-title>
         <mat-card-title class="price">{{eventz.pushEventPrice()[i]|currency:'USD':'symbol':'1.0-0'}} entry</mat-card-title>
-        <mat-card-actions>
                 <div class="ratingItem">
-                        <img src="../assets/images/ratingItem.png" alt="">
+                        <!-- Manual for angular-star-rating and how to do it -->
+                        <!-- https://github.com/BioPhoton/angular-star-rating/wiki/Property-bindings#label-modifier -->
+                        <!-- You need to download the angular-star-rating@3.0.8 i css-star-rating@1.1.2 -->
+                        <star-rating-comp [size]="'small'" [readOnly]="true"[hoverEnabled]="false"[showHalfStars]="true"class="ratingImage"[starType]="'svg'" [rating]="5"></star-rating-comp>
                         <p class="ratingNumber">({{eventz.pushEventRatingNo()[i]}})</p>
                 </div>
-           <button mat-fab color="warn" >Buy now</button>
-        </mat-card-actions>
     </mat-card-content>
 </mat-card>
 </section>
@@ -29,4 +29,3 @@
 
 
 
-<!-- {{event.getEventPrice()|currency:'USD':'symbol':'1.0-0'}} -->

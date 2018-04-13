@@ -2,7 +2,7 @@
 
 footer{
   min-width: 100%;
-  background-color: #fc2840;
+  background-color: $color-accent;
   display: flex;
   justify-content: space-between;
   padding: 3em;
@@ -10,7 +10,8 @@ footer{
   z-index: 2;
   position: fixed;
   bottom:0;
-  height: 4em;
+  height: 10vh;
+  border-top: 2px solid $color-accent-dark;
 }
 
 .fake-footer{

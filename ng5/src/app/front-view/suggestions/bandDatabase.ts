@@ -5,7 +5,7 @@ export class bandDatabase{
     {
       bandName: "Drunk Donkey",
       bandAddress: "Moorooka",
-      bandRatingNo: "46",
+      bandRatingNo: "51",
       bandGenre:"Alternative Rock",
       bandDescription:"Great band for all occasions",
       bandMusic:"http://www.rock.com.au",
@@ -15,7 +15,7 @@ export class bandDatabase{
     {
       bandName: "Street Pieces",
       bandAddress: "Moorooka",
-      bandRatingNo: "46",
+      bandRatingNo: "200",
       bandGenre:"Alternative Rock",
       bandDescription:"Great band for all occasions",
       bandMusic:"http://www.rock.com.au",
