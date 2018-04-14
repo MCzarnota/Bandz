@@ -19,13 +19,9 @@ constructor(eventName:string,venueAddress:string,venueName:string,eventPrice:num
         this.venueAddress=venueAddress;
         this.venueName=venueName;
         this.eventPrice=eventPrice;
-        this.eventRatingNo=eventRatingNo;
-        this.newItem=newItem;
-        this.hotItem=hotItem;
-
-        
-      
-       
+        this.eventRatingNo= eventRatingNo;
+        this.newItem = newItem;
+        this.hotItem = hotItem;
 }
 
 public setEventName(data) {
