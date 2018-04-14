@@ -117,7 +117,6 @@ import { StarRatingModule } from 'angular-star-rating';
     EventsDataService,
     BandSliderComponent,
     BandsDataService,
-    EventsDataService,
     AppServices, AuthService],
   bootstrap: [AppComponent]
 })
