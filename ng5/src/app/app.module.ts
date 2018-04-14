@@ -75,11 +75,7 @@ import { StarRatingModule } from 'angular-star-rating';
     ProfileComponent,
     MainEventSuggestionsComponent,
     MainBandSuggestionsComponent,
-<<<<<<< HEAD
-    BandProfileComponent,
-=======
     BandProfileComponent
->>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
   ],
   imports: [
     BrowserModule,
@@ -116,14 +112,10 @@ import { StarRatingModule } from 'angular-star-rating';
     DataService,
     BandSliderComponent,
     BandsDataService,
-<<<<<<< HEAD
-    AppServices, AuthService],
-=======
     EventsDataService,
     AppServices,
     AuthService,
     AuthGuard],
->>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
   bootstrap: [AppComponent]
 })
 
