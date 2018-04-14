@@ -110,7 +110,6 @@ import { StarRatingModule } from 'angular-star-rating';
   ],
   providers: [
     DataService,
-    EventsDataService,
     BandSliderComponent,
     BandsDataService,
     EventsDataService,

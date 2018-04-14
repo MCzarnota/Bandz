@@ -46,7 +46,14 @@
   </section>
   <aside class="mapContainer"  [class.fixed]="fixed">
 
-      <agm-map  [latitude]="latitude" [longitude]="longitude" [class.fixed]="fixed"></agm-map>
+      <agm-map [class.fixed]="fixed"  [latitude]= "latitude"  [longitude]="longitude" >
+        <agm-marker *ngFor="let marker of markers; let i = index"
+        [latitude]= "marker.latitude"
+        [longitude]="marker.longitude"
+        label="{{marker.eventPrice +'AUD'}}">
+      </agm-marker>
+      </agm-map>
+
   </aside>
 </div>
 

@@ -10,8 +10,7 @@ import {eventDatabase} from '../suggestions/eventDatabase';
 
 @Injectable()
 export class AppServices {
-constructor() {
-}
+constructor() {}
 public pushBandName() {
     let i;
     const list = [];

@@ -13,7 +13,7 @@ p{
   grid-template-rows: auto;
   justify-items: center;
   grid-gap: 1em;
- 
+
 
 }
 
@@ -68,13 +68,14 @@ img {
 .ratingImage,.ratingNumber {
   display: inline-block;
   vertical-align: middle;
-  
+
 }
 
 .price {
-  font-weight: normal;
+  font-weight: 300 !important;
   font-size: 1.1rem;
-  
+  color:red !important;
+
 }
 .venueName,.venueAddress{
   display:inline-block;

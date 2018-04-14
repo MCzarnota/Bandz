@@ -11,6 +11,7 @@ import {SuggestionsComponent} from '../front-view/suggestions/suggestions.compon
 import {BandCardComponent} from '../front-view/band-card/band-card.component';
 import {EventCardComponent} from '../front-view/event-card/event-card.component';
 import {bandDatabase} from '../front-view/suggestions/bandDatabase';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
@@ -20,11 +21,12 @@ import {bandDatabase} from '../front-view/suggestions/bandDatabase';
 export class MainViewComponent  implements OnInit {
   latitude: Number = -27.46888;
   longitude: Number = 153.02122;
+  markers = eventDatabase.Json.events;
   inputActive = false;
   active = false;
   bandz = new AppServices;
   eventz = new AppServices;
-  public fixed:boolean = false;
+  public fixed: Boolean = false;
   changeActive() {
     // When the user activates input. Show the additional window
     console.log('Yo clicked on this' + this.inputActive);
@@ -44,12 +46,9 @@ export class MainViewComponent  implements OnInit {
     // Checks if the window is active
     return this.inputActive;
   }
- constructor(){
-
- }
-
-
+ constructor() {}
   ngOnInit() {
+    console.log(this.markers);
   }
 
 }
@@ -74,7 +73,6 @@ export class MainEventSuggestionsComponent extends EventCardComponent implements
   styleUrls: ['./main-view.component.scss'],
   providers: [AppServices]
 })
-
 export class MainBandSuggestionsComponent extends BandCardComponent implements OnInit {
   bandz = new AppServices;
   constructor() {
@@ -83,3 +81,21 @@ export class MainBandSuggestionsComponent extends BandCardComponent implements O
   ngOnInit() {
    }
 }
+
+// Jquery operating the map changes when scrolling
+let fixed = false;
+$(document).scroll(function() {
+  if ($(this).scrollTop() >= 200) {
+    if (!fixed) {
+      fixed = true;
+      $('.mapContainer').removeClass('normal');
+      $('.mapContainer').addClass('fixed'); // Or set top:20px; in CSS
+    }
+  } else {
+    if (fixed) {
+      fixed = false;
+      $('.mapContainer').removeClass('fixed');
+      $('.mapContainer').addClass('normal');
+    }
+  }
+});
