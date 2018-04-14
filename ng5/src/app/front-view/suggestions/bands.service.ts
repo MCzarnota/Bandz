@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class BandsDataService{
+export class BandsDataService {
 
-    private bandName:string;
-private bandAddress:string;
-private bandRatingNo:number;
-private bandGenre:string;
-private bandPrice:number;
-private bandAvailability:boolean;
-private bandDescription:string;
+    private bandName: string;
+private bandAddress: string;
+private bandRatingNo: number;
+private bandGenre: string;
+private bandPrice: number;
+private bandAvailability: boolean;
+private bandDescription: string;
 private bandMusic:string;
 private bandImage:string;
 private newItem:boolean;

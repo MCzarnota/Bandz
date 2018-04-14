@@ -1,16 +1,14 @@
 export class bandDatabase{
-
-
-   static  Json= {bands : [
+   static  Json = {bands : [
     {
-      bandName: "Drunk Donkey",
-      bandAddress: "Moorooka",
-      bandRatingNo: "51",
-      bandGenre:"Alternative Rock",
-      bandDescription:"Great band for all occasions",
-      bandMusic:"http://www.rock.com.au",
-      bandimage: "../assets/images/band1.jpg",
-      
+      bandName: 'Drunk Donkey',
+      bandAddress: 'Moorooka',
+      bandRatingNo: '51',
+      bandGenre: 'Alternative Rock',
+      bandDescription: 'Great band for all occasions',
+      bandMusic: 'http://www.rock.com.au',
+      bandimage: '../assets/images/band1.jpg',
+
     },
     {
       bandName: "Street Pieces",
@@ -20,9 +18,9 @@ export class bandDatabase{
       bandDescription:"Great band for all occasions",
       bandMusic:"http://www.rock.com.au",
       bandimage: "../assets/images/band1.jpg",
-      
+
     },
-    
+
     {
       bandName: "Metallica",
       bandAddress: "Moorooka",
@@ -31,7 +29,7 @@ export class bandDatabase{
       bandDescription:"Great band for all occasions",
       bandMusic:"http://www.rock.com.au",
       bandimage: "../assets/images/band1.jpg",
-      
+
     },
     {
       bandName: "Doctor Brown",
@@ -41,7 +39,7 @@ export class bandDatabase{
       bandDescription:"Great band for all occasions",
       bandMusic:"http://www.rock.com.au",
       bandimage: "../assets/images/band1.jpg",
-      
+
     },
     {
       bandName: "Death Club",
@@ -51,10 +49,9 @@ export class bandDatabase{
       bandDescription:"Great band for all occasions",
       bandMusic:"http://www.rock.com.au",
       bandimage: "../assets/images/band1.jpg",
-      
+
     }
   ]
   }
 }
 
-  

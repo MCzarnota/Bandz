@@ -22,8 +22,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 /** !Material IO imports */
 /** NG components */
-import {AccordionModule} from 'primeng/components/accordion/accordion';
-import {MenuItem} from 'primeng/components/common/api';
+// import {AccordionModule} from 'primeng/components/accordion/accordion';
+// import {MenuItem} from 'primeng/components/common/api';
 /** !NG components */
 import {AppComponent} from './app.component';
 import {DataService} from './data.service';
@@ -54,9 +54,6 @@ import 'rxjs/add/operator/catch';
 import {AppServices} from './front-view/suggestions/app.service';
 import { StarRatingModule } from 'angular-star-rating';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +75,11 @@ import { StarRatingModule } from 'angular-star-rating';
     ProfileComponent,
     MainEventSuggestionsComponent,
     MainBandSuggestionsComponent,
+<<<<<<< HEAD
     BandProfileComponent,
+=======
+    BandProfileComponent
+>>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
   ],
   imports: [
     BrowserModule,
@@ -107,17 +108,22 @@ import { StarRatingModule } from 'angular-star-rating';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    ReactiveFormsModule,
-    AccordionModule
+    ReactiveFormsModule
   ],
   entryComponents: [
   ],
   providers: [
     DataService,
-    EventsDataService,
     BandSliderComponent,
     BandsDataService,
+<<<<<<< HEAD
     AppServices, AuthService],
+=======
+    EventsDataService,
+    AppServices,
+    AuthService,
+    AuthGuard],
+>>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
   bootstrap: [AppComponent]
 })
 
