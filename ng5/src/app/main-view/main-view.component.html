@@ -9,7 +9,6 @@
       </form>
       <div class="additionalInformationWrapper" [style.display]="isActive() ? 'block': 'none'">
         <div class="innerWrapper">
-<<<<<<< HEAD
           <h3 class="title">
             Explore
             <b>BANDS</b>
@@ -31,42 +30,6 @@
       <button class="filterButton" mat-button>Bands</button>
     </div>
   </section>
-=======
-          <form>
-            <div class="searchWrapper">
-              <img src="../../assets/images/search.svg">
-              <input  (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text"
-                     placeholder="Search&#8226;Anytime">
-            </div>
-
-          </form>
-          <div class="additionalInformationWrapper" [style.display]="isActive() ? 'block': 'none'">
-            <div class="innerWrapper">
-              <h3 class="title">
-                Explore
-                <b>BANDS</b>
-              </h3>
-              <button class="myButton">All</button>
-              <button class="myButton">Bands</button>
-              <button class="myButton">Events</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <section class="filterContainer">
-          <div class="filterWrapper">
-            <button  class ="filterButton"mat-button>Dates</button>
-            <button class ="filterButton" mat-button>Price</button>
-            <button class ="filterButton" mat-button>Popularity</button>
-            <button class ="filterButton" mat-button>Distance</button>
-            <button class ="filterButton" mat-button>Events</button>
-            <button class ="filterButton" mat-button>Bands</button>
-          </div>
-      </section>
-
-
->>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
   <section class="searchResultsContainer">
     <h1>Bands</h1>
     <h2>Discover best bands accross Australia</h2>
@@ -75,10 +38,6 @@
     <h2>Book and experience great events </h2>
     <main-event-suggestions></main-event-suggestions>
   </section>
-<<<<<<< HEAD
-  <aside class="mapContainer">
-    <agm-map [latitude]="latitude" [longitude]="longitude"></agm-map>
-=======
   <aside class="mapContainer"  [class.fixed]="fixed">
 
       <agm-map [class.fixed]="fixed"  [latitude]= "latitude"  [longitude]="longitude" >
@@ -89,6 +48,5 @@
       </agm-marker>
       </agm-map>
 
->>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
   </aside>
 </div>
