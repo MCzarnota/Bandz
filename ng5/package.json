@@ -24,11 +24,6 @@
     "@angular/platform-browser": "5.2.9",
     "@angular/platform-browser-dynamic": "5.2.9",
     "@angular/router": "5.2.9",
-<<<<<<< HEAD
-    "@auth0/angular-jwt": "^1.1.0",
-    "angular-jwt": "^0.1.9",
-=======
->>>>>>> 0cf4ff7d9d6a51b4a3ba5a04b58a7ba09cf95ddb
     "angular-rating": "^3.0.3",
     "angular-star-rating": "^3.0.8",
     "angular2-jwt": "^0.2.3",
