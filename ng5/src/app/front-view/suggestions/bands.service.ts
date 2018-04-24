@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class BandsDataService {
 
-    private bandName: string;
+private bandName: string;
 private bandAddress: string;
 private bandRatingNo: number;
 private bandGenre: string;
@@ -15,7 +15,9 @@ private bandImage:string;
 private newItem:boolean;
 private hotItem:boolean;
 
-    constructor(bandName:string,bandAddress:string,bandImage:string,bandMusic:string,bandDescription:string,bandAvailability:boolean,bandGenre:string,bandPrice:number,bandRatingNo:number,newItem:boolean,hotItem:boolean){
+constructor(bandName:string,bandAddress:string,bandImage: string,bandMusic:string,
+           bandDescription:string,bandAvailability:boolean,bandGenre:string,
+           bandPrice:number,bandRatingNo:number,newItem:boolean,hotItem:boolean) {
         this.bandName=bandName;
         this.bandAddress=bandAddress;
         this.bandImage = bandImage;

@@ -1,32 +1,49 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input,  ViewChild, ViewEncapsulation } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
 import {MatDialogRef} from '@angular/material';
 import { MAT_DIALOG_DATA} from '@angular/material';
-import { AgmCoreModule,  } from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 import {MatButtonModule} from '@angular/material/button';
-import { AppServices } from '../front-view/suggestions/app.service';
-import {eventDatabase} from '../front-view/suggestions/eventDatabase';
 import {SuggestionsComponent} from '../front-view/suggestions/suggestions.component';
 import {BandCardComponent} from '../front-view/band-card/band-card.component';
 import {EventCardComponent} from '../front-view/event-card/event-card.component';
-import {bandDatabase} from '../front-view/suggestions/bandDatabase';
+import {EventsDataService} from '../front-view/suggestions/events.service';
+import {IEvents} from '../../interfaces/IEvents';
+import { ControlPosition } from '@agm/core/services/google-maps-types';
 import * as $ from 'jquery';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {SliderModule} from 'primeng/slider';
+import {OrderByDatePipe } from '../../pipes/order-by-date.pipe';
 @Component({
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
   styleUrls: ['./main-view.component.scss'],
-  providers: [AppServices]
+  providers: []
 })
 export class MainViewComponent  implements OnInit {
+   rangeValues: number[] = [20, 80];
+  @ViewChild('picker') picker;
+  @Input() selected: string;
+  isButtonChangePickerActive = false;
+  isValueSliderActive = false;
   latitude: Number = -27.46888;
   longitude: Number = 153.02122;
-  markers = eventDatabase.Json.events;
+  public events;
   inputActive = false;
   active = false;
-  bandz = new AppServices;
-  eventz = new AppServices;
+  markerActive = false;
   public fixed: Boolean = false;
+  onMapReady(map) {
+    map.setOptions({
+      zoomControl: true,
+      zoomControlOptions: {
+        style: 'LARGE',
+      position: ControlPosition.TOP_LEFT
+  },
+    streetViewControl: false
+  });
+    }
   changeActive() {
     // When the user activates input. Show the additional window
     this.inputActive = !this.inputActive;
@@ -35,32 +52,33 @@ export class MainViewComponent  implements OnInit {
     // Checks if the window is active
     return this.inputActive;
   }
- constructor() {}
+ constructor( private eventService: EventsDataService) {
+ }
   ngOnInit() {
-    console.log(this.markers);
+    this.getEvents();
   }
+  getEvents() {
+    return this.eventService.getEvents().subscribe(data => {
+      this.events = data.events;
+      console.log(this.events);
+      console.log(typeof(this.events[0].date));
+  });
 }
-@Component({
-  selector: 'main-event-suggestions',
-  templateUrl: '../front-view/event-card/event-card.component.html',
-  styleUrls: ['./main-view.component.scss'],
-  providers: [AppServices]
-})
-export class MainEventSuggestionsComponent extends EventCardComponent implements OnInit {
-  eventz = new AppServices();
-  constructor() {
-    super();
+  openDatePicker() {
+    this.picker.open();
+    this.isButtonChangePickerActive = true;
   }
-  ngOnInit() {}
+  openValueSlider() {
+    this.isValueSliderActive = true;
+  }
 }
 @Component({
   selector: 'main-band-suggestions',
   templateUrl: '../front-view/band-card/band-card.component.html',
   styleUrls: ['./main-view.component.scss'],
-  providers: [AppServices]
+  providers: []
 })
 export class MainBandSuggestionsComponent extends BandCardComponent implements OnInit {
-  bandz = new AppServices;
   constructor() {
     super();
   }

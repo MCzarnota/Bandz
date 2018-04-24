@@ -1,6 +1,6 @@
 <div class=" suggestionsGallery " >
 
-<mat-card class="suggestionsBox" *ngFor="let band of bandz.pushBandName();let i = index">
+<mat-card appCardHover class="suggestionsBox">
             <div class="hotItem">
                 <img mat-card-image src="../assets/images/hotItem.png" alt="">
             </div>
@@ -8,9 +8,9 @@
                 <img  src="../assets/images/band1.jpg " alt=" ">
             </div>
             <mat-card-content>
-                <mat-card-subtitle class="bandAddress">{{bandz.pushBandName()[i]|uppercase}}</mat-card-subtitle><br>
-                <mat-card-title class="bandName">{{bandz.pushBandAddress()[i]}}&nbsp;</mat-card-title>
-                <mat-card-title class="bandName">({{bandz.pushBandGenre()[i]}})</mat-card-title>
+                <mat-card-subtitle class="bandAddress"></mat-card-subtitle><br>
+                <mat-card-title class="bandName">&nbsp;</mat-card-title>
+                <mat-card-title class="bandName"></mat-card-title>
                 <mat-card-actions>
                         <div class="ratingItem">
                                <a> <img class="playIcon" src="../assets/images/playButton.svg" alt=""></a>
