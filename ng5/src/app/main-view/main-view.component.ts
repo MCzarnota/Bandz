@@ -33,6 +33,7 @@ export class MainViewComponent  implements OnInit {
   inputActive = false;
   active = false;
   markerActive = false;
+  dateInput = '';
   public fixed: Boolean = false;
   onMapReady(map) {
     map.setOptions({
