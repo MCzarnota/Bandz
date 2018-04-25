@@ -5,7 +5,7 @@
       <form>
         <div class="searchWrapper">
           <img src="../../assets/images/search.svg">
-          <input (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder="Search&#8226;Anytime">
+          <input [(ngModel)]="inputValue"  (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder="Search bands or events">
         </div>
       </form>
       <div class="additionalInformationWrapper" [style.display]="isActive() ? 'block': 'none'">
@@ -44,7 +44,7 @@
     <!-- <main-band-suggestions></main-band-suggestions> -->
     <h2>Book and experience great events </h2>
     <app-event-card  (mouseenter)="event.hovered = true" (mouseleave)="event.hovered = false"
-    *ngFor="let event of events | orderByDate: dateInput" [event]="event"></app-event-card>
+    *ngFor="let event of events | EventSearchFilter: dateInput : rangeValues " [event]="event"></app-event-card>
   </section>
   <aside class="mapContainer"[class.fixed]="fixed">
       <agm-map (mapReady)="onMapReady($event)"
@@ -52,7 +52,7 @@
         [minZoom]=2
         [maxZoom]=11
         [class.fixed]="fixed"  [latitude]= "latitude"  [longitude]="longitude" >
-        <agm-marker *ngFor="let event of events | orderByDate: dateInput; let i = index"
+        <agm-marker *ngFor="let event of events | EventSearchFilter: dateInput : rangeValues; let i = index"
         [latitude]= "event.location.coordinates[0]"
         [longitude]="event.location.coordinates[1]"
         [iconUrl]=""

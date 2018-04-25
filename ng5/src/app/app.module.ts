@@ -56,7 +56,7 @@ import 'rxjs/add/operator/catch';
 import { StarRatingModule } from 'angular-star-rating';
 import { CardHoverDirective } from '../directives/card-hover.directive';
 import {SliderModule} from 'primeng/slider';
-import { OrderByDatePipe } from '../../src/pipes/order-by-date.pipe';
+import { EventSearchFilter } from '../../src/pipes/order-by-date.pipe';
 import * as moment from 'moment';
 @NgModule({
   declarations: [
@@ -80,7 +80,7 @@ import * as moment from 'moment';
     MainBandSuggestionsComponent,
     BandProfileComponent,
     CardHoverDirective,
-    OrderByDatePipe
+    EventSearchFilter
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ import { ControlPosition } from '@agm/core/services/google-maps-types';
 import * as $ from 'jquery';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {SliderModule} from 'primeng/slider';
-import {OrderByDatePipe } from '../../pipes/order-by-date.pipe';
+import {EventSearchFilter } from '../../pipes/order-by-date.pipe';
 @Component({
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
@@ -22,7 +22,7 @@ import {OrderByDatePipe } from '../../pipes/order-by-date.pipe';
   providers: []
 })
 export class MainViewComponent  implements OnInit {
-   rangeValues: number[] = [20, 80];
+   rangeValues: number[] = [0, 100];
   @ViewChild('picker') picker;
   @Input() selected: string;
   isButtonChangePickerActive = false;
@@ -44,9 +44,13 @@ export class MainViewComponent  implements OnInit {
     streetViewControl: false
   });
     }
-  changeActive() {
-    // When the user activates input. Show the additional window
-    this.inputActive = !this.inputActive;
+  changeActive(inputValue) {
+    if (inputValue) {
+      console.log(inputValue);
+       // When the user activates input. Show the additional window
+    } else {
+      this.inputActive = !this.inputActive;
+    }
   }
   isActive() {
     // Checks if the window is active
