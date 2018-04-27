@@ -21,6 +21,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 /** !Material IO imports */
 /** NG components */
 // import {AccordionModule} from 'primeng/components/accordion/accordion';
@@ -105,6 +106,7 @@ import * as moment from 'moment';
     MatNativeDateModule,
     MatSliderModule,
     SliderModule,
+    MatProgressBarModule,
     StarRatingModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'

@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, Input } from '@angular/core';
 import {BandsDataService} from '../suggestions/bands.service';
 import {SuggestionsComponent} from '../suggestions/suggestions.component';
 
@@ -10,6 +10,7 @@ import {SuggestionsComponent} from '../suggestions/suggestions.component';
 })
 @Injectable()
 export class BandCardComponent implements OnInit {
+  @Input() band;
   constructor() {}
 
   ngOnInit() {

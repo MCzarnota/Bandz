@@ -9,31 +9,64 @@ import {SuggestionsComponent} from '../front-view/suggestions/suggestions.compon
 import {BandCardComponent} from '../front-view/band-card/band-card.component';
 import {EventCardComponent} from '../front-view/event-card/event-card.component';
 import {EventsDataService} from '../front-view/suggestions/events.service';
+import {BandsDataService} from '../front-view/suggestions/bands.service';
 import {IEvents} from '../../interfaces/IEvents';
 import { ControlPosition } from '@agm/core/services/google-maps-types';
 import * as $ from 'jquery';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {SliderModule} from 'primeng/slider';
 import {EventSearchFilter } from '../../pipes/order-by-date.pipe';
+import { Router } from '@angular/router';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {trigger, style, transition, animate, keyframes, query, stagger} from '@angular/animations';
 @Component({
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
   styleUrls: ['./main-view.component.scss'],
-  providers: []
+  providers: [],
+  animations: [
+    trigger('listAnimation', [
+      transition('* => *', [
+
+        query(':enter', style({ opacity: 0 }), {optional: true}),
+
+        query(':enter', stagger('300ms', [
+          animate('1s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateX(-75%)', offset: 0}),
+            style({opacity: .5, transform: 'translateX(35px)',  offset: 0.3}),
+            style({opacity: 1, transform: 'translateX(0)',     offset: 1.0}),
+          ]))]), {optional: true})
+      ])
+    ]),
+    trigger('explainerAnim', [
+      transition('* => *', [
+        query('.paragraph', style({ opacity: 0, transform: 'translateX(-40px)' })),
+
+        query('.paragraph', stagger('500ms', [
+          animate('800ms 1.2s ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+        ])),
+
+        query('.paragraph', [
+          animate(1000, style('*'))
+        ])
+      ])
+    ])
+  ]
 })
 export class MainViewComponent  implements OnInit {
-   rangeValues: number[] = [0, 100];
   @ViewChild('picker') picker;
   @Input() selected: string;
+  searching: Boolean = false;
+  rangeValues: number[] = [0, 100];
   isButtonChangePickerActive = false;
   isValueSliderActive = false;
   latitude: Number = -27.46888;
   longitude: Number = 153.02122;
   public events;
+  public bands;
   inputActive = false;
   active = false;
   markerActive = false;
-  dateInput = '';
   public fixed: Boolean = false;
   onMapReady(map) {
     map.setOptions({
@@ -50,6 +83,7 @@ export class MainViewComponent  implements OnInit {
       console.log(inputValue);
        // When the user activates input. Show the additional window
     } else {
+      console.log(inputValue);
       this.inputActive = !this.inputActive;
     }
   }
@@ -57,21 +91,47 @@ export class MainViewComponent  implements OnInit {
     // Checks if the window is active
     return this.inputActive;
   }
- constructor( private eventService: EventsDataService) {
+ constructor( private router: Router, private eventService: EventsDataService, private bandsService: BandsDataService) {
  }
   ngOnInit() {
-    this.getEvents();
+    this.getEvents('');
+    this.getBands('');
   }
-  getEvents() {
-    return this.eventService.getEvents().subscribe(data => {
+  getBands(query: string) {
+    this.searching = true;
+    return this.bandsService.getBands(query).subscribe(data => {
+      this.bands = data.bands;
+      console.log(data);
+  }, error => console.log(error),
+  () => {
+    this.searching = false;
+    this.inputActive = false;
+    console.log('Bands fetched completed');
+  }
+);
+  }
+  getEvents(query: string) {
+    this.searching = true;
+    return this.eventService.getEvents(query).subscribe(data => {
       this.events = data.events;
-      console.log(this.events);
-      console.log(typeof(this.events[0].date));
+      console.log(data);
+  }, error => console.log(error),
+  () => {
+    this.searching = false;
+    this.inputActive = false;
+    console.log('Events fetched completed');
   });
+}
+getAll(query: string) {
+  this.getBands(query);
+  this.getEvents(query);
 }
   openDatePicker() {
     this.picker.open();
     this.isButtonChangePickerActive = true;
+  }
+  redirectToBandProfile() {
+    this.router.navigate(['profile']);
   }
   openValueSlider() {
     this.isValueSliderActive = true;

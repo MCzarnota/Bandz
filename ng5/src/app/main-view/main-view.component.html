@@ -5,7 +5,7 @@
       <form>
         <div class="searchWrapper">
           <img src="../../assets/images/search.svg">
-          <input [(ngModel)]="inputValue"  (focus)="changeActive()" (blur)="changeActive()" class="text-box" title='search' type="text" placeholder="Search bands or events">
+          <input [(ngModel)]="searchQuery" name = "searchInput" (focus)="changeActive()" class="text-box" title='search' type="text" placeholder="Search bands or events">
         </div>
       </form>
       <div class="additionalInformationWrapper" [style.display]="isActive() ? 'block': 'none'">
@@ -14,9 +14,9 @@
             Explore
             <b>BANDS</b>
           </h3>
-          <button class="myButton">All</button>
-          <button class="myButton">Bands</button>
-          <button class="myButton">Events</button>
+          <button (click)="getAll(searchQuery)" class="myButton">All</button>
+          <button (click)="getBands(searchQuery)" class="myButton">Bands</button>
+          <button (click)="getEvents(searchQuery)" class="myButton">Events</button>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
   <section class="filterContainer">
     <div class="filterWrapper">
         <div>
-       <button   class="filterButton" (click)="openDatePicker()" mat-button>Date </button>
+       <button class="filterButton" (click)="openDatePicker()" mat-button>Date </button>
          <input name="dateInput" [matDatepicker]="picker"  [(ngModel)]="dateInput" [style.visibility]="isButtonChangePickerActive ? 'visible': 'hidden'">
        </div>
        <div>
@@ -39,12 +39,16 @@
     </div>
   </section>
   <section class=contentWrapper>
-  <section class="searchResultsContainer">
-    <h2>Discover best bands accross Australia</h2>
-    <!-- <main-band-suggestions></main-band-suggestions> -->
-    <h2>Book and experience great events </h2>
+  <section class="searchResultsContainer" [@listAnimation]='events.length'  [@listAnimation]='bands.length'>
+    <div *ngIf="searching">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <h2 class="paragraph">Book and experience great events </h2>
     <app-event-card  (mouseenter)="event.hovered = true" (mouseleave)="event.hovered = false"
     *ngFor="let event of events | EventSearchFilter: dateInput : rangeValues " [event]="event"></app-event-card>
+    <h2 class= "paragraph">Discover best bands accross Australia</h2>
+    <app-band-card (click)="redirectToBandProfile()" (mouseenter)="band.hovered = true" (mouseleave)="band.hovered = false"
+      [band]="band" *ngFor="let band of bands"></app-band-card>
   </section>
   <aside class="mapContainer"[class.fixed]="fixed">
       <agm-map (mapReady)="onMapReady($event)"

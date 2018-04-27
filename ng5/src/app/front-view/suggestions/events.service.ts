@@ -5,16 +5,22 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import {URLSearchParams} from '@angular/http';
 @Injectable()
 export class EventsDataService {
 
   private _eventsURL = 'http://localhost:3000/events';
-
+  private perPage: string = '&per_page=10';
 constructor(private http: Http) {}
-getEvents() {
+getEvents(searchQuery: string) {
   // get all the Events from the server
+  const search = new URLSearchParams();
+  if (searchQuery === undefined) {
+    searchQuery = '';
+  }
+  search.set('query', searchQuery);
   return this.http
-  .get(this._eventsURL).map(res => {
+  .get(this._eventsURL, {search}).map(res => {
     const results =  res.json();
     return results;
   });
