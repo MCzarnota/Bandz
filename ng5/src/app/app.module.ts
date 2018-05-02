@@ -59,6 +59,8 @@ import { CardHoverDirective } from '../directives/card-hover.directive';
 import {SliderModule} from 'primeng/slider';
 import { EventSearchFilter } from '../../src/pipes/order-by-date.pipe';
 import * as moment from 'moment';
+import { ChatBoxComponent } from './bandProfile/chat-box.component';
+import { SafeUrlPipe } from '../../src/pipes/safe-url.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +83,9 @@ import * as moment from 'moment';
     MainBandSuggestionsComponent,
     BandProfileComponent,
     CardHoverDirective,
-    EventSearchFilter
+    EventSearchFilter,
+    ChatBoxComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

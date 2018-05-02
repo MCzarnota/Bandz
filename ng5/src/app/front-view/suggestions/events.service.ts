@@ -9,7 +9,7 @@ import {URLSearchParams} from '@angular/http';
 @Injectable()
 export class EventsDataService {
 
-  private _eventsURL = 'http://localhost:3000/events';
+  private _eventsURL = 'http://localhost:3000/events/';
   private perPage: string = '&per_page=10';
 constructor(private http: Http) {}
 getEvents(searchQuery: string) {
@@ -21,6 +21,13 @@ getEvents(searchQuery: string) {
   search.set('query', searchQuery);
   return this.http
   .get(this._eventsURL, {search}).map(res => {
+    const results =  res.json();
+    return results;
+  });
+}
+public getEventById(id: number) {
+  return this.http
+  .get(this._eventsURL + id).map(res => {
     const results =  res.json();
     return results;
   });

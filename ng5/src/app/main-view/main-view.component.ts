@@ -130,8 +130,11 @@ getAll(query: string) {
     this.picker.open();
     this.isButtonChangePickerActive = true;
   }
-  redirectToBandProfile() {
-    this.router.navigate(['profile']);
+  redirectToBandProfile(bandId) {
+    this.router.navigate(['/bandDetails', bandId]);
+  }
+  redirectToEventProfile(eventId) {
+    this.router.navigate(['/eventDetails', eventId]);
   }
   openValueSlider() {
     this.isValueSliderActive = true;

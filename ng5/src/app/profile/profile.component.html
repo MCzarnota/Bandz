@@ -1,4 +1,5 @@
 <main>
+
   <div class="banner editable">
     <button *ngIf="userOwnsThisProfile" class="edit-btn" mat-raised-button id="imageEdit">
       <img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
@@ -10,15 +11,15 @@
       <img src="../../assets/images/iconmonstr-pencil-9.svg"> Edit
     </button>
     <div class="title" *ngIf="!editingHeadInfo">
-      <h1>{{ title }}</h1>
-      <h2>{{location}}. {{genre}}</h2>
+      <h1>{{ event?.name }}   </h1>
+      <h2>{{event?.city}} {{event?.venueName}}</h2>
     </div>
     <form *ngIf="editingHeadInfo">
-      <input type="text" value="{{title}}" ref-title_input>
-      <input type="text" value="{{location}}" ref-location_input><input type="text" value="{{genre}}" ref-genre_input>
-      <button mat-raised-button (click)="submitHeadEdit(title_input.value, location_input.value, genre_input.value)">
+      <input type="text" value="{{event.name}}" ref-title_input>
+      <input type="text" value="{{event.city}}" ref-location_input><input type="text" value="{{genre}}" ref-genre_input>
+      <!-- <button mat-raised-button (click)="submitHeadEdit(title_input.value, location_input.value, genre_input.value)">
         submit
-      </button>
+      </button> -->
     </form>
 
     <div class="buttons">

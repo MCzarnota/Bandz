@@ -1,9 +1,6 @@
 <mat-card  appCardHover class="suggestionsBox">
-            <div class="hotItem">
-                <img mat-card-image src="../assets/images/hotItem.png" alt="">
-            </div>
             <div class="bandImage">
-                <img  src="../assets/images/band1.jpg " alt=" ">
+              <img mat-card-image src="{{band.image}}" alt="{{band.name}}">
             </div>
             <mat-card-content>
                 <mat-card-subtitle class="bandName">{{band.genre}}</mat-card-subtitle><br>

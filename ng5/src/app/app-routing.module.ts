@@ -11,8 +11,8 @@ const routes: Routes = [
   {path: 'extra', component: ExtraComponent},
   {path: 'main', component: MainViewComponent},
   {path: '', component: FrontViewComponent},
-  {path: 'bandprofile', component: BandProfileComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'bandDetails/:bandId', component: BandProfileComponent},
+  {path: 'eventDetails/:eventId', component: ProfileComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

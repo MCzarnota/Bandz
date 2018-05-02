@@ -1,5 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { AuthService} from '../../services/auth.service';
+import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
+import { BandsDataService } from '../front-view/suggestions/bands.service';
+import {ChatBoxComponent} from '../bandProfile/chat-box.component';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,19 +10,11 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class BandProfileComponent implements OnInit {
+  bandCampLink = 'https://bandcamp.com/EmbeddedPlayer/album=77046358/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/';
+  band;
+  searching: Boolean = false;
   isBand = true;
   isVenue = false;
-  title = 'Street Pieces';
-  banner = 'url("../../assets/images/band.jpg") no-repeat center';
-  bio = 'Street Pieces formed in 2012 and soon began playing across their home state. After cutting their teeth on the live circuit they ' +
-    'released their first EP featuring ‘Run’, earning them a support slot for Wolfmother and the title of ‘best band in Brisbane’ from' +
-    ' Ugly Phil of Triple M. Coming off the success of their first single and a string of blistering live shows Street Pieces entered the' +
-    ' studio with Jeff Lovejoy (Powderfinger, Tex Perkins) and released ‘Sacrifice’ (2015) and ‘Bad Kind of Woman’ (2016) which soon had' +
-    ' them back on the road with rock heavyweights Shihad (NZ), The Bellrays (US) and Richie Ramone (US). This year with new bassist Jon' +
-    ' Mengede in the mix Street Pieces released \'Monster\', a frenzied psychedelic blues jam featured in Blunt Magazine and followed up' +
-    ' with an unforgettable show as they officially released \'Everything You Ever Wanted\' at The Foundry.\n' + '\n' + 'Listen below...';
-  location = 'Brisbane';
-  genre = 'Rock';
   rateDropDown = false;
   gigs = [
     // Order these by date please. Happens in the DB don't worry about it here
@@ -53,10 +48,33 @@ export class BandProfileComponent implements OnInit {
     this.rateDropDown = !this.rateDropDown;
   }
 
-  constructor() {
+  constructor(private bandService: BandsDataService,
+     private activedRoute: ActivatedRoute,
+     private router: Router) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
+    const bandId = this.activedRoute.snapshot.params['bandId'];
+    this.getBand(bandId);
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0);
+  });
+}
+
+  getBand(bandId) {
+    this.bandService.getBandbyId(bandId).subscribe(data => {
+      this.band =  data;
+      console.log(this.band);
+  }, error => console.log(error),
+  () => {
+    this.searching = false;
+    console.log('Band' + bandId +  ' fetched completed');
+  }
+);
+
   }
 
   toggleContentGigs() {

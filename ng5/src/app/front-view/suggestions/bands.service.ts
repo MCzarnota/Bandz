@@ -9,7 +9,7 @@ import {URLSearchParams} from '@angular/http';
 @Injectable()
 export class BandsDataService {
 
-private _bandsURL = 'http://localhost:3000/bands';
+private _bandsURL = 'http://localhost:3000/bands/';
 private perPage: string = '&per_page=10';
 constructor(private http: Http) {}
 getBands(searchQuery: string) {
@@ -23,6 +23,13 @@ getBands(searchQuery: string) {
   .get(this._bandsURL, {search}).map(res => {
     const results =  res.json();
     searchQuery = '';
+    return results;
+  });
+}
+public getBandbyId(id: number) {
+  return this.http
+  .get(this._bandsURL + id).map(res => {
+    const results =  res.json();
     return results;
   });
 }

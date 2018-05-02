@@ -14,9 +14,9 @@ h1{
 
 p{
   display: block;
- 
+
   height: 1em;
-  
+
   color: black;
 }
 .topBands{
@@ -40,13 +40,8 @@ p{
 }
 
 .bandImage {
-  background-size: cover;
-  background: no-repeat center;
-  position: relative;
-  min-width: 100%;
-  min-height: 80%;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
 }
 
 img {
@@ -104,6 +99,11 @@ img {
   cursor: pointer;
 }
 
+  img.mat-card-img{
+    object-fit: contain; /*this makes de image in src fit to the size of specified below*/
+    width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 80%;
+  }
 .mat-fab {
   background-color: #fc2840;
   -webkit-transition-duration: 0.4s; /* Safari */

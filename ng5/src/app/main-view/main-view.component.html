@@ -39,15 +39,15 @@
     </div>
   </section>
   <section class=contentWrapper>
-  <section class="searchResultsContainer" [@listAnimation]='events.length'  [@listAnimation]='bands.length'>
+  <section class="searchResultsContainer" [@listAnimation]='events?.length'  [@listAnimation]='bands?.length'>
     <div *ngIf="searching">
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
     <h2 class="paragraph">Book and experience great events </h2>
-    <app-event-card  (mouseenter)="event.hovered = true" (mouseleave)="event.hovered = false"
+    <app-event-card (click)="redirectToEventProfile(event._id)" (mouseenter)="event.hovered = true" (mouseleave)="event.hovered = false"
     *ngFor="let event of events | EventSearchFilter: dateInput : rangeValues " [event]="event"></app-event-card>
     <h2 class= "paragraph">Discover best bands accross Australia</h2>
-    <app-band-card (click)="redirectToBandProfile()" (mouseenter)="band.hovered = true" (mouseleave)="band.hovered = false"
+    <app-band-card (click)="redirectToBandProfile(band._id)" (mouseenter)="band.hovered = true" (mouseleave)="band.hovered = false"
       [band]="band" *ngFor="let band of bands"></app-band-card>
   </section>
   <aside class="mapContainer"[class.fixed]="fixed">
