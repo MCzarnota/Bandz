@@ -1,77 +1,38 @@
 import {Injectable} from '@angular/core';
-
+import {IEvents} from '../../../interfaces/IEvents';
+import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import {URLSearchParams} from '@angular/http';
 @Injectable()
 export class EventsDataService {
 
-private eventName: string;
-private venueAddress: string;
-private venueName: string;
-private eventPrice: number;
-private eventRatingNo: number;
-private newItem: boolean;
-private hotItem: boolean;
-
-
-
-constructor(eventName:string,venueAddress:string,venueName:string,eventPrice:number,eventRatingNo:number,newItem:boolean,
-    hotItem:boolean){
-        this.eventName=eventName;
-        this.venueAddress=venueAddress;
-        this.venueName=venueName;
-        this.eventPrice=eventPrice;
-        this.eventRatingNo= eventRatingNo;
-        this.newItem = newItem;
-        this.hotItem = hotItem;
+  private _eventsURL = 'http://localhost:3000/events/';
+  private perPage: string = '&per_page=10';
+constructor(private http: Http) {}
+getEvents(searchQuery: string) {
+  // get all the Events from the server
+  const search = new URLSearchParams();
+  if (searchQuery === undefined) {
+    searchQuery = '';
+  }
+  search.set('query', searchQuery);
+  return this.http
+  .get(this._eventsURL, {search}).map(res => {
+    const results =  res.json();
+    return results;
+  });
 }
-
-public setEventName(data) {
-    this.eventName = data;
-
+public getEventById(id: number) {
+  return this.http
+  .get(this._eventsURL + id).map(res => {
+    const results =  res.json();
+    return results;
+  });
 }
-public getEventName() {
-    return this.eventName;
+private handleError(error: Response) {
+  return Observable.throw(error.statusText);
 }
-public setVenueAddress(data) {
-    this.venueAddress = data;
-}
-
-public getVenueAddress() {
-    return this.venueAddress;
-}
-public setVenueName(data) {
-    this.venueName = data;
-}
-public getVenueName(data) {
-    return this.venueName;
-}
-public setEventPrice(data) {
-    this.eventPrice = data;
-}
-public getEventPrice() {
-    return this.eventPrice;
-}
-public setEventRatingNo(data) {
-    this.eventRatingNo = data;
-}
-public getEventRatingNo() {
-    return this.eventRatingNo;
-}
-public setNewItem(data) {
-    this.newItem = false;
-}
-public getNewItem( ) {
-    return this.newItem;
-}
-public setHotItem(data) {
-    this.hotItem = false;
-}
-public getHotItem() {
-    return this.hotItem;
-}
-// public getEventsArrayName(){
-
-//     for(let x of this.events){
-//         return this.events[0]
-//     }
-// }
 }

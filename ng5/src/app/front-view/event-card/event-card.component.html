@@ -1,16 +1,9 @@
-<section class=" suggestionsGallery " >
-<mat-card class="suggestionsBox" *ngFor="let event of eventz.pushEventName();let i = index">
-    <div class="hotItem">
-        <img mat-card-image src="../assets/images/hotItem.png" alt="">
-    </div>
-    <div class="newItem">
-        <img mat-card-image src="../assets/images/newItem.png" alt="">
-    </div>
-    <div class="eventImage">
-        <img  src="../assets/images/band1.jpg " alt=" ">
-    </div>
 
+<mat-card appCardHover class="suggestionsBox">
+
+        <img mat-card-image src="{{event.image}}" alt="{{event.name}}">
     <mat-card-content class="contents">
+<<<<<<< HEAD
         <mat-card-subtitle class="venueName">{{eventz.pushVenueName()[i]|uppercase}},&nbsp;</mat-card-subtitle>
         <mat-card-subtitle class="venueAddress">{{eventz.pushEventAddress()[i]|uppercase}} </mat-card-subtitle><br>
         <mat-card-title class="eventName">{{eventz.pushEventName()[i]}}</mat-card-title>
@@ -22,9 +15,16 @@
                         <star-rating-comp [size]="'small'" [readOnly]="false"[hoverEnabled]="true"[showHalfStars]="true"class="ratingImage"[starType]="'svg'" [rating]="5"></star-rating-comp>
                         <p class="ratingNumber">({{eventz.pushEventRatingNo()[i]}})</p>
                 </div>
+=======
+        <mat-card-subtitle class="venueName">{{event.venueName}}</mat-card-subtitle>
+        <mat-card-subtitle class="venueAddress">{{event.location.city}}</mat-card-subtitle>
+        <mat-card-subtitle class="venueName">{{event.date }}</mat-card-subtitle><br>
+        <mat-card-title class="eventName">{{event.name}}</mat-card-title>
+        <mat-card-title class="price">{{event.price| currency}}</mat-card-title>
+>>>>>>> 66375bb0dd514be236336f5a81e3865f9aa4668d
     </mat-card-content>
 </mat-card>
-</section>
+
 
 
 

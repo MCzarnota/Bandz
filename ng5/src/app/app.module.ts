@@ -13,18 +13,21 @@ import { AuthGuard} from '../guards/auth.guard';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDatepickerModule,
+        MatNativeDateModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 /** !Material IO imports */
 /** NG components */
 // import {AccordionModule} from 'primeng/components/accordion/accordion';
 // import {MenuItem} from 'primeng/components/common/api';
 /** !NG components */
+import {MatSliderModule} from '@angular/material/slider';
 import {AppComponent} from './app.component';
 import {DataService} from './data.service';
 import {ExtraComponent} from './extra/extra.component';
@@ -39,7 +42,7 @@ import {SuggestionsComponent} from './front-view/suggestions/suggestions.compone
 import {BandCardComponent} from './front-view/band-card/band-card.component';
 import {SubmissionFormNextStepComponent} from './submission-form-next-step/submission-form-next-step.component';
 import {EventCardComponent} from './front-view/event-card/event-card.component';
-import {MainViewComponent, MainEventSuggestionsComponent, MainBandSuggestionsComponent} from './main-view/main-view.component';
+import {MainViewComponent, MainBandSuggestionsComponent} from './main-view/main-view.component';
 import {FrontViewComponent} from './front-view/front-view.component';
 import { BandProfileComponent } from './bandProfile/profile.component';
 import { ProfileComponent} from './profile/profile.component';
@@ -51,9 +54,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {AppServices} from './front-view/suggestions/app.service';
 import { StarRatingModule } from 'angular-star-rating';
-
+import { CardHoverDirective } from '../directives/card-hover.directive';
+import {SliderModule} from 'primeng/slider';
+import { EventSearchFilter } from '../../src/pipes/order-by-date.pipe';
+import * as moment from 'moment';
+import { ChatBoxComponent } from './bandProfile/chat-box.component';
+import { SafeUrlPipe } from '../../src/pipes/safe-url.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,9 +80,12 @@ import { StarRatingModule } from 'angular-star-rating';
     MainViewComponent,
     FrontViewComponent,
     ProfileComponent,
-    MainEventSuggestionsComponent,
     MainBandSuggestionsComponent,
-    BandProfileComponent
+    BandProfileComponent,
+    CardHoverDirective,
+    EventSearchFilter,
+    ChatBoxComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
@@ -94,7 +104,13 @@ import { StarRatingModule } from 'angular-star-rating';
     PasswordStrengthBarModule,
     MatDividerModule,
     MatSnackBarModule,
+    MatDatepickerModule,
     HttpModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule,
+    SliderModule,
+    MatProgressBarModule,
     StarRatingModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDafSVEi1nNB5qre5tuA57GK08m6ybLdqw'
@@ -109,11 +125,11 @@ import { StarRatingModule } from 'angular-star-rating';
   entryComponents: [
   ],
   providers: [
+    MatDatepickerModule,
     DataService,
     BandSliderComponent,
     BandsDataService,
     EventsDataService,
-    AppServices,
     AuthService,
     AuthGuard],
   bootstrap: [AppComponent]

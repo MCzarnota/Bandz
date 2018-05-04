@@ -1,68 +1,39 @@
 import {Injectable} from '@angular/core';
-
+import {IEvents} from '../../../interfaces/IEvents';
+import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import {URLSearchParams} from '@angular/http';
 @Injectable()
 export class BandsDataService {
 
-    private bandName: string;
-private bandAddress: string;
-private bandRatingNo: number;
-private bandGenre: string;
-private bandPrice: number;
-private bandAvailability: boolean;
-private bandDescription: string;
-private bandMusic:string;
-private bandImage:string;
-private newItem:boolean;
-private hotItem:boolean;
-
-    constructor(bandName:string,bandAddress:string,bandImage:string,bandMusic:string,bandDescription:string,bandAvailability:boolean,bandGenre:string,bandPrice:number,bandRatingNo:number,newItem:boolean,hotItem:boolean){
-        this.bandName=bandName;
-        this.bandAddress=bandAddress;
-        this.bandImage = bandImage;
-        this.bandGenre=bandGenre;
-        this.bandRatingNo=bandRatingNo;
-        this.newItem=newItem;
-        this.hotItem=hotItem;
-        this.bandPrice = bandPrice;
-        this.bandAvailability = bandAvailability;
-        this.bandDescription = bandDescription;
-        this.bandMusic=bandMusic;
-
-    }
-    public setBandName(data){
-        this.bandName=data;
-    }
-    public getBandName(){
-        return this.bandName;
-    }
-    public setBandAddress(data){
-        this.bandAddress=data;
-    }
-    public getBandAddress(){
-        return this.bandAddress;
-    }
-    public setBandGenre(data){
-        this.bandGenre=data;
-    }
-    public getBandGenre(){
-        return this.bandGenre;
-    }
-    public setBandRatingNo(data){
-        this.bandRatingNo = data;
-    }
-    public getBandRatingNo(){
-        return this.bandRatingNo;
-    }
-    public setNewItem(data){
-        this.newItem=false;
-    }
-    public getNewItem(){
-        return this.newItem;
-    }
-    public setHotItem(data){
-        this.hotItem=false;
-    }
-    public getHotItem(){
-        return this.hotItem;
-    }
+private _bandsURL = 'http://localhost:3000/bands/';
+private perPage: string = '&per_page=10';
+constructor(private http: Http) {}
+getBands(searchQuery: string) {
+  const search = new URLSearchParams();
+  if (searchQuery === undefined) {
+    searchQuery = '';
+  }
+  search.set('query', searchQuery);
+  // get all the Bands from the server
+  return this.http
+  .get(this._bandsURL, {search}).map(res => {
+    const results =  res.json();
+    searchQuery = '';
+    return results;
+  });
+}
+public getBandbyId(id: number) {
+  return this.http
+  .get(this._bandsURL + id).map(res => {
+    const results =  res.json();
+    return results;
+  });
+}
+private handleError(error: Response) {
+  return Observable.throw(error.statusText);
+}
 }
