@@ -25,7 +25,7 @@
     <div class="filterWrapper">
         <div>
        <button class="filterButton" (click)="openDatePicker()" mat-button>Date </button>
-         <input name="dateInput" [matDatepicker]="picker"  [(ngModel)]="dateInput" [style.visibility]="isButtonChangePickerActive ? 'visible': 'hidden'">
+         <input name="input" [matDatepicker]="picker"  [(ngModel)]="dateInput" [style.visibility]="isButtonChangePickerActive ? 'visible': 'hidden'">
        </div>
        <div>
       <button class="filterButton" (click)="openValueSlider()" mat-button>Price</button>
