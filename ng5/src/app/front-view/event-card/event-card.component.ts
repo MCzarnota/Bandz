@@ -15,12 +15,10 @@ import { extend } from 'webdriver-js-extender';
 @Injectable()
 export class EventCardComponent implements OnInit {
   @Input() event;
-  ngOnInit() {
-  }
+  ngOnInit() {}
   onChange() {
     console.log('change');
   }
-
   // getEvents() {
   //   return this.eventsService.getEvents().subscribe(data => {
   //     this.events = data.events;

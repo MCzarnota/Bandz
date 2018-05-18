@@ -54,6 +54,8 @@ import {trigger, style, transition, animate, keyframes, query, stagger} from '@a
   ]
 })
 export class MainViewComponent  implements OnInit {
+  dateInput = null;
+  searchQuery = '';
   @ViewChild('picker') picker;
   @Input() selected: string;
   searching: Boolean = false;
